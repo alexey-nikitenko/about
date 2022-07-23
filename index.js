@@ -47,39 +47,64 @@ function Footer() {
 function Main() {
     return (
         <div className="container">
-            <section class="py-5 text-center container">
-                <div class="row py-lg-5">
-                    <div class="col-lg-6 col-md-8 mx-auto">
-                        <h1 class="fw-light">Pages</h1>
+            <section className="py-5 text-center container">
+                <div className="row py-lg-5">
+                    <div className="col-lg-6 col-md-8 mx-auto">
+                        <h1 className="fw-light">Pages</h1>
                     </div>
                 </div>
             </section>
 
-            <div class="album py-5 bg-light">
-                <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="card">
-                            <img src="./images/kikstarter_link.png" class="card-img-top" alt="..." />
+            <div className="album py-5 bg-light">
+                <div className="container">
+                    <div className="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div className="card">
+                                <img src="./images/kikstarter_link_beatify.jpg" className="card-img-top" alt="..." />
 
-                            <div class="card-body">
-                                <h5 class="card-title">Kikstarter</h5>
-                                <p class="card-text">Robo Arm. Looking for fundraising</p>
-                                <a href="https://www.kickstarter.com/projects/myroboarm/robotic-arms-as-manipulator-for-keyboards-and-mouse" class="btn btn-primary">Go look at project</a>
+                                <div className="card-body">
+                                    <h5 className="card-title">Kikstarter</h5>
+                                    <p className="card-text">Robo Arm. Looking for fundraising</p>
+                                    <a href="https://www.kickstarter.com/projects/myroboarm/robotic-arms-as-manipulator-for-keyboards-and-mouse" className="btn btn-primary">Go look at project</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <img src="./images/mouse_manipulator.jpg" class="card-img-top" alt="..." />
+                        <div class="col">
+                            <div className="card">
+                                <img src="./images/mouse_manipulator.jpg" className="card-img-top" alt="..." />
 
-                            <div class="card-body">
-                                <h5 class="card-title">Mouse manipulator concept</h5>
-                                <p class="card-text">Mouse manipulator in develop.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <div className="card-body">
+                                    <h5 className="card-title">Mouse manipulator concept</h5>
+                                    <p className="card-text">Mouse manipulator in develop.</p>
+                                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div className="card">
+                                <img src="./images/kikstarter_link_beatify.jpg" className="card-img-top" alt="..." />
+
+                                <div className="card-body">
+                                    <h5 className="card-title">Kikstarter</h5>
+                                    <p className="card-text">Robo Arm. Looking for fundraising</p>
+                                    <a href="https://www.kickstarter.com/projects/myroboarm/robotic-arms-as-manipulator-for-keyboards-and-mouse" className="btn btn-primary">Go look at project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div className="card">
+                                <img src="./images/mouse_manipulator.jpg" className="card-img-top" alt="..." />
+
+                                <div className="card-body">
+                                    <h5 className="card-title">Mouse manipulator concept</h5>
+                                    <p className="card-text">Mouse manipulator in develop.</p>
+                                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }
