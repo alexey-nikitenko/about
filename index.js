@@ -13,6 +13,15 @@ function SympleHeadOne() {
     );
 }
 
+function MainPageWrapper()
+{
+    return(
+    <main className="page-wrapper">
+        <SympleHeadOne />
+    </main>
+    );
+}
+
 function KikstarterImageLink() {
     return (<a
         href="https://www.kickstarter.com/projects/myroboarm/robotic-arms-as-manipulator-for-keyboards-and-mouse">
@@ -31,4 +40,4 @@ function BootstrapBlock() {
         </div>);
 }
 
-ReactDOM.render(<SympleHeadOne />, document.getElementById('root'));
+ReactDOM.render(<MainPageWrapper />, document.getElementById('root'));
