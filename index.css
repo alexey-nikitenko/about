@@ -1,8 +1,10 @@
 .back-im {
-    background-image: linear-gradient(43deg, #092085 0%, #dd13f8 46%, #fa7000 100%);
+    background-image: url("../images/main_image.jpg");
+    background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.album-custom{
-    background: hsla(0,0%, 100%, 0.15)!important;
+.album-custom {
+    background: hsla(0, 0%, 100%, 0.15) !important;
     backdrop-filter: blur(30px);
 }
