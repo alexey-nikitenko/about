@@ -1,5 +1,5 @@
 .back-im {
-    background-image: url("../images/main_image.jpg");
+    background-image: url("./images/main_image.jpg")!important;
     background-repeat: no-repeat;
   background-size: contain;
 }
