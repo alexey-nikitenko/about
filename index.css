@@ -1,7 +1,7 @@
 .back-im {
     background-image: url("./images/main_image.jpg")!important;
     background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .album-custom {
