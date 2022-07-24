@@ -145,8 +145,23 @@ function Main() {
                 <div className="card-body">
                   <h5 className="card-title">My CV</h5>
                   <p className="card-text">More work details about me.</p>
-                  <a href="#" className="btn btn-dark shadow-sm">
+                  <a href="cv.html" className="btn btn-dark shadow-sm">
                     Look at CV
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex align-items-stretch">
+              <div className="card shadow album-custom">
+                <img src="./images/youtube.png"
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">My Youtube Chanel</h5>
+                  <p className="card-text">...</p>
+                  <a href="https://www.youtube.com/channel/UCT1rya_vcEHMqOOlVIp-TnA" className="btn btn-dark shadow-sm">
+                    Watch videos
                   </a>
                 </div>
               </div>
