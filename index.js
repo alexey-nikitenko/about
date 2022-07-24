@@ -23,17 +23,17 @@ function Header() {
               <h4 className="text-white">Contact</h4>
               <ul className="list-unstyled">
                 <li>
-                  <a href="#" className="text-white">
-                    Follow on Twitter
+                  <a href="https://www.linkedin.com/in/aleksey-nikitenko-84837850/" className="text-white">
+                    Linkedin profile
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-white">
+                  <a href="https://www.facebook.com/aleksey.nikitenko.7/" className="text-white">
                     Like on Facebook
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-white">
+                  <a href="mailto:donaspeed@gmail.com" className="text-white">
                     Email me
                   </a>
                 </li>
