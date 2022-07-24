@@ -99,7 +99,7 @@ function Main() {
       <div className="album-custom rounded-2">
         <div className="container">
           <div className="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
+            <div class="col-lg-4 d-flex align-items-stretch">
               <div className="card shadow album-custom">
                 <img
                   src="./images/kikstarter_link_beatify.jpg"
@@ -119,7 +119,7 @@ function Main() {
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg-4 d-flex align-items-stretch">
               <div className="card shadow album-custom">
                 <img
                   src="./images/mouse_manipulator.jpg"
@@ -136,39 +136,17 @@ function Main() {
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg-4 d-flex align-items-stretch">
               <div className="card shadow album-custom">
-                <img
-                  src="./images/kikstarter_link_beatify.jpg"
+                <img src="./images/cv.png"
                   className="card-img-top"
                   alt="..."
                 />
-
                 <div className="card-body">
-                  <h5 className="card-title">Kikstarter</h5>
-                  <p className="card-text">Robo Arm. Looking for fundraising</p>
-                  <a
-                    href="https://www.kickstarter.com/projects/myroboarm/robotic-arms-as-manipulator-for-keyboards-and-mouse"
-                    className="btn btn-dark shadow-sm"
-                  >
-                    Go look at the project
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div className="card shadow album-custom">
-                <img
-                  src="./images/mouse_manipulator.jpg"
-                  className="card-img-top"
-                  alt="..."
-                />
-
-                <div className="card-body ">
-                  <h5 className="card-title">Mouse manipulator concept</h5>
-                  <p className="card-text">Mouse manipulator in develop.</p>
+                  <h5 className="card-title">My CV</h5>
+                  <p className="card-text">More work details about me.</p>
                   <a href="#" className="btn btn-dark shadow-sm">
-                    Go somewhere
+                    Look at CV
                   </a>
                 </div>
               </div>
