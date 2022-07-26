@@ -4,6 +4,12 @@
   background-size: cover;
 }
 
+.back-roboarm-im {
+  background-image: url("./images/3dmodel1.png")!important;
+  background-repeat: no-repeat;
+background-size: cover;
+}
+
 .album-custom {
     background: hsla(0, 0%, 100%, 0.15) !important;
     backdrop-filter: blur(30px);
