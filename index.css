@@ -8,3 +8,11 @@
     background: hsla(0, 0%, 100%, 0.15) !important;
     backdrop-filter: blur(30px);
 }
+
+.card-text-custom {
+  color: white;
+}
+
+.card-text-custom-orange {
+  color: rgb(255, 177, 158);
+}

@@ -166,6 +166,21 @@ function Main() {
                 </div>
               </div>
             </div>
+            <div class="col-lg-4 d-flex align-items-stretch">
+              <div className="card shadow album-custom">
+                <img src="./images/sell_image.png"
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Buy RoboArm</h5>
+                  <p className="card-text"> DIY start kit from <b>29 euro</b> <br/> Application and STL files included</p>
+                  <a href="roboarm.html" className="btn btn-dark shadow-sm">
+                    More details
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -216,3 +231,6 @@ function BootstrapBlock() {
 ReactDOM.render(<Header />, document.getElementById("headerId"));
 ReactDOM.render(<Main />, document.getElementById("mainId"));
 ReactDOM.render(<Footer />, document.getElementById("footerId"));
+
+
+// export function Header() {};
