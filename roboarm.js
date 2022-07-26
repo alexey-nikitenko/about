@@ -141,6 +141,20 @@ function Header() {
                   />
                 </div>
               </div>
+              <div class="col-lg-4 d-flex align-items-stretch">
+                <div className="card shadow album-custom">
+                  <div className="card-body">
+                      <h5 className="card-text-custom">Buy Start Kit for 29 euros with PayPal</h5>
+                  </div>
+                  <div class="form-group">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                      <input type="hidden" name="cmd" value="_s-xclick"></input>
+                      <input type="hidden" name="hosted_button_id" value="BZJ8LC25YQ7AS"></input>
+                      <input type="image" src="https://www.paypalobjects.com/en_US/PL/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></input>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

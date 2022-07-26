@@ -231,6 +231,3 @@ function BootstrapBlock() {
 ReactDOM.render(<Header />, document.getElementById("headerId"));
 ReactDOM.render(<Main />, document.getElementById("mainId"));
 ReactDOM.render(<Footer />, document.getElementById("footerId"));
-
-
-// export function Header() {};
