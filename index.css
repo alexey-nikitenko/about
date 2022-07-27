@@ -5,7 +5,6 @@
 }
 
 .back-roboarm-im {
-  background-image: url("./images/3dmodel1.png")!important;
   background-repeat: no-repeat;
 background-size: cover;
 }
@@ -21,4 +20,23 @@ background-size: cover;
 
 .card-text-custom-orange {
   color: rgb(255, 177, 158);
+}
+
+.card-text-start {
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.doc-text{
+  color: white;
+}
+
+.doc-text-bold{
+  color: white;
+  font-weight: bold
+}
+
+.doc-text-red{
+  color: rgb(255, 167, 132);
 }
