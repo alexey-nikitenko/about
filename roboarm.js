@@ -229,9 +229,11 @@ function Main() {
               <p className="doc-text">
               And have 1 USB 2.0 power adapter 5V 1-2A to power supply PCA9685 16 servo motors board
               </p>
-              <div class="col-sm-1">
-                <img src="./images/adapter.png" class="rounded-2 img-fluid" alt="..."></img>
+              <div clasName="p-3 mb-5">
+                <img src="./images/adapter.png" class="img-fluid rounded-2" alt="..."></img>
               </div>
+              <p className="doc-text">
+              </p>
             </div>
           </div>
         </div>
