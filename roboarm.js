@@ -157,8 +157,26 @@ function Main() {
                 </div>
               </div>
               <div class="col-lg-4 d-flex align-items-stretch">
+                <div className="card shadow album-custom">
+                  <div className="card-body">
+                    <h5 className="card-text-custom">Voice Control Feature</h5>
+                  </div>
+                  <img src="./images/voice_control.gif"
+                    className="card-img-top"
+                    alt="..."
+                  />
+                </div>
               </div>
               <div class="col-lg-4 d-flex align-items-stretch">
+              <div className="card shadow album-custom">
+                  <div className="card-body">
+                    <h5 className="card-text-custom">Computer Vision Feature</h5>
+                  </div>
+                  <img src="./images/computer_vision.gif"
+                    className="card-img-top"
+                    alt="..."
+                  />
+                </div>
               </div>
             </div>
 
@@ -199,39 +217,51 @@ function Main() {
 
               </p>
               <h5 className="card-text-start doc-text-red">Please store it before assemble RoBoArm:</h5>
-              <p className="doc-text">
-                Please print stl files provided in file storage
-              </p>
-              <div class="col-sm-1">
-                <img src="./images/3dprintedparts.png" class="rounded-2 img-fluid" alt="..."></img>
+
+              <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="card bg-dark text-white">
+                  <img src="./images/3dprintedparts.png" class="card-img" alt="..."></img>
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">You have to print stl files provided in file storage</h5>
+                  </div>
+                </div>
               </div>
 
-              <p className="doc-text">
-              You have to buy Arduino, PCA9685 16 servo motors board and required wires
-              </p>
-              <div class="col-sm-1">
-                <img src="./images/arduino_wires.png" class="rounded-2 img-fluid" alt="..."></img>
+              <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="card bg-dark text-white">
+                  <img src="./images/arduino_wires.png" class="card-img" alt="..."></img>
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">You have to buy Arduino, PCA9685 16 servo motors board and required wires</h5>
+                  </div>
+                </div>
               </div>
-              <p className="doc-text">
-              And 4 MG90S servo motors with additional wire for 1 motor
-              </p>
-              <div class="col-sm-1">
-                <img src="./images/4motors.png" class="rounded-2 img-fluid" alt="..."></img>
+              <div class="col-lg-6 d-flex align-items-stretch">
+              <div class="card bg-dark text-white">
+                <img src="./images/4motors.png" class="card-img" alt="..."></img>
+                <div class="card-img-overlay">
+                  <h5 class="card-title">And 4 MG90S servo motors with additional wire for 1 motor</h5>
+                </div>
               </div>
-              <p className="doc-text">
-              You need 1 bearing 35x47x7-mm
-              <br/>
-                d = 35 D = 47 B = 7
-              </p>
-              <div class="col-sm-1">
-                <img src="./images/bearing.png" class="rounded-2 img-fluid" alt="..."></img>
               </div>
-              <p className="doc-text">
-              And have 1 USB 2.0 power adapter 5V 1-2A to power supply PCA9685 16 servo motors board
-              </p>
-              <div clasName="p-3 mb-5">
-                <img src="./images/adapter.png" class="img-fluid rounded-2" alt="..."></img>
+              <div class="col-lg-6 d-flex align-items-stretch">
+              <div class="card bg-dark text-white">
+                <img src="./images/bearing.png" class="card-img" alt="..."></img>
+                <div class="card-img-overlay">
+                  <h5 class="card-title">You need 1 bearing 35x47x7-mm
+                    <br />
+                    d = 35 D = 47 B = 7</h5>
+                </div>
               </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-stretch">
+              <div class="card bg-dark text-white">
+                <img src="./images/adapter.png" class="card-img" alt="..."></img>
+                <div class="card-img-overlay">
+                  <h5 class="card-title">And have 1 USB 2.0 power adapter 5V 1-2A to power supply PCA9685 16 servo motors board</h5>
+                </div>
+              </div>
+              </div>
+
               <p className="doc-text">
               </p>
             </div>

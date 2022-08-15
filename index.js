@@ -168,7 +168,7 @@ function Main() {
             </div>
             <div class="col-lg-4 d-flex align-items-stretch">
               <div className="card shadow album-custom">
-                <img src="./images/sell_image.png"
+                <img src="./images/voice_control.gif"
                   className="card-img-top"
                   alt="..."
                 />
