@@ -216,7 +216,7 @@ function Main() {
                 Future STL files update to support different types of servo motors.<br />
 
               </p>
-              <h5 className="card-text-start doc-text-red">Please store it before assemble RoBoArm:</h5>
+              <h5 className="card-text-start doc-text-red">Please collect those before assemble RoBoArm:</h5>
 
               <div class="col-lg-6 d-flex align-items-stretch">
                 <div class="card bg-dark text-white">
