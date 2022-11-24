@@ -111,7 +111,27 @@ function Main() {
                   <h5 className="card-title">Kikstarter</h5>
                   <p className="card-text">Robo Arm. Looking for fundraising</p>
                   <a
-                    href="https://www.kickstarter.com/projects/myroboarm/robotic-arms-as-manipulator-for-keyboards-and-mouse"
+                    href="https://www.kickstarter.com/projects/myroboarm/robotic-arm-as-manipulator-for-keyboards-or-mouse"
+                    className="btn btn-success shadow-sm"
+                  >
+                    Go look at the project
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex align-items-stretch">
+              <div className="card shadow album-custom">
+                <img
+                  src="./images/kikstarter_link_beatify.jpg"
+                  className="card-img-top"
+                  alt="..."
+                />
+
+                <div className="card-body">
+                  <h5 className="card-title">Indiegogo</h5>
+                  <p className="card-text">Robo Arm. Looking for fundraising</p>
+                  <a
+                    href="https://igg.me/at/roboarm/x/30981655#/"
                     className="btn btn-success shadow-sm"
                   >
                     Go look at the project
