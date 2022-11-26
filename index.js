@@ -109,7 +109,7 @@ function Main() {
 
                 <div className="card-body">
                   <h5 className="card-title">Kikstarter</h5>
-                  <p className="card-text">Robo Arm. Looking for fundraising</p>
+                  <p className="card-text">Robo Arm (remote control for keyboard). Looking for fundraising</p>
                   <a
                     href="https://www.kickstarter.com/projects/myroboarm/robotic-arm-as-manipulator-for-keyboards-or-mouse"
                     className="btn btn-success shadow-sm"
@@ -129,7 +129,7 @@ function Main() {
 
                 <div className="card-body">
                   <h5 className="card-title">Indiegogo</h5>
-                  <p className="card-text">Robo Arm. Looking for fundraising</p>
+                  <p className="card-text">Robo Arm (remote control for keyboard). Looking for fundraising</p>
                   <a
                     href="https://igg.me/at/roboarm/x/30981655#/"
                     className="btn btn-success shadow-sm"
@@ -193,7 +193,7 @@ function Main() {
                   alt="..."
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Buy RoboArm</h5>
+                  <h5 className="card-title">Buy RoboArm (remote control for keyboard)</h5>
                   <p className="card-text"> DIY start kit from <b>29 euro</b> <br/> Application and STL files included</p>
                   <a href="roboarm.html" className="btn btn-dark shadow-sm">
                     More details

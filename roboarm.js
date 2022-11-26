@@ -107,7 +107,7 @@ function Main() {
                     alt="..."
                   />
                   <div className="card-body">
-                    <h5 className="card-title">Buy RoboArm</h5>
+                    <h5 className="card-title">Buy RoboArm (remote control for keyboard)</h5>
                     <p className="card-text-custom">
                       DIY start kit from <b>29 euro</b>
                       <br />
@@ -197,7 +197,7 @@ function Main() {
             <div className="row row-cols-1 row-cols-md-1 g-4">
               <h5 className="card-text-start">What you need to start</h5>
               <p className="doc-text">
-                The idea is to create RoBoArm as much affordable as possible.
+                The idea is to create RoBoArm (remote control for keyboard) as much affordable as possible.
                 <b className="doc-text-red"> Unfortunately I can’t provide a better price for such things like
                   Arduino (tested on UNO and Nano), PCA9685 16 servo motors board, wires,
                   bearings or filament for 3d printer.</b> So I would like to give an opportunity
