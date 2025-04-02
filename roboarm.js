@@ -96,6 +96,10 @@ function Footer() {
 }
 
 function Main() {
+  // Define the current amount and goal for the progress bar
+  const currentAmount = 1145; // Update this value as you collect more funds
+  const goal = 2600;
+  const progressPercentage = (currentAmount / goal) * 100; // Calculate the percentage
   return (
     <div>
       <div className="container">
@@ -139,6 +143,30 @@ function Main() {
                       <li>- A bearing and 4 MG90S 180-degree servo motors</li>
                       <li>- 8 M3 screws and 8 nuts</li>
                     </ul>
+                    {/* Progress Bar Section */}
+                    <div className="mt-3">
+                      <h6 className="card-text-custom">
+                        Open Source Funding Goal
+                      </h6>
+                      <div className="progress" style={{ height: '20px' }}>
+                        <div
+                          className="progress-bar"
+                          role="progressbar"
+                          style={{
+                            width: `${progressPercentage}%`,
+                            backgroundColor: 'rgb(255, 177, 158)', // Matches .card-text-custom-orange
+                          }}
+                          aria-valuenow={progressPercentage}
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
+                          {Math.round(progressPercentage)}%
+                        </div>
+                      </div>
+                      <p className="card-text-custom mt-2 text-center">
+                        <span className="card-text-custom-orange">{currentAmount} EUR</span> / {goal} EUR
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
