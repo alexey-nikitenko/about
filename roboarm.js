@@ -125,10 +125,10 @@ function Main() {
                       Buy RoboArm (Remote Control for Keyboard)
                     </h5>
                     <p className="card-text-custom">
-                      DIY Digital kit for <b>29 EUR</b>
+                      DIY Digital kit for <span className="card-text-custom-orange"><b>29 EUR</b></span>
                       <br />
-                      <br /> Includes Windows Application, STL files, and detailed
-                      instructions.
+                      <br /> Includes Windows Application, STL files, and
+                      detailed instructions.
                     </p>
                     <ul className="card-text-custom list-unstyled">
                       <li>
@@ -139,7 +139,7 @@ function Main() {
                       <li>- A bearing and 4 MG90S 180-degree servo motors</li>
                       <li>- 8 M3 screws and 8 nuts</li>
                     </ul>
-                 </div>
+                  </div>
                 </div>
               </div>
               {/* ==== Column 2: Grid Items ==== */}
@@ -149,15 +149,17 @@ function Main() {
                   {/* Card 2 (PayPal) */}
                   <div className="col d-flex align-items-stretch">
                     <div className="card shadow album-custom h-100">
-                    <img
-                        src="./images/matrix.gif" // Assuming same image, change if needed
+                      <img
+                        src="./images/matrix.gif"
                         className="card-img-top"
                         alt="Placeholder"
                       />
                       <div className="card-body d-flex flex-column justify-content-center align-items-center text-center">
                         <h5 className="card-text-custom mb-3">
                           Buy the Digital Kit
-                          <p>for 29 EUR </p>
+                          <p>
+                            for <span className="card-text-custom-orange"><b>29 EUR</b></span>
+                          </p>
                           with PayPal
                         </h5>
                         <div className="form-group">
@@ -186,11 +188,11 @@ function Main() {
                     </div>
                   </div>
 
-                  {/* Card 3 (Placeholder/Email) */}
+                  {/* Card 3 (Option 2: All components) */}
                   <div className="col d-flex align-items-stretch">
                     <div className="card shadow album-custom h-100">
                       <img
-                        src="./images/required_components.png" // Assuming same image, change if needed
+                        src="./images/required_components.png"
                         className="card-img-top"
                         alt="Required Components"
                       />
@@ -199,12 +201,16 @@ function Main() {
                           Option 2: All components required to make RoBoArm.
                         </h5>
                         <p className="card-text-custom flex-grow-1">
-                          Includes 3D printed parts, Arduino Nano with flashed firmware, PCA9685 16 servo
-                          motors board, 4 MG90S servo motors, wires, bearing, and
-                          8 M3 screws.
+                          Includes 3D printed parts, Arduino Nano with flashed
+                          firmware, PCA9685 16 servo motors board, 4 MG90S servo
+                          motors, wires, bearing, and 8 M3 screws.
                         </p>
                         <p className="card-text-custom flex-grow-1">
-                          <b>Price: 59 EUR + shipping from Poland</b>
+                          <b>
+                            Price:{' '}
+                            <span className="card-text-custom-orange">59 EUR</span>{' '}
+                            + shipping from Poland
+                          </b>
                         </p>
                         <a
                           href="mailto:donaspeed@gmail.com"
@@ -216,11 +222,11 @@ function Main() {
                     </div>
                   </div>
 
-                  {/* Card 4 (STL Files) */}
+                  {/* Card 4 (Option 3: Fully assembled) */}
                   <div className="col d-flex align-items-stretch">
                     <div className="card shadow album-custom h-100">
                       <img
-                        src="./images/rotary_encoder.gif" // Assuming same image, change if needed
+                        src="./images/rotary_encoder.gif"
                         className="card-img-top"
                         alt="Fully Assembled RoboArm"
                       />
@@ -229,12 +235,16 @@ function Main() {
                           Option 3: Fully assembled and tested RoboArm.
                         </h5>
                         <p className="card-text-custom flex-grow-1">
-                          Includes 3D printed parts, Arduino Nano with flashed firmware, PCA9685 16 servo
-                          motors board, 4 MG90S servo motors, wires, bearing, and
-                          8 M3 screws.
+                          Includes 3D printed parts, Arduino Nano with flashed
+                          firmware, PCA9685 16 servo motors board, 4 MG90S servo
+                          motors, wires, bearing, and 8 M3 screws.
                         </p>
                         <p className="card-text-custom flex-grow-1">
-                          <b>Price: 99 EUR + shipping from Poland</b>
+                          <b>
+                            Price:{' '}
+                            <span className="card-text-custom-orange">99 EUR</span>{' '}
+                            + shipping from Poland
+                          </b>
                         </p>
                         <a
                           href="mailto:donaspeed@gmail.com"
@@ -250,8 +260,9 @@ function Main() {
                   <div className="col d-flex align-items-stretch">
                     <div className="card shadow album-custom h-100">
                       <img
+                        
                         src="./images/soft_ui.gif"
-                        className="img-fluid"
+                        className="img-fluid rounded-2"
                         alt="Software UI"
                       />
                       <div className="card-body text-center d-flex flex-column">
@@ -267,7 +278,7 @@ function Main() {
                     <div className="card shadow album-custom h-100">
                       <img
                         src="./images/voice_control.gif"
-                        className="img-fluid"
+                        className="img-fluid rounded-2"
                         alt="Voice Control"
                       />
                       <div className="card-body text-center d-flex flex-column">
@@ -283,7 +294,7 @@ function Main() {
                     <div className="card shadow album-custom h-100">
                       <img
                         src="./images/3d_models.gif"
-                        className="img-fluid"
+                        className="img-fluid rounded-2"
                         alt="3D Models"
                       />
                       <div className="card-body text-center d-flex flex-column">
@@ -321,21 +332,28 @@ function Main() {
             <div className="row row-cols-1 g-4">
               {/* Content moved inside columns for better structure */}
               <div className="col">
-                <h5 className="card-text-start">What You Need to Get Started with Digital Kit</h5>
+                <h5 className="card-text-start">
+                  What You Need to Get Started with Digital Kit
+                </h5>
                 <p className="doc-text">
                   The idea is to create RoBoArm (remote control for keyboard) as
-                  affordably as possible. 
-                  <p><b className="doc-text-red">
-                    Unfortunately, I can’t offer a better price for components
-                    like the Arduino (tested on UNO and Nano), PCA9685 16 servo
-                    motors board, wires, bearings, or 3D printer filament. 
-                  </b></p>
+                  affordably as possible.
+                  <p>
+                    <b className="doc-text-red">
+                      Unfortunately, I can’t offer a better price for components
+                      like the Arduino (tested on UNO and Nano), PCA9685 16
+                      servo motors board, wires, bearings, or 3D printer
+                      filament.
+                    </b>
+                  </p>
                   Therefore, I want to give you the opportunity to find these
-                  items on AliExpress, Amazon, or local markets. 
-                  <p><b className="doc-text-red">
-                    This will significantly speed up the process of making
-                    RoBoArm and reduce the overall cost. 
-                  </b></p>
+                  items on AliExpress, Amazon, or local markets.
+                  <p>
+                    <b className="doc-text-red">
+                      This will significantly speed up the process of making
+                      RoBoArm and reduce the overall cost.
+                    </b>
+                  </p>
                 </p>
                 <p className="doc-text-bold">
                   With the Digital Kit, you will receive link to download:
@@ -343,11 +361,13 @@ function Main() {
                 <p className="doc-text">
                   - Windows 10-11 application
                   <br />
-                  - INO file for Arduino (you will need to upload it to your Arduino)
+                  - INO file for Arduino (you will need to upload it to your
+                  Arduino)
                   <br />
                   - STL files for 3D printing
                   <br />
-                  - Detailed documentation on how to assemble and use the RoBoArm
+                  - Detailed documentation on how to assemble and use the
+                  RoBoArm
                   <br />
                   - Online support and application updates
                   <br />
@@ -382,7 +402,8 @@ function Main() {
                         >
                           {' '}
                           {/* Added background for readability */}
-                          You will need to print the STL files provided in the file storage.
+                          You will need to print the STL files provided in the
+                          file storage.
                         </h5>
                       </div>
                     </div>
@@ -403,8 +424,8 @@ function Main() {
                             padding: '0.25rem',
                           }}
                         >
-                          You will need to purchase an Arduino, a PCA9685 16 servo motors board,
-                          and the necessary wires.
+                          You will need to purchase an Arduino, a PCA9685 16
+                          servo motors board, and the necessary wires.
                         </h5>
                       </div>
                     </div>
@@ -425,8 +446,8 @@ function Main() {
                             padding: '0.25rem',
                           }}
                         >
-                          You will also need 4 MG90S servo motors with an additional wire for one
-                          motor.
+                          You will also need 4 MG90S servo motors with an
+                          additional wire for one motor.
                         </h5>
                       </div>
                     </div>
@@ -470,13 +491,70 @@ function Main() {
                             padding: '0.25rem',
                           }}
                         >
-                          Finally, you'll need a USB 2.0 power adapter (5V, 1-2A) to power
-                          the PCA9685 16 servo motors board.
+                          Finally, you'll need a USB 2.0 power adapter (5V,
+                          1-2A) to power the PCA9685 16 servo motors board.
                         </h5>
                       </div>
                     </div>
                   </div>
-                  {/* Removed the empty <p className="doc-text"></p> */}
+                  {/* Card 6 (Voice Control) */}
+                  <div className="col d-flex align-items-stretch">
+                    <div className="card shadow album-custom h-100">
+                      <div className="card-body text-center d-flex flex-column">
+                        <h5 className="card-title">Documentation:</h5>
+                        <ul className="list-unstyled card-text-custom">
+                          <li>
+                            <a
+                              href="data/Arduino_update.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="doc-text-bold"
+                            >
+                              Arduino Update Guide
+                            </a>{' '}
+                            - Instructions for updating your Arduino with the
+                            required .ino file.
+                          </li>
+                          <li>
+                            <a
+                              href="data/How_to_start.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="doc-text-bold"
+                            >
+                              How to Start
+                            </a>{' '}
+                            - Overview of components and prerequisites before
+                            assembling the RoboArm.
+                          </li>
+                          <li>
+                            <a
+                              href="data/WindowsApp&RoboArmInitialSetup.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="doc-text-bold"
+                            >
+                              Windows App & RoboArm Initial Setup
+                            </a>{' '}
+                            - Guide for setting up the Windows application and
+                            initial RoboArm configuration.
+                          </li>
+                          <li>
+                            <a
+                              href="data/WindowsAppWorkflow.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="doc-text-bold"
+                            >
+                              Windows App Workflow
+                            </a>{' '}
+                            - Detailed workflow for using the Windows app to
+                            control the RoboArm.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -53,5 +53,10 @@ h5 {
 }
 
 .paypal-button {
-  transform: scale(2); /* Increase size by 50% */
+  transform: scale(1.5); /* Increase size by 50% */
+}
+
+.card-text-custom-orange {
+  color: rgb(255, 125, 74);
+  text-shadow: 2px 2px 4px #000000;
 }
