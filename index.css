@@ -11,6 +11,7 @@ background-size: cover;
 
 .album-custom {
     background: hsla(0, 0%, 100%, 0.15) !important;
+    -webkit-backdrop-filter: blur(30px); /* For Safari */
     backdrop-filter: blur(30px);
 }
 
@@ -38,7 +39,7 @@ background-size: cover;
 }
 
 .doc-text-red{
-  color: rgb(255, 167, 132);
+  color: rgb(255, 125, 74);
 }
 
 .drop-shadow{
@@ -49,4 +50,8 @@ background-size: cover;
 h5 {
   color: white;
   text-shadow: 2px 2px 4px #000000;
+}
+
+.paypal-button {
+  transform: scale(2); /* Increase size by 50% */
 }
