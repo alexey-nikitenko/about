@@ -154,7 +154,7 @@ function Main() {
                           role="progressbar"
                           style={{
                             width: `${progressPercentage}%`,
-                            backgroundColor: 'rgb(255, 177, 158)', // Matches .card-text-custom-orange
+                            backgroundColor: 'rgb(255, 125, 74)', // Matches .card-text-custom-orange
                           }}
                           aria-valuenow={progressPercentage}
                           aria-valuemin="0"
