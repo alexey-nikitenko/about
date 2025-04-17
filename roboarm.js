@@ -97,7 +97,7 @@ function Footer() {
 
 function Main() {
   // Define the current amount and goal for the progress bar
-  const currentAmount = 1145; // Update this value as you collect more funds
+  const currentAmount = 1171; // Update this value as you collect more funds
   const goal = 2600;
   const progressPercentage = (currentAmount / goal) * 100; // Calculate the percentage
   return (
