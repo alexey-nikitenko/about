@@ -131,7 +131,12 @@ function Main() {
                     <p className="card-text-custom">
                       DIY Digital kit for <span className="card-text-custom-orange"><b>29 EUR</b></span>
                       <br />
-                      <br /> Includes Windows Application, STL files, and
+                      <br /> Includes Python application
+                      <br />Tested on :
+                      <br />Windows 11
+                      <br />Ubuntu 24.04.2 LTS
+                      <br />MacOS Sequoia 15.4.1  MacBook Air M2 
+                      <br />, STL files, and
                       detailed instructions.
                     </p>
                     <ul className="card-text-custom list-unstyled">
@@ -295,7 +300,11 @@ function Main() {
                       />
                       <div className="card-body text-center d-flex flex-column">
                         <h5 className="card-text-custom flex-grow-1">
-                          Windows 10-11 Application
+                         Includes Python application
+                        <br />Tested on :
+                        <br />Windows 11
+                        <br />Ubuntu 24.04.2 LTS
+                        <br />MacOS Sequoia 15.4.1  MacBook Air M2 
                         </h5>
                       </div>
                     </div>
@@ -387,7 +396,11 @@ function Main() {
                   With the Digital Kit, you will receive link to download:
                 </p>
                 <p className="doc-text">
-                  - Windows 10-11 application
+                <br /> Python application
+                      <br />Tested on :
+                      <br />Windows 11
+                      <br />Ubuntu 24.04.2 LTS
+                      <br />MacOS Sequoia 15.4.1  MacBook Air M2 
                   <br />
                   - INO file for Arduino (you will need to upload it to your
                   Arduino)
@@ -564,19 +577,23 @@ function Main() {
                             >
                               Windows App & RoboArm Initial Setup
                             </a>{' '}
-                            - Guide for setting up the Windows application and
+                            - Guide for setting up RoboBotPy the Python application
+                              Tested on 
+                              Windows 11
+                              Ubuntu 24.04.2 LTS
+                              MacOS Sequoia 15.4.1  MacBook Air M2  and
                             initial RoboArm configuration.
                           </li>
                           <li>
                             <a
-                              href="data/WindowsAppWorkflow.pdf"
+                              href="data/USER_GUIDE.md"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="doc-text-bold"
                             >
-                              Windows App Workflow
+                              RoboBotPy App Workflow
                             </a>{' '}
-                            - Detailed workflow for using the Windows app to
+                            - Detailed workflow for using the RoboBotPy app to
                             control the RoboArm.
                           </li>
                         </ul>

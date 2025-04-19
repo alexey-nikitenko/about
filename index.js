@@ -194,7 +194,8 @@ function Main() {
                 />
                 <div className="card-body">
                   <h5 className="card-title">Buy RoboArm (remote control for keyboard)</h5>
-                  <p className="card-text"> DIY start kit from <b>29 euro</b> <br/> Application and STL files included</p>
+                  <p className="card-text"> DIY start kit from <b>29 euro</b> <br/> Windows , Linux, MacOs 
+                  <br />Python Application and STL files included</p>
                   <a href="roboarm.html" className="btn btn-dark shadow-sm">
                     More details
                   </a>
