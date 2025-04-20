@@ -108,7 +108,7 @@ function Main() {
                 />
 
                 <div className="card-body">
-                  <h5 className="card-title">Kikstarter</h5>
+                  <h5 className="card-title">Kickstarter</h5>
                   <p className="card-text">Robo Arm (remote control for keyboard). Looking for fundraising</p>
                   <a
                     href="https://www.kickstarter.com/projects/myroboarm/robotic-arm-as-manipulator-for-keyboards-or-mouse"
@@ -194,7 +194,7 @@ function Main() {
                 />
                 <div className="card-body">
                   <h5 className="card-title">Buy RoboArm (remote control for keyboard)</h5>
-                  <p className="card-text"> DIY start kit from <b>29 euro</b> <br/> Windows , Linux, MacOs 
+                  <p className="card-text"> DIY Digital Kit from <b>29 euro</b> <br/> Windows , Linux, MacOs 
                   <br />Python Application and STL files included</p>
                   <a href="roboarm.html" className="btn btn-dark shadow-sm">
                     More details
@@ -216,7 +216,7 @@ function SympleHeadOne() {
       <br />
       Thank you for visiting this page.
       <br />
-      It's under renovation. But you can visit my kikstarter project page.
+      It's under renovation. But you can visit my kickstarter project page.
       <p>
         <BootstrapBlock />
       </p>

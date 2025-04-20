@@ -546,7 +546,7 @@ function Main() {
                         <ul className="list-unstyled card-text-custom">
                           <li>
                             <a
-                              href="data/Arduino_update.pdf"
+                              href="data/Arduino sketch upload.pdf"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="doc-text-bold"
@@ -558,7 +558,7 @@ function Main() {
                           </li>
                           <li>
                             <a
-                              href="data/How_to_start.pdf"
+                              href="data/What you need to start.pdf"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="doc-text-bold"
@@ -570,12 +570,12 @@ function Main() {
                           </li>
                           <li>
                             <a
-                              href="data/WindowsApp&RoboArmInitialSetup.pdf"
+                              href="data/Robo Arm Assembly and Motor Setup Guide.pdf"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="doc-text-bold"
                             >
-                              Windows App & RoboArm Initial Setup
+                              RoboArm Initial Setup
                             </a>{' '}
                             - Guide for setting up RoboBotPy the Python application
                               Tested on 
@@ -586,7 +586,7 @@ function Main() {
                           </li>
                           <li>
                             <a
-                              href="data/USER_GUIDE.md"
+                              href="data/USER_GUIDE.pdf"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="doc-text-bold"
