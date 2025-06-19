@@ -68,9 +68,10 @@ function Main() {
             <div className="row justify-content-center">
               <div className="col-lg-10">
                 <div className="ratio ratio-16x9 shadow-lg">
+                  {/* === CORRECTED IFRAME SRC === */}
                   <iframe 
-                    src="https://youtu.be/l_kpORGeoE4?si=L2s0s9Z_nWbG0Mqn" 
-                    title="YouTube video player" 
+                    src="https://www.youtube.com/embed/l_kpORGeoE4" 
+                    title="Relics Of The Lost Dawn - Gameplay Demo"
                     frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowFullScreen>
@@ -124,9 +125,9 @@ function Main() {
             <h3 className="card-text-custom mb-4">Get Involved</h3>
             <p className="text-white">Join our community, try the demo, or contact us for partnership opportunities.</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-center">
-                <a href="https://relicsofthelostdawn.hopto.org/index.html" className="btn btn-warning btn-lg me-md-2" target="_blank">Play the Web Demo</a>
-                <a href="#" className="btn btn-primary btn-lg me-md-2">Join the Discord</a>
                 <a href="https://github.com/alexey-nikitenko/RelicsOfTheLostDown3DMMORPGVersion/releases" className="btn btn-info btn-lg me-md-2" target="_blank">Download Client (Win/Linux)</a>
+                <a href="https://relicsofthelostdawn.hopto.org/index.html" className="btn btn-warning btn-lg me-md-2" target="_blank">Play the Web Demo</a>
+                <a href="https://discord.gg/wcY8b6W3" className="btn btn-primary btn-lg me-md-2" target="_blank">Join the Discord</a>
                 <a href="mailto:donaspeed@gmail.com" className="btn btn-success btn-lg">Contact for Sponsorship</a>
             </div>
         </div>
