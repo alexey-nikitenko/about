@@ -55,7 +55,7 @@ function Main() {
         <section className="py-5 text-center container">
           <div className="row py-lg-5">
             <div className="col-lg-8 col-md-10 mx-auto">
-              <h1 className="card-text-custom-orange fw-light">Relics Of The Lost Dawn</h1>
+              <h1 className="card-text-custom-orange fw-light heading-with-icon">Relics Of The Lost Dawn</h1>
               <p className="lead text-white">An indie MMORPG with a deep crafting economy, being forged in the open by a solo developer. Witness the evolution of a world in real time.</p>
             </div>
           </div>
@@ -126,7 +126,7 @@ function Main() {
             <div className="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
                 <a href="https://github.com/alexey-nikitenko/RelicsOfTheLostDown3DMMORPGVersion/releases" className="btn btn-info btn-lg me-md-2" target="_blank">Download Client (Win/Linux)</a>
                 <a href="https://relicsofthelostdawn.hopto.org/index.html" className="btn btn-warning btn-lg me-md-2" target="_blank">Play the Web Demo</a>
-                <a href="https://discord.gg/donaspeed" className="btn btn-primary btn-lg" target="_blank">Join the Discord</a>
+                <a href="https://discord.gg/HhhxGp5E" className="btn btn-primary btn-lg" target="_blank">Join the Discord</a>
                 <a href="devlog.html" className="btn btn-secondary btn-lg" target="_blank">Read Devlog</a>
             </div>
             

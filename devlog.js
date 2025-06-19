@@ -99,7 +99,7 @@ function Main() {
         <section className="py-5 text-center container">
           <div className="row py-lg-5">
             <div className="col-lg-8 col-md-10 mx-auto">
-              <h1 className="card-text-custom-orange fw-light">Project Devlog</h1>
+              <h1 className="card-text-custom-orange fw-light heading-with-icon">Project Devlog</h1>
               <p className="lead text-white">Follow the real-time evolution of Relics Of The Lost Dawn. New updates are posted at the top.</p>
             </div>
           </div>

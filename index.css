@@ -69,3 +69,21 @@ h5 {
     background-size: cover;
     background-attachment: fixed; /* Makes the background stay in place on scroll */
 }
+
+.heading-with-icon {
+  display: flex; /* Use flexbox for easy alignment */
+  align-items: center; /* Vertically center the icon and text */
+  justify-content: center; /* Horizontally center the whole group (optional, but good for titles) */
+  gap: 0.75rem; /* Add a little space between the icon and the text */
+}
+
+.heading-with-icon::before {
+  content: ''; /* Necessary for the :before pseudo-element to show up */
+  display: block; /* Make it a block-level element */
+  width: 40px; /* The width of your icon */
+  height: 40px; /* The height of your icon */
+  background-image: url('./images/icon.png'); /* The path to your icon */
+  background-size: contain; /* Ensure the icon fits within the dimensions */
+  background-repeat: no-repeat;
+  background-position: center;
+}
