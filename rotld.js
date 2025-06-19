@@ -120,15 +120,27 @@ function Main() {
         </div>
 
 
-        {/* --- Call to Action --- */}
         <div className="album-custom rounded-2 p-4 mb-4 text-center">
             <h3 className="card-text-custom mb-4">Get Involved</h3>
             <p className="text-white">Join our community, try the demo, or contact us for partnership opportunities.</p>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-center">
+            <div className="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
                 <a href="https://github.com/alexey-nikitenko/RelicsOfTheLostDown3DMMORPGVersion/releases" className="btn btn-info btn-lg me-md-2" target="_blank">Download Client (Win/Linux)</a>
                 <a href="https://relicsofthelostdawn.hopto.org/index.html" className="btn btn-warning btn-lg me-md-2" target="_blank">Play the Web Demo</a>
-                <a href="https://discord.gg/wcY8b6W3" className="btn btn-primary btn-lg me-md-2" target="_blank">Join the Discord</a>
-                <a href="mailto:donaspeed@gmail.com" className="btn btn-success btn-lg">Contact for Sponsorship</a>
+                <a href="https://discord.gg/wcY8b6W3" className="btn btn-primary btn-lg" target="_blank">Join the Discord</a>
+            </div>
+            
+            {/* === NEW: Direct Support Section === */}
+            <hr style={{color: "rgba(255,255,255,0.3)"}} />
+            <h5 className="card-text-custom mt-4">Support the Development Directly</h5>
+            <div className="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
+                <a href="https://patreon.com/AspeedGames" className="btn btn-danger btn-lg me-md-2" target="_blank">Support on Patreon</a>
+                <a href="https://ko-fi.com/AspeedGames" className="btn btn-primary btn-lg" target="_blank">Buy Me a Ko-fi</a>
+            </div>
+            
+            <hr className="mt-4" style={{color: "rgba(255,255,255,0.3)"}} />
+            <h5 className="card-text-custom mt-4">For Business Inquiries</h5>
+             <div className="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
+                 <a href="mailto:donaspeed@gmail.com" className="btn btn-success btn-lg">Contact for Sponsorship</a>
             </div>
         </div>
 
