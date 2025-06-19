@@ -60,3 +60,12 @@ h5 {
   color: rgb(255, 125, 74);
   text-shadow: 2px 2px 4px #000000;
 }
+
+/* Add this new style to the bottom of your index.css file */
+
+.back-rotld-im {
+    background-image: url("./images/background_rotld.jpg"); /* You need to create this image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Makes the background stay in place on scroll */
+}

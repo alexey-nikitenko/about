@@ -8,33 +8,43 @@ function Header() {
               <img
                 src="./images/face.jpg"
                 className="card-img-top rounded-2 shadow-sm"
-                alt="..."
+                alt="Profile"
               />
             </div>
             <div className="col-sm-8 col-md-6 py-4">
               <h4 className="text-white">About</h4>
               <p className="text-muted">
-                Aleksey Nikitenko.
-                <br /> Software engineer. <br /> 11 years of experience in
-                automation testing and software developing{" "}
+                Aleksey Nikitenko
+                <br /> Software Engineer
+                <br /> 11 years of experience in automation testing and software development
               </p>
             </div>
             <div className="col-sm-4 col-md-2 py-4">
               <h4 className="text-white">Contact</h4>
               <ul className="list-unstyled">
                 <li>
-                  <a href="https://www.linkedin.com/in/aleksey-nikitenko-84837850/" className="text-white">
-                    Linkedin profile
+                  <a 
+                    href="https://www.linkedin.com/in/aleksey-nikitenko-84837850/" 
+                    className="text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn Profile
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.facebook.com/aleksey.nikitenko.7/" className="text-white">
-                    Like on Facebook
+                  <a 
+                    href="https://www.facebook.com/aleksey.nikitenko.7/" 
+                    className="text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Facebook
                   </a>
                 </li>
                 <li>
                   <a href="mailto:donaspeed@gmail.com" className="text-white">
-                    Email me
+                    Email Me
                   </a>
                 </li>
               </ul>
@@ -88,6 +98,45 @@ function Footer() {
 }
 
 function Main() {
+  const projects = [
+    {
+      id: 1,
+      image: "./images/game_promo.png",
+      title: "Relics Of The Lost Dawn (MMORPG)",
+      description: "Indie MMORPG project with deep crafting and live, open development. Currently seeking partners.",
+      link: "rotld.html",
+      buttonText: "View Project Details",
+      buttonClass: "btn-warning"
+    },
+    {
+      id: 2,
+      image: "./images/voice_control.gif",
+      title: "Buy RoboArm (remote control for keyboard)",
+      description: "DIY Digital Kit from 29 euro\nWindows, Linux, MacOS\nPython Application and STL files included",
+      link: "roboarm.html",
+      buttonText: "More details",
+      buttonClass: "btn-dark"
+    },
+    {
+      id: 3,
+      image: "./images/cv.png",
+      title: "My CV",
+      description: "More work details about me.",
+      link: "cv.html",
+      buttonText: "Look at CV",
+      buttonClass: "btn-dark"
+    },
+    {
+      id: 4,
+      image: "./images/youtube.png",
+      title: "My Youtube Channel",
+      description: "Check out my video content",
+      link: "https://www.youtube.com/channel/UCT1rya_vcEHMqOOlVIp-TnA",
+      buttonText: "Watch videos",
+      buttonClass: "btn-dark"
+    }
+  ];
+
   return (
     <div className="container">
       <section className="py-5 text-center container">
@@ -99,109 +148,24 @@ function Main() {
       <div className="album-custom rounded-2">
         <div className="container">
           <div className="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col-lg-4 d-flex align-items-stretch">
-              <div className="card shadow album-custom">
-                <img
-                  src="./images/kikstarter_link_beatify.jpg"
-                  className="card-img-top"
-                  alt="..."
-                />
-
-                <div className="card-body">
-                  <h5 className="card-title">Kickstarter</h5>
-                  <p className="card-text">Robo Arm (remote control for keyboard). Looking for fundraising</p>
-                  <a
-                    href="https://www.kickstarter.com/projects/myroboarm/robotic-arm-as-manipulator-for-keyboards-or-mouse"
-                    className="btn btn-success shadow-sm"
-                  >
-                    Go look at the project
-                  </a>
+            {projects.map(project => (
+              <div key={project.id} className="col-lg-4 d-flex align-items-stretch">
+                <div className="card shadow album-custom">
+                  <img
+                    src={project.image}
+                    className="card-img-top"
+                    alt={project.title}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{project.title}</h5>
+                    <p className="card-text">{project.description}</p>
+                    <a href={project.link} className={`btn ${project.buttonClass} shadow-sm`}>
+                      {project.buttonText}
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 d-flex align-items-stretch">
-              <div className="card shadow album-custom">
-                <img
-                  src="./images/kikstarter_link_beatify.jpg"
-                  className="card-img-top"
-                  alt="..."
-                />
-
-                <div className="card-body">
-                  <h5 className="card-title">Indiegogo</h5>
-                  <p className="card-text">Robo Arm (remote control for keyboard). Looking for fundraising</p>
-                  <a
-                    href="https://igg.me/at/roboarm/x/30981655#/"
-                    className="btn btn-success shadow-sm"
-                  >
-                    Go look at the project
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 d-flex align-items-stretch">
-              <div className="card shadow album-custom">
-                <img
-                  src="./images/mouse_manipulator.jpg"
-                  className="card-img-top"
-                  alt="..."
-                />
-
-                <div className="card-body">
-                  <h5 className="card-title">Mouse manipulator concept</h5>
-                  <p className="card-text">Mouse manipulator in develop.</p>
-                  <a href="#" className="btn btn-dark shadow-sm">
-                    Go somewhere
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 d-flex align-items-stretch">
-              <div className="card shadow album-custom">
-                <img src="./images/cv.png"
-                  className="card-img-top"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <h5 className="card-title">My CV</h5>
-                  <p className="card-text">More work details about me.</p>
-                  <a href="cv.html" className="btn btn-dark shadow-sm">
-                    Look at CV
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 d-flex align-items-stretch">
-              <div className="card shadow album-custom">
-                <img src="./images/youtube.png"
-                  className="card-img-top"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <h5 className="card-title">My Youtube Chanel</h5>
-                  <p className="card-text">...</p>
-                  <a href="https://www.youtube.com/channel/UCT1rya_vcEHMqOOlVIp-TnA" className="btn btn-dark shadow-sm">
-                    Watch videos
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 d-flex align-items-stretch">
-              <div className="card shadow album-custom">
-                <img src="./images/voice_control.gif"
-                  className="card-img-top"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Buy RoboArm (remote control for keyboard)</h5>
-                  <p className="card-text"> DIY Digital Kit from <b>29 euro</b> <br/> Windows , Linux, MacOs 
-                  <br />Python Application and STL files included</p>
-                  <a href="roboarm.html" className="btn btn-dark shadow-sm">
-                    More details
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
