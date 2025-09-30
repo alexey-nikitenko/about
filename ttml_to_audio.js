@@ -108,10 +108,32 @@ function Main() {
             <div className="row">
                 <div className="col">
                     <h1>TTML to Audio Converter</h1>
+
+                    <div className="card album-custom p-3 my-4">
+                        <div className="card-body">
+                            <h3 className="card-title">What is the TTML to Audio Converter?</h3>
+                            <p>Imagine you have a video with subtitles, but you wish you could listen to the dialogue instead of reading it. This tool does exactly that! It takes a standard subtitle file (the kind used for movies and online videos) and turns it into a spoken audio track using a high-quality computer voice.</p>
+                            <p>Think of it as instantly creating a simple audiobook or a voice-over for any video that already has subtitles. It’s perfect for making content more accessible or for situations where you’d rather listen than watch.</p>
+
+                            <h3 className="card-title mt-4">How Does It Work (in Simple Terms)?</h3>
+                            <p>The magic of this tool is how it handles timing to make the voice sound natural, not rushed or robotic.</p>
+                            <ol>
+                                <li><strong>It Reads the Subtitles:</strong> The tool looks at both the text in the subtitle file and, more importantly, <em>when</em> each line is supposed to appear and disappear on the screen.</li>
+                                <li><strong>It Finds the Perfect Pacing:</strong> Sometimes, a lot of text appears on screen for only a few seconds. Instead of making the voice talk comically fast, the tool is clever. It looks for silent pauses <em>before</em> and <em>after</em> the subtitle appears and "borrows" a bit of that silence to start reading the line a little early or finish it a bit late. The result is a much more natural, evenly-paced narration. It only speeds up the voice as a last resort.</li>
+                                <li><strong>It Learns to Pronounce Words Correctly:</strong> Computer voices can stumble on unusual names, technical terms, or certain words. The tool lets you create a simple "pronunciation dictionary." If you find a word that sounds wrong, you can add it to a list, and the tool will guide the voice to say it correctly in the future.</li>
+                                <li><strong>It Builds the Final Audio File:</strong> After converting all the text, it stitches everything together—the spoken words and the silent pauses—into a single, perfectly synchronized MP3 file that you can play alongside your video or listen to on its own.</li>
+                            </ol>
+                            <p>In short, it’s a smart and flexible tool for anyone who wants to turn written subtitles into a polished, natural-sounding audio experience.</p>
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <h2>Technical Details</h2>
                     <p>This project provides a powerful and flexible tool for converting TTML (Timed Text Markup Language) subtitle files into a single, synchronized audio file using text-to-speech (TTS). It is designed to be highly configurable and resilient, making it ideal for generating audio tracks for videos from their subtitles.</p>
                     <p>The application features both a command-line interface (<code>main.py</code>) for automation and a user-friendly graphical interface (<code>gui.py</code>) for easier use.</p>
 
-                    <h2>Core Features</h2>
+                    <h2 className="mt-4">Core Features</h2>
                     <ul>
                         <li><strong>Intelligent Audio Scheduling:</strong> The application analyzes subtitle timing and intelligently reschedules audio to fit. It first attempts to borrow time from surrounding silent gaps to ensure natural pacing and only resorts to speeding up audio when absolutely necessary.</li>
                         <li><strong>Customizable Pronunciation:</strong> Using a <code>pronunciation_rules.json</code> file, you can fix common TTS pronunciation issues. The application uses a clever "vowel-doubling" trick (e.g., "sin" -> "siin") to guide the TTS engine's pronunciation for specific words.</li>
