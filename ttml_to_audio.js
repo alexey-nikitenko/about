@@ -160,7 +160,7 @@ function Main() {
                     <ol>
                         <li>Clone this repository to your local machine.</li>
                         <li>Install the required Python packages using <code>pip</code>:
-                            <pre><code>pip install -r requirements.txt</code></pre>
+                            <pre><code>{`pip install -r requirements.txt`}</code></pre>
                         </li>
                         <li>Ensure <code>ffmpeg</code> is installed on your system.</li>
                     </ol>
@@ -168,27 +168,27 @@ function Main() {
                     <h2>Usage</h2>
                     <h3>Graphical User Interface (GUI)</h3>
                     <p>For most users, the GUI is the easiest way to use the application. To launch it, run:</p>
-                    <pre><code>python gui.py</code></pre>
+                    <pre><code>{`python gui.py`}</code></pre>
                     <p>The GUI provides access to all the configuration options, a progress bar, and a detailed log window.</p>
 
                     <h3>Command-Line Interface (CLI)</h3>
                     <p>The CLI is ideal for automation and scripting.</p>
-                    <pre><code>usage: main.py [-h] [--voice VOICE] [--min-duration MIN_DURATION] [--max-speed MAX_SPEED] [--crossfade CROSSFADE]
+                    <pre><code>{`usage: main.py [-h] [--voice VOICE] [--min-duration MIN_DURATION] [--max-speed MAX_SPEED] [--crossfade CROSSFADE]
                [--gap-threshold GAP_THRESHOLD] [--borrow-time BORROW_TIME] [--batch-size BATCH_SIZE]
-               input_file [output_file]</code></pre>
+               input_file [output_file]`}</code></pre>
                     <h4>Example Command</h4>
-                    <pre><code>python main.py "C:\\path\\to\\my_subtitles.xml" --voice "en-US-AriaNeural" --borrow-time 1500</code></pre>
+                    <pre><code>{`python main.py "C:\\\\path\\\\to\\\\my_subtitles.xml" --voice "en-US-AriaNeural" --borrow-time 1500`}</code></pre>
 
                     <h2>Custom Pronunciation Rules</h2>
                     <p>To fix common TTS mispronunciations, you can add words to the <code>pronunciation_rules.json</code> file. The application uses a "vowel-doubling" trick to guide the TTS engine.</p>
                     <p>The file is structured by language code. For any word in the list, the application will find its first vowel and double it, which often corrects the pronunciation.</p>
                     <p>For example, to fix the pronunciation of "sin" and "ha" in Korean, the <code>ko</code> section would look like this:</p>
-                    <pre><code>{
+                    <pre><code>{`{
   "ko": [
     "sin",
     "ha"
   ]
-}</code></pre>
+}`}</code></pre>
                 </div>
             </div>
         </div>
