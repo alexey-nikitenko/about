@@ -134,6 +134,15 @@ function Main() {
       link: "https://www.youtube.com/channel/UCT1rya_vcEHMqOOlVIp-TnA",
       buttonText: "Watch videos",
       buttonClass: "btn-dark"
+    },
+    {
+      id: 5,
+      image: "./images/software.jpg",
+      title: "TTML to Audio Converter",
+      description: "A flexible tool for converting TTML subtitle files into a single, synchronized audio file using text-to-speech (TTS).",
+      link: "ttml_to_audio.html",
+      buttonText: "View Project Details",
+      buttonClass: "btn-primary"
     }
   ];
 
