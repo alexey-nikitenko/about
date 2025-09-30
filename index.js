@@ -137,7 +137,7 @@ function Main() {
     },
     {
       id: 5,
-      image: "./images/software.jpg",
+      image: "./images/ttl_to_audio.png",
       title: "TTML to Audio Converter",
       description: "A flexible tool for converting TTML subtitle files into a single, synchronized audio file using text-to-speech (TTS).",
       link: "ttml_to_audio.html",

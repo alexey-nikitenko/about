@@ -136,7 +136,7 @@ function Main() {
                     <h2 className="mt-4">Core Features</h2>
                     <ul>
                         <li><strong>Intelligent Audio Scheduling:</strong> The application analyzes subtitle timing and intelligently reschedules audio to fit. It first attempts to borrow time from surrounding silent gaps to ensure natural pacing and only resorts to speeding up audio when absolutely necessary.</li>
-                        <li><strong>Customizable Pronunciation:</strong> Using a <code>pronunciation_rules.json</code> file, you can fix common TTS pronunciation issues. The application uses a clever "vowel-doubling" trick (e.g., "sin" -> "siin") to guide the TTS engine's pronunciation for specific words.</li>
+                        <li><strong>Customizable Pronunciation:</strong> Using a <code>pronunciation_rules.json</code> file, you can fix common TTS pronunciation issues. The application uses a clever "vowel-doubling" trick (e.g., "sin" -- "siin") to guide the TTS engine's pronunciation for specific words.</li>
                         <li><strong>GUI and CLI Interfaces:</strong> Run the application through a simple graphical interface or use the command-line for scripting and automation.</li>
                         <li><strong>Batch Processing & Resilience:</strong> Processes TTS requests in configurable batches to avoid overwhelming the TTS service. It also automatically retries failed requests to handle transient network issues.</li>
                         <li><strong>Highly Configurable:</strong> Provides settings and command-line arguments to control every aspect of the conversion process, from voice selection to timing tolerances.</li>
