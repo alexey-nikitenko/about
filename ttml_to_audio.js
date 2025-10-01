@@ -106,13 +106,16 @@ function Main() {
     return (
         <div className="container text-white">
 
-            <div className="card album-custom p-4 my-5 text-center bg-light text-dark shadow-lg rounded-3">
-                <div className="card-body">
-                    <h2 className="card-title display-5 fw-bold">Unlock the Full Power of Subtitle to Audio</h2>
-                    <p className="lead fs-4">Get the complete, portable desktop application with advanced features, offline capabilities, and full control over your voice generation.</p>
-                    <a href="https://donaspeed.gumroad.com/l/subtitle-to-audio?wanted=true" className="btn btn-primary btn-lg mt-3" target="_blank" rel="noopener noreferrer">
-                        Purchase Now on Gumroad
-                    </a>
+            <div className="card album-custom p-4 my-5 bg-light text-dark shadow-lg rounded-3">
+                <div className="card-body d-flex">
+                    <img src="./images/tts_audio_logo.png" alt="Logo" style={{ width: '200px', marginRight: '10px', objectFit: 'contain' }} />
+                    <div className="text-center">
+                        <h2 className="card-title display-5 fw-bold">Unlock the Full Power of Subtitle to Audio</h2>
+                        <p className="lead fs-4">Get the complete, portable desktop application with advanced features, offline capabilities, and full control over your voice generation.</p>
+                        <a href="https://donaspeed.gumroad.com/l/subtitle-to-audio?wanted=true" className="btn btn-primary btn-lg mt-3" target="_blank" rel="noopener noreferrer">
+                            Purchase Now on Gumroad
+                        </a>
+                    </div>
                 </div>
             </div>
 
