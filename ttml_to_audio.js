@@ -112,6 +112,7 @@ function Main() {
                     <div className="text-center">
                         <h2 className="card-title display-5 fw-bold">Unlock the Full Power of Subtitle to Audio</h2>
                         <p className="lead fs-4">Get the complete, portable desktop application with advanced features, offline capabilities, and full control over your voice generation.</p>
+                        <p className="lead fs-3">7-day money back guarantee.</p>
                         <a href="https://donaspeed.gumroad.com/l/subtitle-to-audio?wanted=true" className="btn btn-primary btn-lg mt-3" target="_blank" rel="noopener noreferrer">
                             Purchase Now on Gumroad
                         </a>
