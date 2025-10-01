@@ -105,7 +105,18 @@ function Footer() {
 function Main() {
     return (
         <div className="container text-white">
-            <h1>How to Use Subtitle to Audio Converter</h1>
+
+            <div className="card album-custom p-4 my-5 text-center bg-light text-dark shadow-lg rounded-3">
+                <div className="card-body">
+                    <h2 className="card-title display-5 fw-bold">Unlock the Full Power of Subtitle to Audio</h2>
+                    <p className="lead fs-4">Get the complete, portable desktop application with advanced features, offline capabilities, and full control over your voice generation.</p>
+                    <a href="https://donaspeed.gumroad.com/l/subtitle-to-audio?wanted=true" className="btn btn-primary btn-lg mt-3" target="_blank" rel="noopener noreferrer">
+                        Purchase Now on Gumroad
+                    </a>
+                </div>
+            </div>
+
+            <h1>Subtitle to Audio Converter: Features Overview</h1>
             <p>This guide provides a comprehensive overview of the Subtitle to Audio Converter, explaining its core concepts, features, and how to use it effectively.</p>
 
             <h2>Table of Contents</h2>
@@ -113,15 +124,8 @@ function Main() {
                 <li><a href="#the-core-idea-intelligent-audio-scheduling">The Core Idea: Intelligent Audio Scheduling</a></li>
                 <li><a href="#how-it-works-the-four-phases">How It Works: The Four Phases</a></li>
                 <li><a href="#use-cases-who-is-this-for">Use Cases: Who Is This For?</a></li>
-                <li>
-                    <a href="#configuration-in-depth">Configuration In-Depth</a>
-                    <ul>
-                        <li><a href="#file-settings">File Settings</a></li>
-                        <li><a href="#voice-settings">Voice Settings</a></li>
-                        <li><a href="#advanced-timing-settings">Advanced Timing Settings</a></li>
-                    </ul>
-                </li>
-                <li><a href="#mastering-pronunciation-rules">Mastering Pronunciation Rules</a></li>
+                <li><a href="#configuration-in-depth">Advanced Configuration</a></li>
+                <li><a href="#mastering-pronunciation-rules">Mastering Pronunciation</a></li>
                 <li><a href="#troubleshooting--faq">Troubleshooting & FAQ</a></li>
             </ol>
 
@@ -141,30 +145,23 @@ function Main() {
             <hr />
 
             <h2 id="how-it-works-the-four-phases">How It Works: The Four Phases</h2>
-            <p>The conversion process happens in a few distinct phases, which you will see reflected in the application's log output:</p>
+            <p>The conversion process happens in a few distinct, automated phases:</p>
             <ol>
-                <li><strong>Phase 1: Parsing & Initial Audio Generation</strong>
-                    <ul>
-                        <li>The application reads your <code>.srt</code> or <code>.ttml</code> file and extracts the text and timing for each subtitle.</li>
-                        <li>It then generates an audio clip for every subtitle at a natural, 1.0x speed. This is done to measure the "natural duration" of each spoken line.</li>
-                    </ul>
+                <li>
+                    <strong>Phase 1: Parsing & Initial Audio Generation</strong>
+                    <p className="ps-3">The application reads your <code>.srt</code> or <code>.ttml</code> file, extracting text and timings. It then generates audio at a natural speed to measure its "natural duration."</p>
                 </li>
-                <li><strong>Phase 2: Timing Calculation & Rescheduling</strong>
-                    <ul>
-                        <li>This is where the intelligent scheduling happens. Subtitles are grouped, and the application calculates whether it needs to borrow time or speed up each group.</li>
-                        <li>If any audio needs to be faster than 1.0, it is re-generated at the new, calculated speed. This ensures high audio quality without digital artifacts from post-processing.</li>
-                    </ul>
+                <li>
+                    <strong>Phase 2: Timing Calculation & Rescheduling</strong>
+                    <p className="ps-3">This is where the intelligent scheduling happens. The application groups subtitles and calculates if it needs to borrow time from silent gaps or slightly speed up the audio for a perfect fit.</p>
                 </li>
-                <li><strong>Phase 3: Rendering the Final Audio</strong>
-                    <ul>
-                        <li>The application creates a silent audio track matching the total duration of your subtitle file.</li>
-                        <li>It then carefully places each generated audio segment (whether at normal or sped-up speed) into its final, rescheduled position on the track.</li>
-                    </ul>
+                <li>
+                    <strong>Phase 3: Rendering the Final Audio</strong>
+                    <p className="ps-3">A silent audio track is created to match your video's total duration. The rescheduled audio segments are then carefully placed onto this track.</p>
                 </li>
-                <li><strong>Phase 4: Exporting</strong>
-                    <ul>
-                        <li>The final, complete audio track is encoded into a high-quality MP3 file and saved to your specified output path.</li>
-                    </ul>
+                <li>
+                    <strong>Phase 4: Exporting</strong>
+                    <p className="ps-3">The final, complete audio track is encoded into a high-quality MP3 file, ready for use.</p>
                 </li>
             </ol>
 
@@ -181,112 +178,53 @@ function Main() {
 
             <hr />
 
-            <h2 id="configuration-in-depth">Configuration In-Depth</h2>
-            <p>You can control the conversion process through the GUI or CLI. Here is a detailed breakdown of each setting.</p>
+            <h2 id="configuration-in-depth">Advanced Configuration</h2>
+            <p>The application gives you fine-grained control over the intelligent scheduling algorithm through a simple interface. Here’s a breakdown of the powerful settings you can tweak to get the perfect result:</p>
 
-            <h3 id="file-settings">File Settings</h3>
+            <h3>Advanced Timing Settings</h3>
             <ul>
-                <li><strong>Input File:</strong> The source subtitle file. Both <code>.srt</code> and <code>.ttml</code>/<code>.xml</code> formats are supported.</li>
-                <li><strong>Output File:</strong> The destination path for the final MP3 audio file.</li>
-            </ul>
-
-            <h3 id="voice-settings">Voice Settings</h3>
-            <ul>
-                <li><strong>Voice:</strong> The Microsoft Edge TTS voice used for generation. Voices are organized by language and locale code (e.g., <code>en-US-AriaNeural</code>, <code>pl-PL-MarekNeural</code>). The GUI will automatically load all available voices.</li>
-            </ul>
-
-            <h3 id="advanced-timing-settings">Advanced Timing Settings</h3>
-            <p>These settings give you fine-grained control over the intelligent scheduling algorithm.</p>
-            <ul>
-                <li><strong>Max Speed (e.g., <code>1.5</code>)</strong>
-                    <ul>
-                        <li><strong>What it is:</strong> The absolute maximum speed-up factor the application is allowed to use. <code>1.5</code> means the audio can be played up to 50% faster than its natural speed.</li>
-                        <li><strong>Why change it:</strong> If you find the sped-up dialogue too fast and unnatural, lower this value (e.g., to <code>1.3</code>). If you need to fit very long text into very short times, you might increase it, but be aware that higher values can sound robotic.</li>
-                    </ul>
+                <li>
+                    <strong>Max Speed:</strong>
+                    <p className="ps-3">Control the absolute maximum speed-up factor the application is allowed to use. If you find the dialogue too fast, lower this value for a more natural pace. If you need to fit long text into short times, you can increase it.</p>
                 </li>
-                <li><strong>Min Duration (ms) (e.g., <code>500</code>)</strong>
-                    <ul>
-                        <li><strong>What it is:</strong> The minimum duration a subtitle must have to be spoken. Any subtitle shorter than this will be treated as silence.</li>
-                        <li><strong>Why change it:</strong> This is useful for ignoring very short, non-dialogue subtitles, such as those marking scene changes (<code>"-"</code>) or containing only a single word. Increase it to skip more subtitles, or decrease it to include very short ones.</li>
-                    </ul>
+                <li>
+                    <strong>Min Duration:</strong>
+                    <p className="ps-3">Set the minimum duration a subtitle must have to be spoken. This is perfect for automatically ignoring short, non-dialogue subtitles, like those marking scene changes ("-") or single words.</p>
                 </li>
-                <li><strong>Gap Threshold (ms) (e.g., <code>1000</code>)</strong>
-                    <ul>
-                        <li><strong>What it is:</strong> The minimum silence (in milliseconds) required between two subtitles to consider them part of separate dialogue groups.</li>
-                        <li><strong>Why change it:</strong> If you feel that separate conversations are being incorrectly grouped and sped up together, <em>increase</em> this value. If rapid-fire dialogue between two characters is being split into too many small groups, <em>decrease</em> this value.</li>
-                    </ul>
+                <li>
+                    <strong>Gap Threshold:</strong>
+                    <p className="ps-3">Define the minimum silence required between two subtitles to consider them part of separate conversations. Increase this if you feel separate dialogues are being incorrectly grouped, or decrease it to group rapid-fire dialogue together.</p>
                 </li>
-                <li><strong>Borrow Time (ms) (e.g., <code>1000</code>)</strong>
-                    <ul>
-                        <li><strong>What it is:</strong> The maximum amount of time the application is allowed to "steal" from a silent gap on either side of a dialogue group.</li>
-                        <li><strong>Why change it:</strong> Increasing this value gives the scheduler more flexibility to avoid speeding up audio by allowing it to shift dialogue earlier or later. If you find the timing of spoken lines feels "off" relative to the on-screen action, you might want to lower this value to keep the audio more rigidly aligned with its original timing.</li>
-                    </ul>
+                <li>
+                    <strong>Borrow Time:</strong>
+                    <p className="ps-3">Adjust the maximum amount of time the application can "steal" from silent gaps. Increasing this gives the scheduler more flexibility to avoid speeding up audio, resulting in more natural speech that is shifted slightly in time.</p>
                 </li>
             </ul>
 
             <hr />
 
-            <h2 id="mastering-pronunciation-rules">Mastering Pronunciation Rules</h2>
-            <p>The <code>pronunciation_rules.json</code> file is a powerful feature for fixing common TTS mispronunciations. The application uses a clever "vowel-doubling" trick to guide the TTS engine.</p>
+            <h2 id="mastering-pronunciation-rules">Mastering Pronunciation</h2>
+            <p>The application includes a powerful and unique feature to fix common text-to-speech mispronunciations. Using a simple set of rules, you can teach the TTS engine how to say specific words correctly.</p>
 
             <h3>How It Works</h3>
-            <p>When a word from the rules list is found in the subtitle text, the application finds the first vowel in that word and duplicates it.</p>
-            <p><strong>Example:</strong></p>
-            <ul>
-                <li>The word "read" can be pronounced "reed" or "red".</li>
-                <li>If the TTS is getting it wrong, you can add <code>"read"</code> to the rules file.</li>
-                <li>The application will change it to <code>"reead"</code> before sending it to the TTS engine. This subtle change is usually enough to force the correct pronunciation without being audible.</li>
-            </ul>
-
-            <h3>How to Use the File</h3>
-            <p>The <code>pronunciation_rules.json</code> is organized by language code.</p>
-            <pre><code>{`{
-  "global": [
-    "example"
-  ],
-  "en": [
-    "read",
-    "live"
-  ],
-  "ko": [
-    "sin",
-    "ha"
-  ]
-}`}</code></pre>
-            <ul>
-                <li><strong><code>global</code></strong>: A list of words to apply the rule to, regardless of the selected voice's language.</li>
-                <li><strong><code>en</code></strong>, <strong><code>ko</code></strong>, etc.: Language-specific lists. The application checks the selected voice (e.g., <code>en-US-AriaNeural</code>) to determine the language code (<code>en</code>).</li>
-            </ul>
+            <p>When a word you've added to the rules list is found, the application intelligently modifies it with a "vowel-doubling" trick before sending it to the TTS engine. For example, if the TTS mispronounces "read" (as in "red"), the tool can change it to "reead," guiding the engine to the correct "reed" sound without any audible artifact.</p>
+            <p>This allows you to create a personalized dictionary for names, technical terms, or any word the TTS struggles with, ensuring a flawless final audio track.</p>
 
             <hr />
 
             <h2 id="troubleshooting--faq">Troubleshooting & FAQ</h2>
             <ul>
-                <li><strong>Q: The application is frozen and not responding!</strong>
-                    <ul>
-                        <li><strong>A:</strong> The initial voice loading or the audio generation process can take time. If using the GUI, check the log window for activity. The application is likely working hard in the background. The GUI runs the core work in a separate thread to prevent true freezing.</li>
-                    </ul>
+                <li>
+                    <strong>Q: The application seems frozen or unresponsive.</strong>
+                    <p className="ps-3"><strong>A:</strong> Audio generation can be a resource-intensive process. The application is likely working hard in the background. The user-friendly GUI includes a detailed log window so you can always see the progress in real-time.</p>
                 </li>
-                <li><strong>Q: I'm getting a "Failed to generate audio" error in the log.</strong>
-                    <ul>
-                        <li><strong>A:</strong> This usually indicates a problem connecting to the Microsoft TTS service. Check your internet connection. The application has a built-in retry mechanism, so occasional failures are normal, but persistent failures point to a network issue.</li>
-                    </ul>
+                <li>
+                    <strong>Q: The generated audio sounds too fast and robotic.</strong>
+                    <p className="ps-3"><strong>A:</strong> This usually means your subtitles have a lot of text in very short durations. The best solution is to adjust the advanced timing settings! Try increasing the "Borrow Time" to give the scheduler more room, or lower the "Max Speed" to cap the playback rate.</p>
                 </li>
-                <li><strong>Q: The audio sounds too fast and robotic.</strong>
-                    <ul>
-                        <li><strong>A:</strong> Your subtitles likely have a lot of text in short durations. Try one of these solutions:
-                            <ol>
-                                <li><strong>Increase <code>Borrow Time</code>:</strong> This gives the scheduler more room to shift audio instead of speeding it up.</li>
-                                <li><strong>Lower <code>Max Speed</code>:</strong> This forces the application to cap how fast the audio can get, though it may result in audio being cut off if the text is too long.</li>
-                                <li><strong>Edit the subtitles:</strong> The best solution is often to edit the source subtitle file to allow more time for the dialogue.</li>
-                            </ol>
-                        </li>
-                    </ul>
-                </li>
-                <li><strong>Q: A specific word is always pronounced wrong.</strong>
-                    <ul>
-                        <li><strong>A:</strong> This is the perfect use case for <code>pronunciation_rules.json</code>! Add the mispronounced word to the list for the correct language and re-run the generation.</li>
-                    </ul>
+                <li>
+                    <strong>Q: A specific word is always pronounced wrong.</strong>
+                    <p className="ps-3"><strong>A:</strong> This is the perfect use case for the "Mastering Pronunciation" feature! Simply add the mispronounced word to the built-in rules list to teach the application the correct way to say it.</p>
                 </li>
             </ul>
         </div>
