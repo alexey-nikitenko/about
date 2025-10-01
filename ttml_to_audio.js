@@ -105,92 +105,190 @@ function Footer() {
 function Main() {
     return (
         <div className="container text-white">
-            <div className="row">
-                <div className="col">
-                    <h1>TTML to Audio Converter</h1>
+            <h1>How to Use Subtitle to Audio Converter</h1>
+            <p>This guide provides a comprehensive overview of the Subtitle to Audio Converter, explaining its core concepts, features, and how to use it effectively.</p>
 
-                    <div className="card album-custom p-3 my-4">
-                        <div className="card-body">
-                            <h3 className="card-title">What is the TTML to Audio Converter?</h3>
-                            <p>Imagine you have a video with subtitles, but you wish you could listen to the dialogue instead of reading it. This tool does exactly that! It takes a standard subtitle file (the kind used for movies and online videos) and turns it into a spoken audio track using a high-quality computer voice.</p>
-                            <p>Think of it as instantly creating a simple audiobook or a voice-over for any video that already has subtitles. It’s perfect for making content more accessible or for situations where you’d rather listen than watch.</p>
-
-                            <h3 className="card-title mt-4">How Does It Work (in Simple Terms)?</h3>
-                            <p>The magic of this tool is how it handles timing to make the voice sound natural, not rushed or robotic.</p>
-                            <ol>
-                                <li><strong>It Reads the Subtitles:</strong> The tool looks at both the text in the subtitle file and, more importantly, <em>when</em> each line is supposed to appear and disappear on the screen.</li>
-                                <li><strong>It Finds the Perfect Pacing:</strong> Sometimes, a lot of text appears on screen for only a few seconds. Instead of making the voice talk comically fast, the tool is clever. It looks for silent pauses <em>before</em> and <em>after</em> the subtitle appears and "borrows" a bit of that silence to start reading the line a little early or finish it a bit late. The result is a much more natural, evenly-paced narration. It only speeds up the voice as a last resort.</li>
-                                <li><strong>It Learns to Pronounce Words Correctly:</strong> Computer voices can stumble on unusual names, technical terms, or certain words. The tool lets you create a simple "pronunciation dictionary." If you find a word that sounds wrong, you can add it to a list, and the tool will guide the voice to say it correctly in the future.</li>
-                                <li><strong>It Builds the Final Audio File:</strong> After converting all the text, it stitches everything together—the spoken words and the silent pauses—into a single, perfectly synchronized MP3 file that you can play alongside your video or listen to on its own.</li>
-                            </ol>
-                            <p>In short, it’s a smart and flexible tool for anyone who wants to turn written subtitles into a polished, natural-sounding audio experience.</p>
-                        </div>
-                    </div>
-
-                    <hr/>
-
-                    <h2>Technical Details</h2>
-                    <p>This project provides a powerful and flexible tool for converting TTML (Timed Text Markup Language) subtitle files into a single, synchronized audio file using text-to-speech (TTS). It is designed to be highly configurable and resilient, making it ideal for generating audio tracks for videos from their subtitles.</p>
-                    <p>The application features both a command-line interface (<code>main.py</code>) for automation and a user-friendly graphical interface (<code>gui.py</code>) for easier use.</p>
-
-                    <h2 className="mt-4">Core Features</h2>
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#the-core-idea-intelligent-audio-scheduling">The Core Idea: Intelligent Audio Scheduling</a></li>
+                <li><a href="#how-it-works-the-four-phases">How It Works: The Four Phases</a></li>
+                <li><a href="#use-cases-who-is-this-for">Use Cases: Who Is This For?</a></li>
+                <li>
+                    <a href="#configuration-in-depth">Configuration In-Depth</a>
                     <ul>
-                        <li><strong>Intelligent Audio Scheduling:</strong> The application analyzes subtitle timing and intelligently reschedules audio to fit. It first attempts to borrow time from surrounding silent gaps to ensure natural pacing and only resorts to speeding up audio when absolutely necessary.</li>
-                        <li><strong>Customizable Pronunciation:</strong> Using a <code>pronunciation_rules.json</code> file, you can fix common TTS pronunciation issues. The application uses a clever "vowel-doubling" trick (e.g., "sin" -- "siin") to guide the TTS engine's pronunciation for specific words.</li>
-                        <li><strong>GUI and CLI Interfaces:</strong> Run the application through a simple graphical interface or use the command-line for scripting and automation.</li>
-                        <li><strong>Batch Processing & Resilience:</strong> Processes TTS requests in configurable batches to avoid overwhelming the TTS service. It also automatically retries failed requests to handle transient network issues.</li>
-                        <li><strong>Highly Configurable:</strong> Provides settings and command-line arguments to control every aspect of the conversion process, from voice selection to timing tolerances.</li>
-                        <li><strong>Detailed Logging:</strong> Offers clear, real-time feedback on the conversion process, including pronunciation rule applications, scheduling decisions, and a final summary of statistics, making it easy to diagnose any issues.</li>
+                        <li><a href="#file-settings">File Settings</a></li>
+                        <li><a href="#voice-settings">Voice Settings</a></li>
+                        <li><a href="#advanced-timing-settings">Advanced Timing Settings</a></li>
                     </ul>
+                </li>
+                <li><a href="#mastering-pronunciation-rules">Mastering Pronunciation Rules</a></li>
+                <li><a href="#troubleshooting--faq">Troubleshooting & FAQ</a></li>
+            </ol>
 
-                    <h2>Dependencies & Services</h2>
-                    <h3>Python Libraries</h3>
-                    <p>The script relies on the following Python libraries:</p>
+            <hr />
+
+            <h2 id="the-core-idea-intelligent-audio-scheduling">The Core Idea: Intelligent Audio Scheduling</h2>
+            <p>The primary challenge in converting subtitles to audio is that the time allotted for a subtitle on screen is often not the same as the time it takes to speak the text naturally. A short phrase might stay on screen for several seconds, while a long, dense sentence might appear for only a moment.</p>
+            <p>This application solves this problem with <strong>intelligent audio scheduling</strong>.</p>
+            <p>Instead of naively forcing the audio to fit the subtitle's original duration (which would lead to unnaturally fast or slow speech), the application:</p>
+            <ol>
+                <li><strong>Groups related subtitles:</strong> It first identifies "dialogue groups"—subtitles that appear close together in time, separated by longer silences.</li>
+                <li><strong>Borrows time from silence:</strong> If a group of spoken lines needs more time than available, the application "borrows" time from the silent gaps before and after the dialogue group, shifting the audio slightly without altering its speed.</li>
+                <li><strong>Speeds up audio as a last resort:</strong> Only when there isn't enough silent time to borrow does the application uniformly speed up the entire dialogue group. This ensures the pacing remains consistent and natural within a single conversation.</li>
+            </ol>
+            <p>This approach results in a much more professional and pleasant listening experience compared to simple, one-to-one subtitle-to-speech conversion.</p>
+
+            <hr />
+
+            <h2 id="how-it-works-the-four-phases">How It Works: The Four Phases</h2>
+            <p>The conversion process happens in a few distinct phases, which you will see reflected in the application's log output:</p>
+            <ol>
+                <li><strong>Phase 1: Parsing & Initial Audio Generation</strong>
                     <ul>
-                        <li><strong><code>edge-tts</code></strong>: A powerful library that provides an unofficial API for Microsoft Edge's excellent text-to-speech service.</li>
-                        <li><strong><code>pydub</code></strong>: Used for all audio manipulation tasks, including creating silent segments and exporting the final MP3 file.</li>
+                        <li>The application reads your <code>.srt</code> or <code>.ttml</code> file and extracts the text and timing for each subtitle.</li>
+                        <li>It then generates an audio clip for every subtitle at a natural, 1.0x speed. This is done to measure the "natural duration" of each spoken line.</li>
                     </ul>
-                    <h3>External Services</h3>
+                </li>
+                <li><strong>Phase 2: Timing Calculation & Rescheduling</strong>
                     <ul>
-                        <li><strong>Microsoft Edge TTS Service:</strong> This project uses the free, high-quality text-to-speech voices provided by Microsoft Edge. An active internet connection is required during the audio generation phase.</li>
-                        <li><strong><code>ffmpeg</code></strong>: <code>pydub</code> requires the <code>ffmpeg</code> library for exporting audio files. You must have it installed and available in your system's PATH.</li>
+                        <li>This is where the intelligent scheduling happens. Subtitles are grouped, and the application calculates whether it needs to borrow time or speed up each group.</li>
+                        <li>If any audio needs to be faster than 1.0, it is re-generated at the new, calculated speed. This ensures high audio quality without digital artifacts from post-processing.</li>
                     </ul>
+                </li>
+                <li><strong>Phase 3: Rendering the Final Audio</strong>
+                    <ul>
+                        <li>The application creates a silent audio track matching the total duration of your subtitle file.</li>
+                        <li>It then carefully places each generated audio segment (whether at normal or sped-up speed) into its final, rescheduled position on the track.</li>
+                    </ul>
+                </li>
+                <li><strong>Phase 4: Exporting</strong>
+                    <ul>
+                        <li>The final, complete audio track is encoded into a high-quality MP3 file and saved to your specified output path.</li>
+                    </ul>
+                </li>
+            </ol>
 
-                    <h2>Installation</h2>
-                    <ol>
-                        <li>Clone this repository to your local machine.</li>
-                        <li>Install the required Python packages using <code>pip</code>:
-                            <pre><code>{`pip install -r requirements.txt`}</code></pre>
-                        </li>
-                        <li>Ensure <code>ffmpeg</code> is installed on your system.</li>
-                    </ol>
+            <hr />
 
-                    <h2>Usage</h2>
-                    <h3>Graphical User Interface (GUI)</h3>
-                    <p>For most users, the GUI is the easiest way to use the application. To launch it, run:</p>
-                    <pre><code>{`python gui.py`}</code></pre>
-                    <p>The GUI provides access to all the configuration options, a progress bar, and a detailed log window.</p>
+            <h2 id="use-cases-who-is-this-for">Use Cases: Who Is This For?</h2>
+            <p>This tool is useful for a wide range of applications:</p>
+            <ul>
+                <li><strong>Accessibility:</strong> Create audio descriptions or dubbed tracks for visually impaired individuals.</li>
+                <li><strong>Language Learning:</strong> Listen to the pronunciation of dialogue in a foreign language film or show. Use the generated audio to practice listening and speaking skills.</li>
+                <li><strong>Content Creation:</strong> Generate voiceovers for documentaries, tutorials, or YouTube videos directly from a script written in a subtitle format.</li>
+                <li><strong>Proofing & Editing:</strong> Listen to your subtitles to catch errors, awkward phrasing, or timing issues that are less obvious when reading.</li>
+            </ul>
 
-                    <h3>Command-Line Interface (CLI)</h3>
-                    <p>The CLI is ideal for automation and scripting.</p>
-                    <pre><code>{`usage: main.py [-h] [--voice VOICE] [--min-duration MIN_DURATION] [--max-speed MAX_SPEED] [--crossfade CROSSFADE]
-               [--gap-threshold GAP_THRESHOLD] [--borrow-time BORROW_TIME] [--batch-size BATCH_SIZE]
-               input_file [output_file]`}</code></pre>
-                    <h4>Example Command</h4>
-                    <pre><code>{`python main.py "C:\\\\path\\\\to\\\\my_subtitles.xml" --voice "en-US-AriaNeural" --borrow-time 1500`}</code></pre>
+            <hr />
 
-                    <h2>Custom Pronunciation Rules</h2>
-                    <p>To fix common TTS mispronunciations, you can add words to the <code>pronunciation_rules.json</code> file. The application uses a "vowel-doubling" trick to guide the TTS engine.</p>
-                    <p>The file is structured by language code. For any word in the list, the application will find its first vowel and double it, which often corrects the pronunciation.</p>
-                    <p>For example, to fix the pronunciation of "sin" and "ha" in Korean, the <code>ko</code> section would look like this:</p>
-                    <pre><code>{`{
+            <h2 id="configuration-in-depth">Configuration In-Depth</h2>
+            <p>You can control the conversion process through the GUI or CLI. Here is a detailed breakdown of each setting.</p>
+
+            <h3 id="file-settings">File Settings</h3>
+            <ul>
+                <li><strong>Input File:</strong> The source subtitle file. Both <code>.srt</code> and <code>.ttml</code>/<code>.xml</code> formats are supported.</li>
+                <li><strong>Output File:</strong> The destination path for the final MP3 audio file.</li>
+            </ul>
+
+            <h3 id="voice-settings">Voice Settings</h3>
+            <ul>
+                <li><strong>Voice:</strong> The Microsoft Edge TTS voice used for generation. Voices are organized by language and locale code (e.g., <code>en-US-AriaNeural</code>, <code>pl-PL-MarekNeural</code>). The GUI will automatically load all available voices.</li>
+            </ul>
+
+            <h3 id="advanced-timing-settings">Advanced Timing Settings</h3>
+            <p>These settings give you fine-grained control over the intelligent scheduling algorithm.</p>
+            <ul>
+                <li><strong>Max Speed (e.g., <code>1.5</code>)</strong>
+                    <ul>
+                        <li><strong>What it is:</strong> The absolute maximum speed-up factor the application is allowed to use. <code>1.5</code> means the audio can be played up to 50% faster than its natural speed.</li>
+                        <li><strong>Why change it:</strong> If you find the sped-up dialogue too fast and unnatural, lower this value (e.g., to <code>1.3</code>). If you need to fit very long text into very short times, you might increase it, but be aware that higher values can sound robotic.</li>
+                    </ul>
+                </li>
+                <li><strong>Min Duration (ms) (e.g., <code>500</code>)</strong>
+                    <ul>
+                        <li><strong>What it is:</strong> The minimum duration a subtitle must have to be spoken. Any subtitle shorter than this will be treated as silence.</li>
+                        <li><strong>Why change it:</strong> This is useful for ignoring very short, non-dialogue subtitles, such as those marking scene changes (<code>"-"</code>) or containing only a single word. Increase it to skip more subtitles, or decrease it to include very short ones.</li>
+                    </ul>
+                </li>
+                <li><strong>Gap Threshold (ms) (e.g., <code>1000</code>)</strong>
+                    <ul>
+                        <li><strong>What it is:</strong> The minimum silence (in milliseconds) required between two subtitles to consider them part of separate dialogue groups.</li>
+                        <li><strong>Why change it:</strong> If you feel that separate conversations are being incorrectly grouped and sped up together, <em>increase</em> this value. If rapid-fire dialogue between two characters is being split into too many small groups, <em>decrease</em> this value.</li>
+                    </ul>
+                </li>
+                <li><strong>Borrow Time (ms) (e.g., <code>1000</code>)</strong>
+                    <ul>
+                        <li><strong>What it is:</strong> The maximum amount of time the application is allowed to "steal" from a silent gap on either side of a dialogue group.</li>
+                        <li><strong>Why change it:</strong> Increasing this value gives the scheduler more flexibility to avoid speeding up audio by allowing it to shift dialogue earlier or later. If you find the timing of spoken lines feels "off" relative to the on-screen action, you might want to lower this value to keep the audio more rigidly aligned with its original timing.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr />
+
+            <h2 id="mastering-pronunciation-rules">Mastering Pronunciation Rules</h2>
+            <p>The <code>pronunciation_rules.json</code> file is a powerful feature for fixing common TTS mispronunciations. The application uses a clever "vowel-doubling" trick to guide the TTS engine.</p>
+
+            <h3>How It Works</h3>
+            <p>When a word from the rules list is found in the subtitle text, the application finds the first vowel in that word and duplicates it.</p>
+            <p><strong>Example:</strong></p>
+            <ul>
+                <li>The word "read" can be pronounced "reed" or "red".</li>
+                <li>If the TTS is getting it wrong, you can add <code>"read"</code> to the rules file.</li>
+                <li>The application will change it to <code>"reead"</code> before sending it to the TTS engine. This subtle change is usually enough to force the correct pronunciation without being audible.</li>
+            </ul>
+
+            <h3>How to Use the File</h3>
+            <p>The <code>pronunciation_rules.json</code> is organized by language code.</p>
+            <pre><code>{`{
+  "global": [
+    "example"
+  ],
+  "en": [
+    "read",
+    "live"
+  ],
   "ko": [
     "sin",
     "ha"
   ]
 }`}</code></pre>
-                </div>
-            </div>
+            <ul>
+                <li><strong><code>global</code></strong>: A list of words to apply the rule to, regardless of the selected voice's language.</li>
+                <li><strong><code>en</code></strong>, <strong><code>ko</code></strong>, etc.: Language-specific lists. The application checks the selected voice (e.g., <code>en-US-AriaNeural</code>) to determine the language code (<code>en</code>).</li>
+            </ul>
+
+            <hr />
+
+            <h2 id="troubleshooting--faq">Troubleshooting & FAQ</h2>
+            <ul>
+                <li><strong>Q: The application is frozen and not responding!</strong>
+                    <ul>
+                        <li><strong>A:</strong> The initial voice loading or the audio generation process can take time. If using the GUI, check the log window for activity. The application is likely working hard in the background. The GUI runs the core work in a separate thread to prevent true freezing.</li>
+                    </ul>
+                </li>
+                <li><strong>Q: I'm getting a "Failed to generate audio" error in the log.</strong>
+                    <ul>
+                        <li><strong>A:</strong> This usually indicates a problem connecting to the Microsoft TTS service. Check your internet connection. The application has a built-in retry mechanism, so occasional failures are normal, but persistent failures point to a network issue.</li>
+                    </ul>
+                </li>
+                <li><strong>Q: The audio sounds too fast and robotic.</strong>
+                    <ul>
+                        <li><strong>A:</strong> Your subtitles likely have a lot of text in short durations. Try one of these solutions:
+                            <ol>
+                                <li><strong>Increase <code>Borrow Time</code>:</strong> This gives the scheduler more room to shift audio instead of speeding it up.</li>
+                                <li><strong>Lower <code>Max Speed</code>:</strong> This forces the application to cap how fast the audio can get, though it may result in audio being cut off if the text is too long.</li>
+                                <li><strong>Edit the subtitles:</strong> The best solution is often to edit the source subtitle file to allow more time for the dialogue.</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Q: A specific word is always pronounced wrong.</strong>
+                    <ul>
+                        <li><strong>A:</strong> This is the perfect use case for <code>pronunciation_rules.json</code>! Add the mispronounced word to the list for the correct language and re-run the generation.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     );
 }
