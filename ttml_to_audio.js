@@ -119,117 +119,119 @@ function Main() {
                 </div>
             </div>
 
-            <h1>Subtitle to Audio Converter: Features Overview</h1>
-            <p>This guide provides a comprehensive overview of the Subtitle to Audio Converter, explaining its core concepts, features, and how to use it effectively.</p>
+            <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', borderRadius: '15px', padding: '20px' }}>
+                <h1>Subtitle to Audio Converter: Features Overview</h1>
+                <p>This guide provides a comprehensive overview of the Subtitle to Audio Converter, explaining its core concepts, features, and how to use it effectively.</p>
 
-            <h2>Table of Contents</h2>
-            <ol>
-                <li><a href="#the-core-idea-intelligent-audio-scheduling">The Core Idea: Intelligent Audio Scheduling</a></li>
-                <li><a href="#how-it-works-the-four-phases">How It Works: The Four Phases</a></li>
-                <li><a href="#use-cases-who-is-this-for">Use Cases: Who Is This For?</a></li>
-                <li><a href="#configuration-in-depth">Advanced Configuration</a></li>
-                <li><a href="#mastering-pronunciation-rules">Mastering Pronunciation</a></li>
-                <li><a href="#troubleshooting--faq">Troubleshooting & FAQ</a></li>
-            </ol>
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#the-core-idea-intelligent-audio-scheduling">The Core Idea: Intelligent Audio Scheduling</a></li>
+                    <li><a href="#how-it-works-the-four-phases">How It Works: The Four Phases</a></li>
+                    <li><a href="#use-cases-who-is-this-for">Use Cases: Who Is This For?</a></li>
+                    <li><a href="#configuration-in-depth">Advanced Configuration</a></li>
+                    <li><a href="#mastering-pronunciation-rules">Mastering Pronunciation</a></li>
+                    <li><a href="#troubleshooting--faq">Troubleshooting & FAQ</a></li>
+                </ol>
 
-            <hr />
+                <hr />
 
-            <h2 id="the-core-idea-intelligent-audio-scheduling">The Core Idea: Intelligent Audio Scheduling</h2>
-            <p>The primary challenge in converting subtitles to audio is that the time allotted for a subtitle on screen is often not the same as the time it takes to speak the text naturally. A short phrase might stay on screen for several seconds, while a long, dense sentence might appear for only a moment.</p>
-            <p>This application solves this problem with <strong>intelligent audio scheduling</strong>.</p>
-            <p>Instead of naively forcing the audio to fit the subtitle's original duration (which would lead to unnaturally fast or slow speech), the application:</p>
-            <ol>
-                <li><strong>Groups related subtitles:</strong> It first identifies "dialogue groups"—subtitles that appear close together in time, separated by longer silences.</li>
-                <li><strong>Borrows time from silence:</strong> If a group of spoken lines needs more time than available, the application "borrows" time from the silent gaps before and after the dialogue group, shifting the audio slightly without altering its speed.</li>
-                <li><strong>Speeds up audio as a last resort:</strong> Only when there isn't enough silent time to borrow does the application uniformly speed up the entire dialogue group. This ensures the pacing remains consistent and natural within a single conversation.</li>
-            </ol>
-            <p>This approach results in a much more professional and pleasant listening experience compared to simple, one-to-one subtitle-to-speech conversion.</p>
+                <h2 id="the-core-idea-intelligent-audio-scheduling">The Core Idea: Intelligent Audio Scheduling</h2>
+                <p>The primary challenge in converting subtitles to audio is that the time allotted for a subtitle on screen is often not the same as the time it takes to speak the text naturally. A short phrase might stay on screen for several seconds, while a long, dense sentence might appear for only a moment.</p>
+                <p>This application solves this problem with <strong>intelligent audio scheduling</strong>.</p>
+                <p>Instead of naively forcing the audio to fit the subtitle's original duration (which would lead to unnaturally fast or slow speech), the application:</p>
+                <ol>
+                    <li><strong>Groups related subtitles:</strong> It first identifies "dialogue groups"—subtitles that appear close together in time, separated by longer silences.</li>
+                    <li><strong>Borrows time from silence:</strong> If a group of spoken lines needs more time than available, the application "borrows" time from the silent gaps before and after the dialogue group, shifting the audio slightly without altering its speed.</li>
+                    <li><strong>Speeds up audio as a last resort:</strong> Only when there isn't enough silent time to borrow does the application uniformly speed up the entire dialogue group. This ensures the pacing remains consistent and natural within a single conversation.</li>
+                </ol>
+                <p>This approach results in a much more professional and pleasant listening experience compared to simple, one-to-one subtitle-to-speech conversion.</p>
 
-            <hr />
+                <hr />
 
-            <h2 id="how-it-works-the-four-phases">How It Works: The Four Phases</h2>
-            <p>The conversion process happens in a few distinct, automated phases:</p>
-            <ol>
-                <li>
-                    <strong>Phase 1: Parsing & Initial Audio Generation</strong>
-                    <p className="ps-3">The application reads your <code>.srt</code> or <code>.ttml</code> file, extracting text and timings. It then generates audio at a natural speed to measure its "natural duration."</p>
-                </li>
-                <li>
-                    <strong>Phase 2: Timing Calculation & Rescheduling</strong>
-                    <p className="ps-3">This is where the intelligent scheduling happens. The application groups subtitles and calculates if it needs to borrow time from silent gaps or slightly speed up the audio for a perfect fit.</p>
-                </li>
-                <li>
-                    <strong>Phase 3: Rendering the Final Audio</strong>
-                    <p className="ps-3">A silent audio track is created to match your video's total duration. The rescheduled audio segments are then carefully placed onto this track.</p>
-                </li>
-                <li>
-                    <strong>Phase 4: Exporting</strong>
-                    <p className="ps-3">The final, complete audio track is encoded into a high-quality MP3 file, ready for use.</p>
-                </li>
-            </ol>
+                <h2 id="how-it-works-the-four-phases">How It Works: The Four Phases</h2>
+                <p>The conversion process happens in a few distinct, automated phases:</p>
+                <ol>
+                    <li>
+                        <strong>Phase 1: Parsing & Initial Audio Generation</strong>
+                        <p className="ps-3">The application reads your <code>.srt</code> or <code>.ttml</code> file, extracting text and timings. It then generates audio at a natural speed to measure its "natural duration."</p>
+                    </li>
+                    <li>
+                        <strong>Phase 2: Timing Calculation & Rescheduling</strong>
+                        <p className="ps-3">This is where the intelligent scheduling happens. The application groups subtitles and calculates if it needs to borrow time from silent gaps or slightly speed up the audio for a perfect fit.</p>
+                    </li>
+                    <li>
+                        <strong>Phase 3: Rendering the Final Audio</strong>
+                        <p className="ps-3">A silent audio track is created to match your video's total duration. The rescheduled audio segments are then carefully placed onto this track.</p>
+                    </li>
+                    <li>
+                        <strong>Phase 4: Exporting</strong>
+                        <p className="ps-3">The final, complete audio track is encoded into a high-quality MP3 file, ready for use.</p>
+                    </li>
+                </ol>
 
-            <hr />
+                <hr />
 
-            <h2 id="use-cases-who-is-this-for">Use Cases: Who Is This For?</h2>
-            <p>This tool is useful for a wide range of applications:</p>
-            <ul>
-                <li><strong>Accessibility:</strong> Create audio descriptions or dubbed tracks for visually impaired individuals.</li>
-                <li><strong>Language Learning:</strong> Listen to the pronunciation of dialogue in a foreign language film or show. Use the generated audio to practice listening and speaking skills.</li>
-                <li><strong>Content Creation:</strong> Generate voiceovers for documentaries, tutorials, or YouTube videos directly from a script written in a subtitle format.</li>
-                <li><strong>Proofing & Editing:</strong> Listen to your subtitles to catch errors, awkward phrasing, or timing issues that are less obvious when reading.</li>
-            </ul>
+                <h2 id="use-cases-who-is-this-for">Use Cases: Who Is This For?</h2>
+                <p>This tool is useful for a wide range of applications:</p>
+                <ul>
+                    <li><strong>Accessibility:</strong> Create audio descriptions or dubbed tracks for visually impaired individuals.</li>
+                    <li><strong>Language Learning:</strong> Listen to the pronunciation of dialogue in a foreign language film or show. Use the generated audio to practice listening and speaking skills.</li>
+                    <li><strong>Content Creation:</strong> Generate voiceovers for documentaries, tutorials, or YouTube videos directly from a script written in a subtitle format.</li>
+                    <li><strong>Proofing & Editing:</strong> Listen to your subtitles to catch errors, awkward phrasing, or timing issues that are less obvious when reading.</li>
+                </ul>
 
-            <hr />
+                <hr />
 
-            <h2 id="configuration-in-depth">Advanced Configuration</h2>
-            <p>The application gives you fine-grained control over the intelligent scheduling algorithm through a simple interface. Here’s a breakdown of the powerful settings you can tweak to get the perfect result:</p>
+                <h2 id="configuration-in-depth">Advanced Configuration</h2>
+                <p>The application gives you fine-grained control over the intelligent scheduling algorithm through a simple interface. Here’s a breakdown of the powerful settings you can tweak to get the perfect result:</p>
 
-            <h3>Advanced Timing Settings</h3>
-            <ul>
-                <li>
-                    <strong>Max Speed:</strong>
-                    <p className="ps-3">Control the absolute maximum speed-up factor the application is allowed to use. If you find the dialogue too fast, lower this value for a more natural pace. If you need to fit long text into short times, you can increase it.</p>
-                </li>
-                <li>
-                    <strong>Min Duration:</strong>
-                    <p className="ps-3">Set the minimum duration a subtitle must have to be spoken. This is perfect for automatically ignoring short, non-dialogue subtitles, like those marking scene changes ("-") or single words.</p>
-                </li>
-                <li>
-                    <strong>Gap Threshold:</strong>
-                    <p className="ps-3">Define the minimum silence required between two subtitles to consider them part of separate conversations. Increase this if you feel separate dialogues are being incorrectly grouped, or decrease it to group rapid-fire dialogue together.</p>
-                </li>
-                <li>
-                    <strong>Borrow Time:</strong>
-                    <p className="ps-3">Adjust the maximum amount of time the application can "steal" from silent gaps. Increasing this gives the scheduler more flexibility to avoid speeding up audio, resulting in more natural speech that is shifted slightly in time.</p>
-                </li>
-            </ul>
+                <h3>Advanced Timing Settings</h3>
+                <ul>
+                    <li>
+                        <strong>Max Speed:</strong>
+                        <p className="ps-3">Control the absolute maximum speed-up factor the application is allowed to use. If you find the dialogue too fast, lower this value for a more natural pace. If you need to fit long text into short times, you can increase it.</p>
+                    </li>
+                    <li>
+                        <strong>Min Duration:</strong>
+                        <p className="ps-3">Set the minimum duration a subtitle must have to be spoken. This is perfect for automatically ignoring short, non-dialogue subtitles, like those marking scene changes ("-") or single words.</p>
+                    </li>
+                    <li>
+                        <strong>Gap Threshold:</strong>
+                        <p className="ps-3">Define the minimum silence required between two subtitles to consider them part of separate conversations. Increase this if you feel separate dialogues are being incorrectly grouped, or decrease it to group rapid-fire dialogue together.</p>
+                    </li>
+                    <li>
+                        <strong>Borrow Time:</strong>
+                        <p className="ps-3">Adjust the maximum amount of time the application can "steal" from silent gaps. Increasing this gives the scheduler more flexibility to avoid speeding up audio, resulting in more natural speech that is shifted slightly in time.</p>
+                    </li>
+                </ul>
 
-            <hr />
+                <hr />
 
-            <h2 id="mastering-pronunciation-rules">Mastering Pronunciation</h2>
-            <p>The application includes a powerful and unique feature to fix common text-to-speech mispronunciations. Using a simple set of rules, you can teach the TTS engine how to say specific words correctly.</p>
+                <h2 id="mastering-pronunciation-rules">Mastering Pronunciation</h2>
+                <p>The application includes a powerful and unique feature to fix common text-to-speech mispronunciations. Using a simple set of rules, you can teach the TTS engine how to say specific words correctly.</p>
 
-            <h3>How It Works</h3>
-            <p>When a word you've added to the rules list is found, the application intelligently modifies it with a "vowel-doubling" trick before sending it to the TTS engine. For example, if the TTS mispronounces "read" (as in "red"), the tool can change it to "reead," guiding the engine to the correct "reed" sound without any audible artifact.</p>
-            <p>This allows you to create a personalized dictionary for names, technical terms, or any word the TTS struggles with, ensuring a flawless final audio track.</p>
+                <h3>How It Works</h3>
+                <p>When a word you've added to the rules list is found, the application intelligently modifies it with a "vowel-doubling" trick before sending it to the TTS engine. For example, if the TTS mispronounces "read" (as in "red"), the tool can change it to "reead," guiding the engine to the correct "reed" sound without any audible artifact.</p>
+                <p>This allows you to create a personalized dictionary for names, technical terms, or any word the TTS struggles with, ensuring a flawless final audio track.</p>
 
-            <hr />
+                <hr />
 
-            <h2 id="troubleshooting--faq">Troubleshooting & FAQ</h2>
-            <ul>
-                <li>
-                    <strong>Q: The application seems frozen or unresponsive.</strong>
-                    <p className="ps-3"><strong>A:</strong> Audio generation can be a resource-intensive process. The application is likely working hard in the background. The user-friendly GUI includes a detailed log window so you can always see the progress in real-time.</p>
-                </li>
-                <li>
-                    <strong>Q: The generated audio sounds too fast and robotic.</strong>
-                    <p className="ps-3"><strong>A:</strong> This usually means your subtitles have a lot of text in very short durations. The best solution is to adjust the advanced timing settings! Try increasing the "Borrow Time" to give the scheduler more room, or lower the "Max Speed" to cap the playback rate.</p>
-                </li>
-                <li>
-                    <strong>Q: A specific word is always pronounced wrong.</strong>
-                    <p className="ps-3"><strong>A:</strong> This is the perfect use case for the "Mastering Pronunciation" feature! Simply add the mispronounced word to the built-in rules list to teach the application the correct way to say it.</p>
-                </li>
-            </ul>
+                <h2 id="troubleshooting--faq">Troubleshooting & FAQ</h2>
+                <ul>
+                    <li>
+                        <strong>Q: The application seems frozen or unresponsive.</strong>
+                        <p className="ps-3"><strong>A:</strong> Audio generation can be a resource-intensive process. The application is likely working hard in the background. The user-friendly GUI includes a detailed log window so you can always see the progress in real-time.</p>
+                    </li>
+                    <li>
+                        <strong>Q: The generated audio sounds too fast and robotic.</strong>
+                        <p className="ps-3"><strong>A:</strong> This usually means your subtitles have a lot of text in very short durations. The best solution is to adjust the advanced timing settings! Try increasing the "Borrow Time" to give the scheduler more room, or lower the "Max Speed" to cap the playback rate.</p>
+                    </li>
+                    <li>
+                        <strong>Q: A specific word is always pronounced wrong.</strong>
+                        <p className="ps-3"><strong>A:</strong> This is the perfect use case for the "Mastering Pronunciation" feature! Simply add the mispronounced word to the built-in rules list to teach the application the correct way to say it.</p>
+                    </li>
+                </ul>
+            </div>
         </div>
     );
 }
