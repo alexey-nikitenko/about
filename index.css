@@ -87,3 +87,13 @@ h5 {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.toc-link {
+  color: #a0c4ff; /* A light, readable blue */
+  text-decoration: none; /* Optional: remove underline */
+}
+
+.toc-link:hover {
+  color: #cce0ff; /* A slightly brighter blue for hover */
+  text-decoration: underline;
+}

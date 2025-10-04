@@ -120,18 +120,18 @@ function Main() {
                 </div>
             </div>
 
-            <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', borderRadius: '15px', padding: '20px' }}>
+            <div style={{ backgroundColor: 'rgba(40, 40, 40, 0.8)', borderRadius: '15px', padding: '20px' }}>
                 <h1>Subtitle to Audio Converter: Features Overview</h1>
                 <p>This guide provides a comprehensive overview of the Subtitle to Audio Converter, explaining its core concepts, features, and how to use it effectively.</p>
 
                 <h2>Table of Contents</h2>
                 <ol>
-                    <li><a href="#the-core-idea-intelligent-audio-scheduling">The Core Idea: Intelligent Audio Scheduling</a></li>
-                    <li><a href="#how-it-works-the-four-phases">How It Works: The Four Phases</a></li>
-                    <li><a href="#use-cases-who-is-this-for">Use Cases: Who Is This For?</a></li>
-                    <li><a href="#configuration-in-depth">Advanced Configuration</a></li>
-                    <li><a href="#mastering-pronunciation-rules">Mastering Pronunciation</a></li>
-                    <li><a href="#troubleshooting--faq">Troubleshooting & FAQ</a></li>
+                    <li><a href="#the-core-idea-intelligent-audio-scheduling" className="toc-link">The Core Idea: Intelligent Audio Scheduling</a></li>
+                    <li><a href="#how-it-works-the-four-phases" className="toc-link">How It Works: The Four Phases</a></li>
+                    <li><a href="#use-cases-who-is-this-for" className="toc-link">Use Cases: Who Is This For?</a></li>
+                    <li><a href="#configuration-in-depth" className="toc-link">Advanced Configuration</a></li>
+                    <li><a href="#mastering-pronunciation-rules" className="toc-link">Mastering Pronunciation</a></li>
+                    <li><a href="#troubleshooting--faq" className="toc-link">Troubleshooting & FAQ</a></li>
                 </ol>
 
                 <hr />
