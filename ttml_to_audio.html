@@ -22,12 +22,22 @@
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-<body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white flex items-center justify-center p-6">
-    <main class="w-full max-w-6xl" style="animation: slide-in 720ms linear 0s 1 normal both;">
-        <div class="header">
-            <h1>Subtitle to Audio Converter</h1>
-            <p>This guide provides a comprehensive overview of the Subtitle to Audio Converter, explaining its core concepts, features, and how to use it effectively.</p>
+<body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
+    <main class="w-full max-w-6xl mx-auto" style="animation: slide-in 720ms linear 0s 1 normal both;">
+      <header class="bg-gray-800 text-gray-100 p-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="./images/icon.png" alt="Company Logo" class="h-8 w-8 mr-2">
+          <h1 class="text-xl font-bold">AspeedSoftware</h1>
         </div>
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li><a href="roboarm.html" class="hover:text-white">RoboArm</a></li>
+            <li><a href="ttml_to_audio.html" class="hover:text-white">TTML to Audio</a></li>
+            <li><a href="index.html#about" class="hover:text-white">About</a></li>
+          </ul>
+        </nav>
+      </header>
 
         <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
             <img src="./images/tts_audio_logo.png" alt="Logo" style="width: 200px; margin-right: 10px; object-fit: contain;">
@@ -132,13 +142,16 @@
                 </li>
             </ul>
         </div>
-        <a href="index.html">Back to projects</a>
-    </main>
-    <script>
-      // Initialize icons with 1.5 stroke width
-      if (window.lucide) {
-        lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
-      }
-    </script>
-</body>
-</html>
+      <footer class="mt-8 flex items-center justify-between border-t border-neutral-800 pt-6">
+        <p class="text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">
+          © 2023 AspeedSoftware. All rights reserved.
+        </p>
+        <div class="flex items-center gap-3">
+          <a href="index.html#about" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
+            <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px; font-weight: 400;">About</span>
+          </a>
+          <a href="#top" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
+            <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px; font-weight: 400;">Back to top</span>
+          </a>
+        </div>
+      </footer>
