@@ -1,4 +1,5 @@
 import React from 'react';
+import faceJpg from '../../images/face.jpg';
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
           <div className="row">
             <div className="col-sm-8 col-md-2 py-4">
               <img
-                src="./images/face.jpg"
+                src={faceJpg}
                 className="card-img-top rounded-2 shadow-sm"
                 alt="Profile"
               />
