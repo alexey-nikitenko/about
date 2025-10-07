@@ -1,26 +1,37 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AspeedSoftware - Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @keyframes slide-in {
-        from { transform: translateY(18px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-      }
+        @keyframes slide-in {
+            from {
+                transform: translateY(18px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
     </style>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
+
 <body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
     <header class="bg-gray-800 text-gray-100 p-4">
         <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <img src="./images/icon.png" alt="Company Logo" class="h-8 w-8 mr-2">
-                <h1 class="text-xl font-bold">AspeedSoftware</h1>
+                <h1 class="text-xl font-bold"><span style="color: white;">Aspeed</span><span
+                        style="color: #2563EB;">Software</span></h1>
             </div>
             <nav>
                 <ul class="flex space-x-4">
@@ -34,15 +45,19 @@
     </header>
 
     <main class="w-full max-w-6xl mx-auto px-4 py-8" style="animation: slide-in 720ms linear 0s 1 normal both;">
-        
+
         <!-- Hero Section -->
         <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm p-8 mb-8">
             <div class="flex flex-col md:flex-row gap-8 items-center">
-                <img src="./images/face.jpg" alt="Aleksey Nikitenko" class="w-32 h-32 rounded-xl object-cover border-2 border-neutral-700">
+                <img src="./images/face.jpg" alt="Aleksey Nikitenko"
+                    class="w-32 h-32 rounded-xl object-cover border-2 border-neutral-700">
                 <div class="flex-1 text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-white mb-2">Welcome to AspeedSoftware</h2>
-                    <p class="text-lg text-gray-300 mb-4">Innovative software solutions and DIY robotics projects by Aleksey Nikitenko</p>
-                    <p class="text-gray-400">Software engineer with 13 years of experience in automation testing and software development.</p>
+                    <h2 class="text-3xl font-bold text-white mb-2">Welcome to <span
+                            style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span></h2>
+                    <p class="text-lg text-gray-300 mb-4">Innovative software solutions and DIY robotics projects by
+                        Aleksey Nikitenko</p>
+                    <p class="text-gray-400">Software engineer with 13 years of experience in automation testing and
+                        software development.</p>
                 </div>
             </div>
         </div>
@@ -51,11 +66,12 @@
         <div class="mb-8">
             <h3 class="text-2xl font-bold text-white mb-4 px-2">Featured Projects</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
+
                 <!-- RoboArm -->
-                <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors overflow-hidden">
+                <div
+                    class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors overflow-hidden">
                     <div class="aspect-video bg-gray-800">
-                        <img src="./images/sell_image.png" alt="RoboArm" class="h-full w-full object-cover">
+                        <img src="./images/rotary_encoder.gif" alt="RoboArm" class="h-full w-full object-cover">
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-3 mb-3">
@@ -64,13 +80,19 @@
                             </div>
                             <h4 class="text-xl font-semibold text-white">RoboArm</h4>
                         </div>
-                        <p class="text-gray-400 mb-4">A 3D printed robotic arm controlled via keyboard. DIY kit includes Python application, STL files, and detailed instructions.</p>
+                        <p class="text-gray-400 mb-4">A 3D printed robotic arm controlled via keyboard. DIY kit includes
+                            Python application, STL files, and detailed instructions.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">Arduino</span>
-                            <span class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">Python</span>
-                            <span class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">3D Printing</span>
+                            <span
+                                class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">Arduino</span>
+                            <span
+                                class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">Python</span>
+                            <span
+                                class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">3D
+                                Printing</span>
                         </div>
-                        <a href="roboarm.html" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition-colors">
+                        <a href="roboarm.html"
+                            class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition-colors">
                             <span>Learn More</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
@@ -78,9 +100,10 @@
                 </div>
 
                 <!-- TTML to Audio -->
-                <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors overflow-hidden">
-                    <div class="aspect-video bg-gray-800 flex items-center justify-center">
-                        <img src="./images/tts_audio_logo.png" alt="TTML to Audio" class="h-32 w-32 object-contain">
+                <div
+                    class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors overflow-hidden">
+                    <div class="aspect-video bg-gray-800">
+                        <img src="./images/sub_to_audio.png" alt="TTML to Audio" class="h-full w-full object-cover">
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-3 mb-3">
@@ -89,12 +112,18 @@
                             </div>
                             <h4 class="text-xl font-semibold text-white">TTML to Audio</h4>
                         </div>
-                        <p class="text-gray-400 mb-4">Transform subtitle files into natural-sounding audio with intelligent timing and pronunciation control. Perfect for accessibility and content creation.</p>
+                        <p class="text-gray-400 mb-4">Transform subtitle files into natural-sounding audio with
+                            intelligent timing and pronunciation control. Perfect for accessibility and content
+                            creation.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">Text-to-Speech</span>
-                            <span class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">Audio Processing</span>
+                            <span
+                                class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">Text-to-Speech</span>
+                            <span
+                                class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">Audio
+                                Processing</span>
                         </div>
-                        <a href="ttml_to_audio.html" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition-colors">
+                        <a href="ttml_to_audio.html"
+                            class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition-colors">
                             <span>Learn More</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
@@ -105,7 +134,7 @@
 
         <!-- Connect Section -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
+
             <!-- Social Media -->
             <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm p-6">
                 <div class="flex items-center gap-3 mb-4">
@@ -115,7 +144,8 @@
                     <h3 class="text-xl font-semibold text-white">Connect With Me</h3>
                 </div>
                 <div class="space-y-3">
-                    <a href="https://www.linkedin.com/in/aleksey-nikitenko-84837850/" target="_blank" class="flex items-center justify-between p-3 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                    <a href="https://www.linkedin.com/in/aleksey-nikitenko-84837850/" target="_blank"
+                        class="flex items-center justify-between p-3 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
                         <div class="flex items-center gap-3">
                             <i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i>
                             <div>
@@ -125,8 +155,9 @@
                         </div>
                         <i data-lucide="external-link" class="w-4 h-4 text-gray-400"></i>
                     </a>
-                    
-                    <a href="https://github.com/alexey-nikitenko" target="_blank" class="flex items-center justify-between p-3 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+
+                    <a href="https://github.com/alexey-nikitenko" target="_blank"
+                        class="flex items-center justify-between p-3 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
                         <div class="flex items-center gap-3">
                             <i data-lucide="github" class="w-5 h-5 text-gray-300"></i>
                             <div>
@@ -136,8 +167,9 @@
                         </div>
                         <i data-lucide="external-link" class="w-4 h-4 text-gray-400"></i>
                     </a>
-                    
-                    <a href="https://www.facebook.com/aleksey.nikitenko.7/" target="_blank" class="flex items-center justify-between p-3 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+
+                    <a href="https://www.facebook.com/aleksey.nikitenko.7/" target="_blank"
+                        class="flex items-center justify-between p-3 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
                         <div class="flex items-center gap-3">
                             <i data-lucide="facebook" class="w-5 h-5 text-blue-500"></i>
                             <div>
@@ -158,7 +190,8 @@
                     </div>
                     <h3 class="text-xl font-semibold text-white">About Me</h3>
                 </div>
-                <p class="text-gray-400 mb-4">13 years of experience in web and desktop application development and testing, specializing in .NET technologies and test automation.</p>
+                <p class="text-gray-400 mb-4">13 years of experience in web and desktop application development and
+                    testing, specializing in .NET technologies and test automation.</p>
                 <div class="space-y-2 mb-4">
                     <div class="flex items-center gap-2 text-sm text-gray-400">
                         <i data-lucide="map-pin" class="w-4 h-4 text-blue-400"></i>
@@ -173,7 +206,8 @@
                         <span>donaspeed@gmail.com</span>
                     </div>
                 </div>
-                <a href="about.html" class="inline-flex items-center gap-2 rounded-lg border border-neutral-700 bg-gray-800 px-4 py-2 text-white hover:bg-gray-700 transition-colors">
+                <a href="about.html"
+                    class="inline-flex items-center gap-2 rounded-lg border border-neutral-700 bg-gray-800 px-4 py-2 text-white hover:bg-gray-700 transition-colors">
                     <span>View Full Profile</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
@@ -184,12 +218,16 @@
 
     <footer class="bg-gray-900 border-t border-neutral-800 mt-8">
         <div class="w-full max-w-6xl mx-auto px-4 flex items-center justify-between pt-6 pb-8">
-            <p class="text-gray-400 text-sm">© 2023 AspeedSoftware. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">© <span id="currentYear"></span> <span
+                    style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span>. All rights
+                reserved.</p>
             <div class="flex items-center gap-3">
-                <a href="about.html" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                <a href="about.html"
+                    class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
                     <span>About</span>
                 </a>
-                <a href="#top" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                <a href="#top"
+                    class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
                     <span>Back to top</span>
                 </a>
             </div>
@@ -200,6 +238,8 @@
         if (window.lucide) {
             lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
         }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
+
 </html>
