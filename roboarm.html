@@ -3,155 +3,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robo Arm</title>
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Open+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
-
-    <!-- Tailwind CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Animation Keyframes (minimal) -->
     <style>
       @keyframes slide-in {
         from { transform: translateY(18px); opacity: 0; }
         to { transform: translateY(0); opacity: 1; }
       }
     </style>
-
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
-      <header class="bg-gray-800 text-gray-100 p-4 flex justify-between items-center">
+    <header class="bg-gray-800 text-gray-100 p-4">
+        <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
         <div class="flex items-center">
-          <img src="./images/icon.png" alt="Company Logo" class="h-8 w-8 mr-2">
-          <h1 class="text-xl font-bold">AspeedSoftware</h1>
+            <img src="./images/icon.png" alt="Company Logo" class="h-8 w-8 mr-2">
+            <h1 class="text-xl font-bold">AspeedSoftware</h1>
         </div>
         <nav>
-          <ul class="flex space-x-4">
-            <li><a href="index.html" class="hover:text-white">Home</a></li>
-            <li><a href="roboarm.html" class="hover:text-white">RoboArm</a></li>
-            <li><a href="ttml_to_audio.html" class="hover:text-white">TTML to Audio</a></li>
-            <li><a href="index.html#about" class="hover:text-white">About</a></li>
-          </ul>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:text-white">Home</a></li>
+                <li><a href="roboarm.html" class="hover:text-white">RoboArm</a></li>
+                <li><a href="ttml_to_audio.html" class="hover:text-white">TTML to Audio</a></li>
+                <li><a href="about.html" class="hover:text-white">About</a></li>
+            </ul>
         </nav>
-      </header>
-    <main class="w-full max-w-6xl mx-auto" style="animation: slide-in 720ms linear 0s 1 normal both;">
-<div class="grid grid-cols-1 gap-4 md:gap-6">
-            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
-                <img src="./images/sell_image.png" alt="RoboArm Kit">
-                <h2>Buy RoboArm (Remote Control for Keyboard)</h2>
-                <p>DIY Digital kit for 29 EUR</p>
-                <p>Includes Python application, STL files, and detailed instructions.</p>
-                <p><b>You will need:</b></p>
-                <ul>
-                    <li>- A 3D printer to print the STL files</li>
-                    <li>- An Arduino (tested on UNO and Nano)</li>
-                    <li>- A bearing and 4 MG90S 180-degree servo motors</li>
-                    <li>- 8 M3 screws and 8 nuts</li>
-                </ul>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BZJ8LC25YQ7AS">Buy with PayPal</a>
-            </div>
-
-            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
-                <img src="./images/required_components.png" alt="Required Components">
-                <h2>Option 2: All components required to make RoBoArm.</h2>
-                <p>Includes 3D printed parts, Arduino Nano with flashed firmware, PCA9685 16 servo motors board, 4 MG90S servo motors, wires, bearing, and 8 M3 screws.</p>
-                <p><b>Price: 59 EUR + shipping from Poland</b></p>
-                <a href="mailto:donaspeed@gmail.com">Email Me</a>
-            </div>
-
-            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
-                <img src="./images/rotary_encoder.gif" alt="Fully Assembled RoboArm">
-                <h2>Option 3: Fully assembled and tested RoboArm.</h2>
-                <p>Includes 3D printed parts, Arduino Nano with flashed firmware, PCA9685 16 servo motors board, 4 MG90S servo motors, wires, bearing, and 8 M3 screws.</p>
-                <p><b>Price: 99 EUR + shipping from Poland</b></p>
-                <a href="mailto:donaspeed@gmail.com">Email Me</a>
-            </div>
-
-            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
-                <img src="./images/soft_ui.gif" alt="Software UI">
-                <h2>Includes Python application</h2>
-                <p>Tested on :<br>Windows 11<br>Ubuntu 24.04.2 LTS<br>MacOS Sequoia 15.4.1  MacBook Air M2</p>
-            </div>
-
-            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
-                <img src="./images/voice_control.gif" alt="Voice Control">
-                <h2>Voice Control Feature</h2>
-            </div>
-
-            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
-                <img src="./images/3d_models.gif" alt="3D Models">
-                <h2>STL Files for 3D Printing</h2>
-            </div>
         </div>
+    </header>
 
-        <div class="grid grid-cols-1 gap-4 md:gap-6">
-            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
-                <p>The idea is to create RoBoArm (remote control for keyboard) as affordably as possible.</p>
-                <p><b>Unfortunately, I can’t offer a better price for components like the Arduino (tested on UNO and Nano), PCA9685 16 servo motors board, wires, bearings, or 3D printer filament.</b></p>
-                <p>Therefore, I want to give you the opportunity to find these items on AliExpress, Amazon, or local markets.</p>
-                <p><b>This will significantly speed up the process of making RoBoArm and reduce the overall cost.</b></p>
-                <p><b>With the Digital Kit, you will receive link to download:</b></p>
-                <ul>
-                    <li>- Python application</li>
-                    <li>- INO file for Arduino</li>
-                    <li>- STL files for 3D printing</li>
-                    <li>- Detailed documentation</li>
-                    <li>- Online support and application updates</li>
-                    <li>- Future STL file updates</li>
-                </ul>
-            </div>
-
-            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
-                <h3>Please collect the following items before assembling RoBoArm:</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <div>
-                        <img src="./images/3dprintedparts.png" alt="3D Printed Parts">
-                        <p>You will need to print the STL files provided in the file storage.</p>
-                    </div>
-                    <div>
-                        <img src="./images/arduino_wires.png" alt="Arduino and Wires">
-                        <p>You will need to purchase an Arduino, a PCA9685 16 servo motors board, and the necessary wires.</p>
-                    </div>
-                    <div>
-                        <img src="./images/4motors.png" alt="Servo Motors">
-                        <p>You will also need 4 MG90S servo motors with an additional wire for one motor.</p>
-                    </div>
-                    <div>
-                        <img src="./images/bearing.png" alt="Bearing">
-                        <p>You will need one 35x47x7-mm bearing</p>
-                    </div>
-                    <div>
-                        <img src="./images/adapter.png" alt="Power Adapter">
-                        <p>Finally, you'll need a USB 2.0 power adapter (5V, 1-2A) to power the PCA9685 16 servo motors board.</p>
-                    </div>
+    <main class="w-full max-w-6xl mx-auto px-4 py-8" style="animation: slide-in 720ms linear 0s 1 normal both;">
+        
+        <!-- Hero Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm p-8 mb-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <img src="./images/sell_image.png" alt="RoboArm Kit" class="w-full md:w-1/2 rounded-lg">
+                <div class="flex-1">
+                    <h2 class="text-3xl font-bold text-white mb-4">RoboArm - Remote Control for Keyboard</h2>
+                    <p class="text-gray-300 text-lg mb-6">A 3D printed robotic arm controlled via keyboard. Build your own DIY robotics project with our comprehensive kit.</p>
                 </div>
             </div>
+        </div>
 
-            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
-                <h3>Documentation:</h3>
-                <ul>
-                    <li><a href="data/Arduino sketch upload.pdf">Arduino Update Guide</a></li>
-                    <li><a href="data/What you need to start.pdf">How to Start</a></li>
-                    <li><a href="data/Robo Arm Assembly and Motor Setup Guide.pdf">RoboArm Initial Setup</a></li>
-                    <li><a href="data/USER_GUIDE.pdf">RoboBotPy App Workflow</a></li>
-                </ul>
+        <!-- Purchase Options -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4 px-2">Purchase Options</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Option 1: Digital Kit -->
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors p-6 flex flex-col">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-white mb-2">Digital Kit</h3>
+                        <p class="text-3xl font-bold text-blue-400 mb-4">29 EUR</p>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-300 mb-4">Perfect for makers with 3D printers and Arduino experience.</p>
+                        <p class="text-sm font-semibold text-gray-200 mb-2">Includes:</p>
+                        <ul class="text-sm text-gray-400 space-y-1 mb-4">
+                            <li>• Python application</li>
+                            <li>• Arduino INO file</li>
+                            <li>• STL files for 3D printing</li>
+                            <li>• Detailed documentation</li>
+                            <li>• Online support & updates</li>
+                        </ul>
+                        <p class="text-sm font-semibold text-gray-200 mb-2">You will need:</p>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li>• 3D printer</li>
+                            <li>• Arduino UNO or Nano</li>
+                            <li>• 4x MG90S servo motors</li>
+                            <li>• Bearing & screws</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BZJ8LC25YQ7AS" class="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-white hover:bg-blue-700 transition-colors">
+                        <span>Buy with PayPal</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Option 2: Components Kit -->
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors p-6 flex flex-col">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-white mb-2">Components Kit</h3>
+                        <p class="text-3xl font-bold text-blue-400 mb-4">59 EUR</p>
+                        <p class="text-sm text-gray-400">+ shipping from Poland</p>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-300 mb-4">All hardware components ready to assemble.</p>
+                        <p class="text-sm font-semibold text-gray-200 mb-2">Includes:</p>
+                        <ul class="text-sm text-gray-400 space-y-1 mb-4">
+                            <li>• 3D printed parts</li>
+                            <li>• Arduino Nano (flashed)</li>
+                            <li>• PCA9685 servo board</li>
+                            <li>• 4x MG90S servo motors</li>
+                            <li>• Wires, bearing & screws</li>
+                            <li>• All digital files</li>
+                        </ul>
+                    </div>
+                    <img src="./images/required_components.png" alt="Components" class="w-full rounded-lg mb-4">
+                    <a href="mailto:donaspeed@gmail.com" class="w-full inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-700 bg-gray-800 px-4 py-3 text-white hover:bg-gray-700 transition-colors">
+                        <span>Email Me</span>
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Option 3: Fully Assembled -->
+                <div class="rounded-xl border border-blue-600 bg-gray-900 shadow-sm hover:border-blue-500 transition-colors p-6 flex flex-col relative">
+                    <div class="absolute -top-3 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">READY TO USE</div>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-white mb-2">Fully Assembled</h3>
+                        <p class="text-3xl font-bold text-blue-400 mb-4">99 EUR</p>
+                        <p class="text-sm text-gray-400">+ shipping from Poland</p>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-gray-300 mb-4">Professionally assembled and tested. Plug and play.</p>
+                        <p class="text-sm font-semibold text-gray-200 mb-2">Includes:</p>
+                        <ul class="text-sm text-gray-400 space-y-1 mb-4">
+                            <li>• Fully assembled RoboArm</li>
+                            <li>• Tested & calibrated</li>
+                            <li>• All components included</li>
+                            <li>• All digital files</li>
+                            <li>• Ready to use immediately</li>
+                        </ul>
+                    </div>
+                    <img src="./images/rotary_encoder.gif" alt="Assembled RoboArm" class="w-full rounded-lg mb-4">
+                    <a href="mailto:donaspeed@gmail.com" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-white hover:bg-blue-700 transition-colors">
+                        <span>Email Me</span>
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </main>
-    <footer class="w-full max-w-6xl mx-auto mt-8 flex items-center justify-between border-t border-neutral-800 pt-6">
-        <p class="text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">
-          © 2023 AspeedSoftware. All rights reserved.
-        </p>
-        <div class="flex items-center gap-3">
-          <a href="index.html#about" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
-            <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px; font-weight: 400;">About</span>
-          </a>
-          <a href="#top" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
-            <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px; font-weight: 400;">Back to top</span>
-          </a>
+
+        <!-- Features Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4 px-2">Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <img src="./images/soft_ui.gif" alt="Software UI" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">Cross-Platform Software</h3>
+                    <p class="text-sm text-gray-400 mb-2">Python application tested on:</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>• Windows 11</li>
+                        <li>• Ubuntu 24.04.2 LTS</li>
+                        <li>• MacOS Sequoia 15.4.1</li>
+                    </ul>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <img src="./images/voice_control.gif" alt="Voice Control" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">Voice Control</h3>
+                    <p class="text-sm text-gray-400">Control your RoboArm using voice commands for hands-free operation.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <img src="./images/3d_models.gif" alt="3D Models" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">3D Printable Design</h3>
+                    <p class="text-sm text-gray-400">Complete STL files optimized for FDM 3D printing with minimal supports.</p>
+                </div>
+            </div>
         </div>
-      </footer>
+
+        <!-- Why Digital Kit Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4">Why Choose the Digital Kit?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-300 mb-4">The idea is to create RoboArm as affordably as possible. By sourcing components yourself from AliExpress, Amazon, or local markets, you can significantly reduce costs and speed up the build process.</p>
+                    <p class="text-gray-300">The Digital Kit gives you everything you need to build and customize your RoboArm at your own pace.</p>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-gray-200 mb-2">What you get:</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Python application with GUI</li>
+                        <li>• INO file for Arduino</li>
+                        <li>• STL files for 3D printing</li>
+                        <li>• Detailed assembly documentation</li>
+                        <li>• Online support</li>
+                        <li>• Free application updates</li>
+                        <li>• Future STL file updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Components Needed Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-6">Components You'll Need</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="text-center">
+                    <img src="./images/3dprintedparts.png" alt="3D Printed Parts" class="w-full rounded-lg mb-3">
+                    <p class="text-sm font-semibold text-gray-200">3D Printed Parts</p>
+                    <p class="text-xs text-gray-400">Print from STL files</p>
+                </div>
+                <div class="text-center">
+                    <img src="./images/arduino_wires.png" alt="Arduino" class="w-full rounded-lg mb-3">
+                    <p class="text-sm font-semibold text-gray-200">Arduino & Board</p>
+                    <p class="text-xs text-gray-400">UNO/Nano + PCA9685</p>
+                </div>
+                <div class="text-center">
+                    <img src="./images/4motors.png" alt="Servo Motors" class="w-full rounded-lg mb-3">
+                    <p class="text-sm font-semibold text-gray-200">Servo Motors</p>
+                    <p class="text-xs text-gray-400">4x MG90S 180°</p>
+                </div>
+                <div class="text-center">
+                    <img src="./images/bearing.png" alt="Bearing" class="w-full rounded-lg mb-3">
+                    <p class="text-sm font-semibold text-gray-200">Bearing</p>
+                    <p class="text-xs text-gray-400">35x47x7 mm</p>
+                </div>
+                <div class="text-center">
+                    <img src="./images/adapter.png" alt="Power Adapter" class="w-full rounded-lg mb-3">
+                    <p class="text-sm font-semibold text-gray-200">Power Adapter</p>
+                    <p class="text-xs text-gray-400">USB 5V 1-2A</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8">
+            <h2 class="text-2xl font-bold text-white mb-4">Documentation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <a href="data/What you need to start.pdf" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                    <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-200">Getting Started</p>
+                        <p class="text-xs text-gray-400">What you need</p>
+                    </div>
+                </a>
+                <a href="data/Arduino sketch upload.pdf" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                    <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-200">Arduino Setup</p>
+                        <p class="text-xs text-gray-400">Upload guide</p>
+                    </div>
+                </a>
+                <a href="data/Robo Arm Assembly and Motor Setup Guide.pdf" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                    <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-200">Assembly Guide</p>
+                        <p class="text-xs text-gray-400">Initial setup</p>
+                    </div>
+                </a>
+                <a href="data/USER_GUIDE.pdf" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                    <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-200">User Guide</p>
+                        <p class="text-xs text-gray-400">App workflow</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 border-t border-neutral-800 mt-8">
+        <div class="w-full max-w-6xl mx-auto px-4 flex items-center justify-between pt-6 pb-8">
+        <p class="text-gray-400 text-sm">© 2023 AspeedSoftware. All rights reserved.</p>
+        <div class="flex items-center gap-3">
+            <a href="about.html" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                <span>About</span>
+            </a>
+            <a href="#top" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                <span>Back to top</span>
+            </a>
+        </div>
+        </div>
+    </footer>
+
     <script>
+        if (window.lucide) {
+            lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+        }
+    </script>
+</body>
+</html>

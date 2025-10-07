@@ -23,8 +23,8 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   </head>
   <body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
-    <main class="w-full max-w-6xl mx-auto" style="animation: slide-in 720ms linear 0s 1 normal both;">
-      <header class="bg-gray-800 text-gray-100 p-4 flex justify-between items-center">
+      <header class="bg-gray-800 text-gray-100 p-4">
+        <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
         <div class="flex items-center">
           <img src="./images/icon.png" alt="Company Logo" class="h-8 w-8 mr-2">
           <h1 class="text-xl font-bold">AspeedSoftware</h1>
@@ -34,11 +34,13 @@
             <li><a href="index.html" class="hover:text-white">Home</a></li>
             <li><a href="roboarm.html" class="hover:text-white">RoboArm</a></li>
             <li><a href="ttml_to_audio.html" class="hover:text-white">TTML to Audio</a></li>
-            <li><a href="index.html#about" class="hover:text-white">About</a></li>
+            <li><a href="about.html" class="hover:text-white">About</a></li>
           </ul>
         </nav>
+        </div>
       </header>
 
+    <main class="w-full max-w-6xl mx-auto px-4 py-8" style="animation: slide-in 720ms linear 0s 1 normal both;">
       <!-- Grid: 2-2 Square -->
       <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <!-- Tile 1: Products -->
@@ -210,20 +212,21 @@
           </div>
         </div>
       </section>
-
     </main>
 
-      <footer class="w-full max-w-6xl mx-auto mt-8 flex items-center justify-between border-t border-neutral-800 pt-6">
+      <footer class="bg-gray-900 border-t border-neutral-800 mt-8">
+        <div class="w-full max-w-6xl mx-auto px-4 flex items-center justify-between pt-6 pb-8">
         <p class="text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">
           © 2023 AspeedSoftware. All rights reserved.
         </p>
         <div class="flex items-center gap-3">
-          <a href="index.html#about" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
+          <a href="about.html" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
             <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px; font-weight: 400;">About</span>
           </a>
           <a href="#top" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
             <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px; font-weight: 400;">Back to top</span>
           </a>
+        </div>
         </div>
       </footer>
 
