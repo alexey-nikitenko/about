@@ -1,33 +1,135 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <title>Robo Arm on Kickstarter</title>
+    <title>Robo Arm</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Open+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Animation Keyframes (minimal) -->
+    <style>
+      @keyframes slide-in {
+        from { transform: translateY(18px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+    </style>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
+<body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white flex items-center justify-center p-6">
+    <main class="w-full max-w-6xl" style="animation: slide-in 720ms linear 0s 1 normal both;">
+        <div class="header">
+            <h1>RoboArm</h1>
+            <p>A 3D printed robotic arm with remote control for your keyboard.</p>
+        </div>
 
-<body class="bg-dark">
-    <header id="headerId">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+                <img src="./images/sell_image.png" alt="RoboArm Kit">
+                <h2>Buy RoboArm (Remote Control for Keyboard)</h2>
+                <p>DIY Digital kit for 29 EUR</p>
+                <p>Includes Python application, STL files, and detailed instructions.</p>
+                <p><b>You will need:</b></p>
+                <ul>
+                    <li>- A 3D printer to print the STL files</li>
+                    <li>- An Arduino (tested on UNO and Nano)</li>
+                    <li>- A bearing and 4 MG90S 180-degree servo motors</li>
+                    <li>- 8 M3 screws and 8 nuts</li>
+                </ul>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BZJ8LC25YQ7AS">Buy with PayPal</a>
+            </div>
 
-    </header>
+            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+                <img src="./images/required_components.png" alt="Required Components">
+                <h2>Option 2: All components required to make RoBoArm.</h2>
+                <p>Includes 3D printed parts, Arduino Nano with flashed firmware, PCA9685 16 servo motors board, 4 MG90S servo motors, wires, bearing, and 8 M3 screws.</p>
+                <p><b>Price: 59 EUR + shipping from Poland</b></p>
+                <a href="mailto:donaspeed@gmail.com">Email Me</a>
+            </div>
 
-    <main id="mainId" class="back-roboarm-im">
+            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+                <img src="./images/rotary_encoder.gif" alt="Fully Assembled RoboArm">
+                <h2>Option 3: Fully assembled and tested RoboArm.</h2>
+                <p>Includes 3D printed parts, Arduino Nano with flashed firmware, PCA9685 16 servo motors board, 4 MG90S servo motors, wires, bearing, and 8 M3 screws.</p>
+                <p><b>Price: 99 EUR + shipping from Poland</b></p>
+                <a href="mailto:donaspeed@gmail.com">Email Me</a>
+            </div>
 
+            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+                <img src="./images/soft_ui.gif" alt="Software UI">
+                <h2>Includes Python application</h2>
+                <p>Tested on :<br>Windows 11<br>Ubuntu 24.04.2 LTS<br>MacOS Sequoia 15.4.1  MacBook Air M2</p>
+            </div>
+
+            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+                <img src="./images/voice_control.gif" alt="Voice Control">
+                <h2>Voice Control Feature</h2>
+            </div>
+
+            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+                <img src="./images/3d_models.gif" alt="3D Models">
+                <h2>STL Files for 3D Printing</h2>
+            </div>
+        </div>
+
+        <div class="header">
+            <h2>What You Need to Get Started with Digital Kit</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+                <p>The idea is to create RoBoArm (remote control for keyboard) as affordably as possible.</p>
+                <p><b>Unfortunately, I can’t offer a better price for components like the Arduino (tested on UNO and Nano), PCA9685 16 servo motors board, wires, bearings, or 3D printer filament.</b></p>
+                <p>Therefore, I want to give you the opportunity to find these items on AliExpress, Amazon, or local markets.</p>
+                <p><b>This will significantly speed up the process of making RoBoArm and reduce the overall cost.</b></p>
+                <p><b>With the Digital Kit, you will receive link to download:</b></p>
+                <ul>
+                    <li>- Python application</li>
+                    <li>- INO file for Arduino</li>
+                    <li>- STL files for 3D printing</li>
+                    <li>- Detailed documentation</li>
+                    <li>- Online support and application updates</li>
+                    <li>- Future STL file updates</li>
+                </ul>
+            </div>
+
+            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+                <h3>Please collect the following items before assembling RoBoArm:</h3>
+                <img src="./images/3dprintedparts.png" alt="3D Printed Parts">
+                <p>You will need to print the STL files provided in the file storage.</p>
+                <img src="./images/arduino_wires.png" alt="Arduino and Wires">
+                <p>You will need to purchase an Arduino, a PCA9685 16 servo motors board, and the necessary wires.</p>
+                <img src="./images/4motors.png" alt="Servo Motors">
+                <p>You will also need 4 MG90S servo motors with an additional wire for one motor.</p>
+                <img src="./images/bearing.png" alt="Bearing">
+                <p>You will need one 35x47x7-mm bearing</p>
+                <img src="./images/adapter.png" alt="Power Adapter">
+                <p>Finally, you'll need a USB 2.0 power adapter (5V, 1-2A) to power the PCA9685 16 servo motors board.</p>
+            </div>
+
+            <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+                <h3>Documentation:</h3>
+                <ul>
+                    <li><a href="data/Arduino sketch upload.pdf">Arduino Update Guide</a></li>
+                    <li><a href="data/What you need to start.pdf">How to Start</a></li>
+                    <li><a href="data/Robo Arm Assembly and Motor Setup Guide.pdf">RoboArm Initial Setup</a></li>
+                    <li><a href="data/USER_GUIDE.pdf">RoboBotPy App Workflow</a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="index.html">Back to projects</a>
     </main>
-
-    <div id="root"></div>
-    <script src="roboarm.js" type="text/babel">
+    <script>
+      // Initialize icons with 1.5 stroke width
+      if (window.lucide) {
+        lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+      }
     </script>
-
-    <footer id="footerId" class="text-muted py-5 bg-dark">
-    </footer>
-
 </body>
-
 </html>

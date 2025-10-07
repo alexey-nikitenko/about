@@ -1,0 +1,288 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2x2 Square Grid</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Open+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Animation Keyframes (minimal) -->
+    <style>
+      @keyframes slide-in {
+        from { transform: translateY(18px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+    </style>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  </head>
+  <body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white flex items-center justify-center p-6">
+    <main class="w-full max-w-6xl" style="animation: slide-in 720ms linear 0s 1 normal both;">
+      <!-- Header -->
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-white" style="font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; font-weight: 400; letter-spacing: normal; font-size: 36px;">
+          Indie Studio Overview
+        </h1>
+        <p class="mt-2 text-gray-300" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; font-weight: 400; font-size: 22px;">
+          Preview your products and open detailed software pages.
+        </p>
+      </header>
+
+      <!-- Grid: 2-2 Square -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <!-- Tile 1: Products -->
+        <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <div class="inline-flex items-center justify-center rounded-lg border border-neutral-800 bg-gray-800/40 p-2.5 text-gray-200 group-hover:border-neutral-700">
+                <i data-lucide="boxes" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h2 class="text-white" style="font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; font-weight: 400; letter-spacing: normal; font-size: 22px;">
+                  Products
+                </h2>
+                <p class="text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">
+                  Previews of created software
+                </p>
+              </div>
+            </div>
+            <button class="rounded-md border border-neutral-800 bg-gray-800/40 p-2 text-gray-300 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear" aria-label="Options">
+              <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Product previews and Details buttons -->
+          <div class="mt-6 grid grid-cols-2 gap-4">
+            <!-- Product A -->
+            <div class="rounded-lg border border-neutral-800 bg-gray-800/30 overflow-hidden hover:border-neutral-700">
+              <div class="aspect-video bg-gray-800">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Product A preview" class="h-full w-full object-cover">
+              </div>
+              <div class="p-3">
+                <p class="text-gray-200" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">Atlas Notes</p>
+                <p class="text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">Markdown editor</p>
+                <a href="/products/atlas-notes" class="mt-3 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-gray-800/40 px-3 py-1.5 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                  <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">Open details</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Product B -->
+            <div class="rounded-lg border border-neutral-800 bg-gray-800/30 overflow-hidden hover:border-neutral-700">
+              <div class="aspect-video bg-gray-800">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Product B preview" class="h-full w-full object-cover">
+              </div>
+              <div class="p-3">
+                <p class="text-gray-200" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">Pulse Boards</p>
+                <p class="text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">Kanban &amp; sprints</p>
+                <a href="/products/pulse-boards" class="mt-3 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-gray-800/40 px-3 py-1.5 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                  <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">Open details</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tile 2: Replaced Performance with TTML to Audio Converter -->
+        <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <div class="inline-flex items-center justify-center rounded-lg border border-neutral-800 bg-gray-800/40 p-2.5 text-gray-200 group-hover:border-neutral-700">
+                <i data-lucide="file-audio" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h2 class="text-white" style="font-family: 'Open Sans', ui-sans-serif, system-ui; font-weight: 400; letter-spacing: normal; font-size: 22px;">
+                  TTML to Audio Converter
+                </h2>
+                <p class="text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">
+                  A flexible tool for converting TTML subtitle files into a single, synchronized audio file using text-to-speech (TTS).
+                </p>
+              </div>
+            </div>
+            <button class="rounded-md border border-neutral-800 bg-gray-800/40 p-2 text-gray-300 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear" aria-label="Options">
+              <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <div class="mt-6">
+            <a href="/products/ttml-to-audio-converter" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px; font-weight: 400;">View project</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tile 3: Social media (replaces Activity) -->
+        <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <div class="inline-flex items-center justify-center rounded-lg border border-neutral-800 bg-gray-800/40 p-2.5 text-gray-200 group-hover:border-neutral-700">
+                <i data-lucide="share-2" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h2 class="text-white" style="font-family: 'Open Sans', ui-sans-serif, system-ui; font-weight: 400; letter-spacing: normal; font-size: 22px;">
+                  Social media
+                </h2>
+                <p class="text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">
+                  Profiles and channels
+                </p>
+              </div>
+            </div>
+            <button class="rounded-md border border-neutral-800 bg-gray-800/40 p-2 text-gray-300 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear" aria-label="Options">
+              <i data-lucide="filter" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-center justify-between rounded-lg border border-neutral-800 bg-gray-800/30 p-3 hover:border-neutral-700">
+              <div class="flex items-center gap-3">
+                <i data-lucide="twitter" class="w-4 h-4 text-sky-400"></i>
+                <div>
+                  <span class="text-gray-200 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">Twitter</span>
+                  <span class="text-gray-400 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">@yourhandle</span>
+                </div>
+              </div>
+              <a href="https://x.com/yourhandle" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-white">
+                <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">Visit</span>
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </li>
+            <li class="flex items-center justify-between rounded-lg border border-neutral-800 bg-gray-800/30 p-3 hover:border-neutral-700">
+              <div class="flex items-center gap-3">
+                <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i>
+                <div>
+                  <span class="text-gray-200 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">LinkedIn</span>
+                  <span class="text-gray-400 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">/company/yourcompany</span>
+                </div>
+              </div>
+              <a href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-white">
+                <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">Visit</span>
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </li>
+            <li class="flex items-center justify-between rounded-lg border border-neutral-800 bg-gray-800/30 p-3 hover:border-neutral-700">
+              <div class="flex items-center gap-3">
+                <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+                <div>
+                  <span class="text-gray-200 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">Instagram</span>
+                  <span class="text-gray-400 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">@yourhandle</span>
+                </div>
+              </div>
+              <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-white">
+                <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">Visit</span>
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </li>
+            <li class="flex items-center justify-between rounded-lg border border-neutral-800 bg-gray-800/30 p-3 hover:border-neutral-700">
+              <div class="flex items-center gap-3">
+                <i data-lucide="youtube" class="w-4 h-4 text-red-500"></i>
+                <div>
+                  <span class="text-gray-200 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">YouTube</span>
+                  <span class="text-gray-400 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">@yourchannel</span>
+                </div>
+              </div>
+              <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-white">
+                <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">Visit</span>
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </li>
+            <li class="flex items-center justify-between rounded-lg border border-neutral-800 bg-gray-800/30 p-3 hover:border-neutral-700">
+              <div class="flex items-center gap-3">
+                <i data-lucide="github" class="w-4 h-4 text-gray-300"></i>
+                <div>
+                  <span class="text-gray-200 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">GitHub</span>
+                  <span class="text-gray-400 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">/yourorg</span>
+                </div>
+              </div>
+              <a href="https://github.com/yourorg" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-white">
+                <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">Visit</span>
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </li>
+            <li class="flex items-center justify-between rounded-lg border border-neutral-800 bg-gray-800/30 p-3 hover:border-neutral-700">
+              <div class="flex items-center gap-3">
+                <i data-lucide="discord" class="w-4 h-4 text-indigo-400"></i>
+                <div>
+                  <span class="text-gray-200 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">Discord</span>
+                  <span class="text-gray-400 block" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">invite/yourcommunity</span>
+                </div>
+              </div>
+              <a href="https://discord.gg/yourinvite" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-white">
+                <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">Visit</span>
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tile 4: About (replaces Integrations) -->
+        <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors ease-linear p-5 md:p-6 aspect-square">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <div class="inline-flex items-center justify-center rounded-lg border border-neutral-800 bg-gray-800/40 p-2.5 text-gray-200 group-hover:border-neutral-700">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h2 class="text-white tracking-tight" style="font-family: 'Open Sans', ui-sans-serif, system-ui; font-weight: 400; font-size: 22px;">
+                  About
+                </h2>
+                <p class="text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">
+                  Photo and a short bio
+                </p>
+              </div>
+            </div>
+            <button class="rounded-md border border-neutral-800 bg-gray-800/40 p-2 text-gray-300 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear" aria-label="Options">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <div class="mt-6 grid grid-cols-2 gap-3">
+            <!-- Photo -->
+            <div class="rounded-lg border border-neutral-800 bg-gray-800/30 overflow-hidden hover:border-neutral-700">
+              <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Your photo" class="h-full w-full object-cover aspect-square">
+            </div>
+            <!-- Bio -->
+            <div class="flex flex-col rounded-lg border border-neutral-800 bg-gray-800/30 p-3 hover:border-neutral-700">
+              <p class="text-gray-200" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 15px; font-weight: 400;">Your Name</p>
+              <p class="mt-1 text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">
+                Indie developer building focused, high‑polish tools. Passionate about clean UX, performance, and thoughtful details. Currently shipping notes, boards, and audio tooling.
+              </p>
+              <p class="mt-2 text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">
+                Based in your city. Available for collaborations and interesting problems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-8 flex items-center justify-between border-t border-neutral-800 pt-6">
+        <p class="text-gray-400" style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px;">
+          Last updated 5 minutes ago
+        </p>
+        <div class="flex items-center gap-3">
+          <button class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
+            <i data-lucide="refresh-ccw" class="w-4 h-4"></i>
+            <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px; font-weight: 400;">Refresh</span>
+          </button>
+          <button class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-700 transition-colors ease-linear">
+            <i data-lucide="settings" class="w-4 h-4"></i>
+            <span style="font-family: Inter, ui-sans-serif, system-ui; font-size: 14px; font-weight: 400;">Settings</span>
+          </button>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      // Initialize icons with 1.5 stroke width
+      if (window.lucide) {
+        lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+      }
+    </script>
+  
+</body></html>
