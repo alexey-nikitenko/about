@@ -1,10 +1,15 @@
 import React from 'react';
+import gamePromo from '../../images/game_promo.png';
+import voiceControl from '../../images/voice_control.gif';
+import cv from '../../images/cv.png';
+import youtube from '../../images/youtube.png';
+import ttlToAudio from '../../images/ttl_to_audio.png';
 
 export default function Main() {
   const projects = [
     {
       id: 1,
-      image: "./images/game_promo.png",
+      image: gamePromo,
       title: "Relics Of The Lost Dawn (MMORPG)",
       description: "Indie MMORPG project with deep crafting and live, open development. Currently seeking partners.",
       link: "rotld.html",
@@ -13,7 +18,7 @@ export default function Main() {
     },
     {
       id: 2,
-      image: "./images/voice_control.gif",
+      image: voiceControl,
       title: "Buy RoboArm (remote control for keyboard)",
       description: "DIY Digital Kit from 29 euro\nWindows, Linux, MacOS\nPython Application and STL files included",
       link: "roboarm.html",
@@ -22,7 +27,7 @@ export default function Main() {
     },
     {
       id: 3,
-      image: "./images/cv.png",
+      image: cv,
       title: "My CV",
       description: "More work details about me.",
       link: "cv.html",
@@ -31,7 +36,7 @@ export default function Main() {
     },
     {
       id: 4,
-      image: "./images/youtube.png",
+      image: youtube,
       title: "My Youtube Channel",
       description: "Check out my video content",
       link: "https://www.youtube.com/channel/UCT1rya_vcEHMqOOlVIp-TnA",
@@ -40,8 +45,8 @@ export default function Main() {
     },
     {
       id: 5,
-      image: "./images/ttl_to_audio.png",
-      title: "TTML to Audio Converter",
+      image: ttlToAudio,
+      title: "Subtitles to Audio Converter",
       description: "A flexible tool for converting TTML subtitle files into a single, synchronized audio file using text-to-speech (TTS).",
       link: "ttml_to_audio.html",
       buttonText: "View Project Details",
