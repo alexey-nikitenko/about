@@ -45,91 +45,60 @@
             </div>
         </div>
 
-        <!-- Purchase Options -->
+        <!-- Purchase Option -->
         <div class="mb-8">
-            <h2 class="text-2xl font-bold text-white mb-4 px-2">Purchase Options</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Option 1: Digital Kit -->
-                <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors p-6 flex flex-col">
-                    <div class="mb-4">
-                        <h3 class="text-xl font-semibold text-white mb-2">Digital Kit</h3>
-                        <p class="text-3xl font-bold text-blue-400 mb-4">29 EUR</p>
+            <h2 class="text-2xl font-bold text-white mb-4 px-2">Get Your RoboArm Digital Kit</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="rounded-xl border border-blue-600 bg-gray-900 shadow-lg hover:border-blue-500 transition-colors p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold text-white mb-2">Digital Kit</h3>
+                            <p class="text-4xl font-bold text-blue-400 mb-4">29 EUR</p>
+                            <p class="text-gray-300 mb-6">Perfect for makers with 3D printers and Arduino experience. Build your own robotic arm from scratch!</p>
+                            
+                            <div class="mb-6">
+                                <p class="text-base font-semibold text-gray-200 mb-3">What's Included:</p>
+                                <ul class="text-sm text-gray-400 space-y-2">
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                                        <span>Python application with GUI</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                                        <span>Arduino INO file (firmware)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                                        <span>STL files for 3D printing</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                                        <span>Detailed assembly documentation</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                                        <span>Online support & free updates</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <p class="text-base font-semibold text-gray-200 mb-3">You Will Need:</p>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• 3D printer (FDM)</li>
+                                    <li>• Arduino UNO or Nano</li>
+                                    <li>• 4x MG90S servo motors (180°)</li>
+                                    <li>• 35x47x7mm bearing</li>
+                                    <li>• 8x M3 screws & nuts</li>
+                                </ul>
+                            </div>
+                            
+                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BZJ8LC25YQ7AS" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-4 text-white hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg">
+                                <span>Buy with PayPal</span>
+                                <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="flex-1">
-                        <p class="text-gray-300 mb-4">Perfect for makers with 3D printers and Arduino experience.</p>
-                        <p class="text-sm font-semibold text-gray-200 mb-2">Includes:</p>
-                        <ul class="text-sm text-gray-400 space-y-1 mb-4">
-                            <li>• Python application</li>
-                            <li>• Arduino INO file</li>
-                            <li>• STL files for 3D printing</li>
-                            <li>• Detailed documentation</li>
-                            <li>• Online support & updates</li>
-                        </ul>
-                        <p class="text-sm font-semibold text-gray-200 mb-2">You will need:</p>
-                        <ul class="text-sm text-gray-400 space-y-1">
-                            <li>• 3D printer</li>
-                            <li>• Arduino UNO or Nano</li>
-                            <li>• 4x MG90S servo motors</li>
-                            <li>• Bearing & screws</li>
-                        </ul>
-                    </div>
-                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BZJ8LC25YQ7AS" class="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-white hover:bg-blue-700 transition-colors">
-                        <span>Buy with PayPal</span>
-                        <i data-lucide="external-link" class="w-4 h-4"></i>
-                    </a>
-                </div>
-
-                <!-- Option 2: Components Kit -->
-                <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors p-6 flex flex-col">
-                    <div class="mb-4">
-                        <h3 class="text-xl font-semibold text-white mb-2">Components Kit</h3>
-                        <p class="text-3xl font-bold text-blue-400 mb-4">59 EUR</p>
-                        <p class="text-sm text-gray-400">+ shipping from Poland</p>
-                    </div>
-                    <div class="flex-1">
-                        <p class="text-gray-300 mb-4">All hardware components ready to assemble.</p>
-                        <p class="text-sm font-semibold text-gray-200 mb-2">Includes:</p>
-                        <ul class="text-sm text-gray-400 space-y-1 mb-4">
-                            <li>• 3D printed parts</li>
-                            <li>• Arduino Nano (flashed)</li>
-                            <li>• PCA9685 servo board</li>
-                            <li>• 4x MG90S servo motors</li>
-                            <li>• Wires, bearing & screws</li>
-                            <li>• All digital files</li>
-                        </ul>
-                    </div>
-                    <img src="./images/required_components.png" alt="Components" class="w-full rounded-lg mb-4">
-                    <a href="mailto:donaspeed@gmail.com" class="w-full inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-700 bg-gray-800 px-4 py-3 text-white hover:bg-gray-700 transition-colors">
-                        <span>Email Me</span>
-                        <i data-lucide="mail" class="w-4 h-4"></i>
-                    </a>
-                </div>
-
-                <!-- Option 3: Fully Assembled -->
-                <div class="rounded-xl border border-blue-600 bg-gray-900 shadow-sm hover:border-blue-500 transition-colors p-6 flex flex-col relative">
-                    <div class="absolute -top-3 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">READY TO USE</div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-semibold text-white mb-2">Fully Assembled</h3>
-                        <p class="text-3xl font-bold text-blue-400 mb-4">99 EUR</p>
-                        <p class="text-sm text-gray-400">+ shipping from Poland</p>
-                    </div>
-                    <div class="flex-1">
-                        <p class="text-gray-300 mb-4">Professionally assembled and tested. Plug and play.</p>
-                        <p class="text-sm font-semibold text-gray-200 mb-2">Includes:</p>
-                        <ul class="text-sm text-gray-400 space-y-1 mb-4">
-                            <li>• Fully assembled RoboArm</li>
-                            <li>• Tested & calibrated</li>
-                            <li>• All components included</li>
-                            <li>• All digital files</li>
-                            <li>• Ready to use immediately</li>
-                        </ul>
-                    </div>
-                    <img src="./images/rotary_encoder.gif" alt="Assembled RoboArm" class="w-full rounded-lg mb-4">
-                    <a href="mailto:donaspeed@gmail.com" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-white hover:bg-blue-700 transition-colors">
-                        <span>Email Me</span>
-                        <i data-lucide="mail" class="w-4 h-4"></i>
-                    </a>
                 </div>
             </div>
         </div>
