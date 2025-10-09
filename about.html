@@ -1,7 +1,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <meta name="theme-color" content="#1f2937">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=yes">
     <title>About Aleksey Nikitenko - Software Engineer & Robotics Enthusiast</title>
     <meta name="description" content="13 years of experience in software engineering, specializing in .NET technologies and test automation. Based in Gdańsk, Poland.">
     <meta name="keywords" content="Aleksey Nikitenko, software engineer, automation testing, .NET, C#, EPAM Systems, Gdańsk Poland">
@@ -30,22 +34,48 @@
         from { transform: translateY(18px); opacity: 0; }
         to { transform: translateY(0); opacity: 1; }
       }
+      
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+        a, button {
+          min-height: 44px;
+        }
+        
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        
+        html {
+          -webkit-text-size-adjust: 100%;
+        }
+        
+        * {
+          -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+        }
+        
+        /* Better phone number links */
+        a[href^="tel:"] {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
     </style>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
-    <header class="bg-gray-800 text-gray-100 p-4">
+    <header class="bg-gray-800 text-gray-100 p-4 sticky top-0 z-50 shadow-lg">
         <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
         <div class="flex items-center">
-            <h1 class="text-xl font-bold"><span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span></h1>
+            <h1 class="text-lg sm:text-xl font-bold"><span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span></h1>
         </div>
         <nav>
-            <ul class="flex space-x-4">
-                <li><a href="index.html" class="hover:text-white">Home</a></li>
-                <li><a href="roboarm.html" class="hover:text-white">RoboArm</a></li>
-                <li><a href="ttml_to_audio.html" class="hover:text-white">TTML to Audio</a></li>
-                <li><a href="blog.html" class="hover:text-white">Blog</a></li>
-                <li><a href="about.html" class="hover:text-white">About</a></li>
+            <ul class="flex space-x-2 sm:space-x-4 text-sm sm:text-base">
+                <li><a href="index.html" class="hover:text-white px-2 py-2">Home</a></li>
+                <li class="hidden sm:block"><a href="roboarm.html" class="hover:text-white px-2 py-2">RoboArm</a></li>
+                <li class="hidden sm:block"><a href="ttml_to_audio.html" class="hover:text-white px-2 py-2">TTML to Audio</a></li>
+                <li><a href="blog.html" class="hover:text-white px-2 py-2">Blog</a></li>
+                <li><a href="about.html" class="hover:text-white px-2 py-2">About</a></li>
             </ul>
         </nav>
         </div>

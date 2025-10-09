@@ -2,26 +2,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <meta name="theme-color" content="#1f2937">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
     <title>TTML to Audio - Subtitle to Voice Converter | AspeedSoftware</title>
-    <meta name="description" content="Transform subtitle files into natural-sounding audio voiceovers. Stop reading subtitles, start listening. Intelligent timing, pronunciation control, offline TTS.">
-    <meta name="keywords" content="subtitle to audio, TTML converter, text to speech, TTS, voiceover, accessibility, subtitle reader, audio generation">
+    <meta name="description"
+        content="Transform subtitle files into natural-sounding audio voiceovers. Stop reading subtitles, start listening. Intelligent timing, pronunciation control, offline TTS.">
+    <meta name="keywords"
+        content="subtitle to audio, TTML converter, text to speech, TTS, voiceover, accessibility, subtitle reader, audio generation">
     <meta name="author" content="Aleksey Nikitenko">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="product">
     <meta property="og:url" content="https://aspeedsoftware.com/ttml_to_audio.html">
     <meta property="og:title" content="TTML to Audio - Subtitle to Voice Converter">
-    <meta property="og:description" content="Transform subtitle files into natural-sounding audio voiceovers. Stop reading subtitles, start listening.">
+    <meta property="og:description"
+        content="Transform subtitle files into natural-sounding audio voiceovers. Stop reading subtitles, start listening.">
     <meta property="og:image" content="https://aspeedsoftware.com/images/sub_to_audio.png">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://aspeedsoftware.com/ttml_to_audio.html">
     <meta property="twitter:title" content="TTML to Audio - Subtitle to Voice Converter">
-    <meta property="twitter:description" content="Transform subtitle files into natural-sounding audio voiceovers. Stop reading subtitles, start listening.">
+    <meta property="twitter:description"
+        content="Transform subtitle files into natural-sounding audio voiceovers. Stop reading subtitles, start listening.">
     <meta property="twitter:image" content="https://aspeedsoftware.com/images/sub_to_audio.png">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@400;500&display=swap"
@@ -39,24 +47,44 @@
                 opacity: 1;
             }
         }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            a, button {
+                min-height: 44px;
+            }
+            
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            
+            html {
+                -webkit-text-size-adjust: 100%;
+            }
+            
+            * {
+                -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+            }
+        }
     </style>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 
 <body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
-    <header class="bg-gray-800 text-gray-100 p-4">
+    <header class="bg-gray-800 text-gray-100 p-4 sticky top-0 z-50 shadow-lg">
         <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <h1 class="text-xl font-bold"><span style="color: white;">Aspeed</span><span
+                <h1 class="text-lg sm:text-xl font-bold"><span style="color: white;">Aspeed</span><span
                         style="color: #2563EB;">Software</span></h1>
             </div>
             <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="index.html" class="hover:text-white">Home</a></li>
-                    <li><a href="roboarm.html" class="hover:text-white">RoboArm</a></li>
-                    <li><a href="ttml_to_audio.html" class="hover:text-white">TTML to Audio</a></li>
-                    <li><a href="blog.html" class="hover:text-white">Blog</a></li>
-                    <li><a href="about.html" class="hover:text-white">About</a></li>
+                <ul class="flex space-x-2 sm:space-x-4 text-sm sm:text-base">
+                    <li><a href="index.html" class="hover:text-white px-2 py-2">Home</a></li>
+                    <li class="hidden sm:block"><a href="roboarm.html" class="hover:text-white px-2 py-2">RoboArm</a></li>
+                    <li><a href="ttml_to_audio.html" class="hover:text-white px-2 py-2">TTML to Audio</a></li>
+                    <li><a href="blog.html" class="hover:text-white px-2 py-2">Blog</a></li>
+                    <li><a href="about.html" class="hover:text-white px-2 py-2">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -70,7 +98,8 @@
             <div class="bg-gray-900/80 backdrop-blur-sm p-8">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="flex-1">
-                        <h2 class="text-4xl font-bold text-white mb-4">Stop Reading. Keep watching. Start Listening.</h2>
+                        <h2 class="text-4xl font-bold text-white mb-4">Stop Reading. Keep watching. Start Listening.
+                        </h2>
                         <p class="text-xl text-gray-200 mb-4">Tired of jumping back and forth between video and
                             subtitles?
                             Transform your subtitle files into natural voiceovers and enjoy your content hands-free.</p>
