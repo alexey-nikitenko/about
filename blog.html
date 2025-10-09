@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog - AspeedSoftware</title>
+    <meta name="description" content="Read articles about robotics, software development, automation testing, and DIY projects by Aleksey Nikitenko.">
+    <meta name="keywords" content="software development, robotics, DIY, Arduino, Python, automation testing, .NET">
+    <meta name="author" content="Aleksey Nikitenko">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aspeedsoftware.com/blog.html">
+    <meta property="og:title" content="Blog - AspeedSoftware">
+    <meta property="og:description" content="Read articles about robotics, software development, automation testing, and DIY projects.">
+    <meta property="og:image" content="https://aspeedsoftware.com/images/face.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aspeedsoftware.com/blog.html">
+    <meta property="twitter:title" content="Blog - AspeedSoftware">
+    <meta property="twitter:description" content="Read articles about robotics, software development, automation testing, and DIY projects.">
+    <meta property="twitter:image" content="https://aspeedsoftware.com/images/face.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slide-in {
+            from { transform: translateY(18px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
+    <header class="bg-gray-800 text-gray-100 p-4">
+        <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-xl font-bold"><span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span></h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-white">Home</a></li>
+                    <li><a href="roboarm.html" class="hover:text-white">RoboArm</a></li>
+                    <li><a href="ttml_to_audio.html" class="hover:text-white">TTML to Audio</a></li>
+                    <li><a href="blog.html" class="text-blue-400 hover:text-white">Blog</a></li>
+                    <li><a href="about.html" class="hover:text-white">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="w-full max-w-6xl mx-auto px-4 py-8" style="animation: slide-in 720ms linear 0s 1 normal both;">
+        
+        <!-- Hero Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm p-8 mb-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+                <div class="flex items-center gap-3">
+                    <div class="rounded-lg bg-blue-600/20 p-2">
+                        <i data-lucide="book-open" class="w-6 h-6 text-blue-400"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white">Blog</h2>
+                </div>
+                <a href="rss.xml" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-4 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                    <i data-lucide="rss" class="w-4 h-4"></i>
+                    <span>RSS Feed</span>
+                </a>
+            </div>
+            <p class="text-lg text-gray-300 mb-4">Insights on software development, robotics, automation testing, and DIY projects.</p>
+            
+            <!-- Search Bar -->
+            <div class="relative">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search blog posts..." 
+                    class="w-full px-4 py-3 pl-11 rounded-lg bg-gray-800 border border-neutral-700 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-600 transition-colors"
+                >
+                <i data-lucide="search" class="w-5 h-5 text-gray-500 absolute left-3 top-1/2 -translate-y-1/2"></i>
+            </div>
+        </div>
+
+        <!-- Blog Posts Container -->
+        <div id="blog-posts" class="space-y-6">
+            <!-- Posts will be loaded here by JavaScript -->
+        </div>
+
+        <!-- No Posts Message -->
+        <div id="no-posts" class="hidden rounded-xl border border-neutral-800 bg-gray-900 p-8 text-center">
+            <i data-lucide="file-text" class="w-12 h-12 text-gray-600 mx-auto mb-4"></i>
+            <p class="text-gray-400">No blog posts yet. Check back soon!</p>
+        </div>
+
+        <!-- No Search Results -->
+        <div id="no-results" class="hidden rounded-xl border border-neutral-800 bg-gray-900 p-8 text-center">
+            <i data-lucide="search-x" class="w-12 h-12 text-gray-600 mx-auto mb-4"></i>
+            <p class="text-gray-400">No posts found matching your search.</p>
+            <button onclick="clearSearch()" class="mt-4 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm">
+                <span>Clear Search</span>
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 border-t border-neutral-800 mt-8">
+        <div class="w-full max-w-6xl mx-auto px-4 flex items-center justify-between pt-6 pb-8">
+            <p class="text-gray-400 text-sm">© <span id="currentYear"></span> <span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span>. All rights reserved.</p>
+            <div class="flex items-center gap-3">
+                <a href="about.html" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                    <span>About</span>
+                </a>
+                <a href="#top" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                    <span>Back to top</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        if (window.lucide) {
+            lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+        }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        let allPosts = [];
+
+        // Security: Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Load blog posts
+        async function loadBlogPosts() {
+            try {
+                const response = await fetch('blog-posts.json');
+                const posts = await response.json();
+                
+                // Sort by date (newest first)
+                allPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                displayPosts(allPosts);
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+                document.getElementById('no-posts').classList.remove('hidden');
+            }
+        }
+
+        function displayPosts(posts) {
+            const container = document.getElementById('blog-posts');
+            const noPosts = document.getElementById('no-posts');
+            const noResults = document.getElementById('no-results');
+            
+            // Clear container
+            container.innerHTML = '';
+            
+            // Hide all messages
+            noPosts.classList.add('hidden');
+            noResults.classList.add('hidden');
+            
+            if (posts.length === 0) {
+                const searchInput = document.getElementById('search-input');
+                if (searchInput && searchInput.value.trim()) {
+                    noResults.classList.remove('hidden');
+                } else {
+                    noPosts.classList.remove('hidden');
+                }
+                return;
+            }
+            
+            posts.forEach(post => {
+                const postElement = createPostCard(post);
+                container.appendChild(postElement);
+            });
+            
+            // Reinitialize lucide icons
+            if (window.lucide) {
+                lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+            }
+        }
+
+        function createPostCard(post) {
+            const article = document.createElement('article');
+            article.className = 'rounded-xl border border-neutral-800 bg-gray-900 shadow-sm hover:border-neutral-700 transition-colors overflow-hidden';
+            article.dataset.postId = post.id;
+            
+            const date = new Date(post.date);
+            const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            article.innerHTML = `
+                <a href="blog-post.html?id=${encodeURIComponent(post.id)}" class="block">
+                    ${post.image ? `
+                    <div class="aspect-video bg-gray-800">
+                        <img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}" class="h-full w-full object-cover">
+                    </div>
+                    ` : ''}
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3 text-sm text-gray-400">
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="calendar" class="w-4 h-4"></i>
+                                <span>${escapeHtml(formattedDate)}</span>
+                            </div>
+                            ${post.readTime ? `
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                                <span>${escapeHtml(post.readTime.toString())} min read</span>
+                            </div>
+                            ` : ''}
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">${escapeHtml(post.title)}</h3>
+                        <p class="text-gray-400 mb-4">${escapeHtml(post.excerpt)}</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${post.tags.map(tag => `
+                                <span class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">${escapeHtml(tag)}</span>
+                            `).join('')}
+                        </div>
+                        <div class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors">
+                            <span>Read more</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </a>
+            `;
+            
+            return article;
+        }
+
+        // Search functionality
+        function searchPosts(query) {
+            if (!query.trim()) {
+                displayPosts(allPosts);
+                return;
+            }
+            
+            const lowerQuery = query.toLowerCase();
+            const filtered = allPosts.filter(post => {
+                return post.title.toLowerCase().includes(lowerQuery) ||
+                       post.excerpt.toLowerCase().includes(lowerQuery) ||
+                       post.tags.some(tag => tag.toLowerCase().includes(lowerQuery)) ||
+                       post.content.toLowerCase().includes(lowerQuery);
+            });
+            
+            displayPosts(filtered);
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            displayPosts(allPosts);
+        }
+
+        // Setup search input listener
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-input');
+            let searchTimeout;
+            
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    searchPosts(e.target.value);
+                }, 300); // Debounce search
+            });
+        });
+
+        // Load posts on page load
+        loadBlogPosts();
+    </script>
+</body>
+</html>

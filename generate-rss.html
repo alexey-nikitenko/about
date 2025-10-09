@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generate RSS Feed - AspeedSoftware</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm p-8 mb-8">
+            <h1 class="text-3xl font-bold text-white mb-4">RSS Feed Generator</h1>
+            <p class="text-gray-300 mb-6">This page generates your RSS feed. Click the button below to generate and download.</p>
+            
+            <button onclick="generateRSS()" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-white hover:bg-blue-700 transition-colors font-semibold">
+                <span>Generate RSS Feed</span>
+            </button>
+            
+            <div id="status" class="mt-6 hidden">
+                <div class="rounded-lg border border-green-800 bg-green-900/20 p-4">
+                    <p class="text-green-400 font-semibold mb-2">✓ RSS Feed Generated!</p>
+                    <p class="text-gray-300 text-sm mb-4">Copy the content below and save it as <code class="bg-gray-800 px-2 py-1 rounded">rss.xml</code> in your website root.</p>
+                    <textarea id="rss-output" readonly class="w-full h-96 p-4 rounded-lg bg-gray-800 border border-neutral-700 text-gray-200 font-mono text-sm"></textarea>
+                    <button onclick="copyToClipboard()" class="mt-4 inline-flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-white hover:bg-gray-600 transition-colors text-sm">
+                        <span>Copy to Clipboard</span>
+                    </button>
+                    <button onclick="downloadRSS()" class="mt-4 ml-2 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm">
+                        <span>Download rss.xml</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let rssContent = '';
+
+        async function generateRSS() {
+            try {
+                const response = await fetch('blog-posts.json');
+                const posts = await response.json();
+                
+                // Sort by date (newest first)
+                posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                const now = new Date().toUTCString();
+                const baseUrl = 'https://aspeedsoftware.com';
+                
+                let rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AspeedSoftware Blog</title>
+    <link>${baseUrl}/blog.html</link>
+    <description>Insights on software development, robotics, automation testing, and DIY projects by Aleksey Nikitenko</description>
+    <language>en-us</language>
+    <lastBuildDate>${now}</lastBuildDate>
+    <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>${baseUrl}/images/face.jpg</url>
+      <title>AspeedSoftware Blog</title>
+      <link>${baseUrl}/blog.html</link>
+    </image>
+`;
+
+                posts.forEach(post => {
+                    const postDate = new Date(post.date).toUTCString();
+                    const postUrl = `${baseUrl}/blog-post.html?id=${post.id}`;
+                    const imageTag = post.image ? `<img src="${baseUrl}/${post.image}" alt="${escapeXml(post.title)}" style="max-width:100%;height:auto;"/><br/><br/>` : '';
+                    
+                    rss += `
+    <item>
+      <title>${escapeXml(post.title)}</title>
+      <link>${postUrl}</link>
+      <guid isPermaLink="true">${postUrl}</guid>
+      <pubDate>${postDate}</pubDate>
+      <description><![CDATA[${imageTag}${escapeXml(post.excerpt)}]]></description>
+      ${post.tags.map(tag => `<category>${escapeXml(tag)}</category>`).join('\n      ')}
+    </item>
+`;
+                });
+
+                rss += `  </channel>
+</rss>`;
+
+                rssContent = rss;
+                document.getElementById('rss-output').value = rss;
+                document.getElementById('status').classList.remove('hidden');
+                
+            } catch (error) {
+                alert('Error generating RSS feed: ' + error.message);
+            }
+        }
+
+        function escapeXml(unsafe) {
+            return unsafe.replace(/[<>&'"]/g, (c) => {
+                switch (c) {
+                    case '<': return '&lt;';
+                    case '>': return '&gt;';
+                    case '&': return '&amp;';
+                    case '\'': return '&apos;';
+                    case '"': return '&quot;';
+                }
+            });
+        }
+
+        function copyToClipboard() {
+            const textarea = document.getElementById('rss-output');
+            textarea.select();
+            document.execCommand('copy');
+            alert('RSS feed copied to clipboard!');
+        }
+
+        function downloadRSS() {
+            const blob = new Blob([rssContent], { type: 'application/xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'rss.xml';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AspeedSoftware Blog</title>
+    <link>https://aspeedsoftware.com/blog.html</link>
+    <description>Insights on software development, robotics, automation testing, and DIY projects by Aleksey Nikitenko</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Oct 2025 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://aspeedsoftware.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://aspeedsoftware.com/images/face.jpg</url>
+      <title>AspeedSoftware Blog</title>
+      <link>https://aspeedsoftware.com/blog.html</link>
+    </image>
+
+    <item>
+      <title>Welcome to My Blog</title>
+      <link>https://aspeedsoftware.com/blog-post.html?id=welcome-to-my-blog</link>
+      <guid isPermaLink="true">https://aspeedsoftware.com/blog-post.html?id=welcome-to-my-blog</guid>
+      <pubDate>Thu, 09 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<img src="https://aspeedsoftware.com/images/main_image.png" alt="Welcome to My Blog" style="max-width:100%;height:auto;"/><br/><br/>Starting a new journey sharing insights about software development, robotics, and DIY projects. Learn what to expect from this blog.]]></description>
+      <category>General</category>
+      <category>Introduction</category>
+    </item>
+  </channel>
+</rss>

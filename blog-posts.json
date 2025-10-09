@@ -1,0 +1,13 @@
+[
+  {
+    "id": "welcome-to-my-blog",
+    "title": "Welcome to My Blog",
+    "date": "2025-10-09",
+    "excerpt": "Starting a new journey sharing insights about software development, robotics, and DIY projects. Learn what to expect from this blog.",
+    "tags": ["General", "Introduction"],
+    "readTime": 3,
+    "image": "images/main_image.png",
+    "contentType": "markdown",
+    "content": "## Welcome!\n\nI'm excited to start this blog where I'll be sharing my experiences and insights in software development, robotics, and DIY projects.\n\n### What to Expect\n\nOn this blog, you'll find:\n\n- **Software Development Tips**: Best practices, code snippets, and lessons learned from 13+ years in the industry\n- **Robotics Projects**: Deep dives into projects like RoboArm, including build guides and troubleshooting\n- **Automation Testing**: Strategies and frameworks for effective test automation\n- **DIY Electronics**: Arduino projects, 3D printing tips, and maker culture\n\n### My Background\n\nWith over 13 years of experience in software engineering, specializing in .NET technologies and test automation, I've worked on diverse projects from insurance systems to museum management platforms. Now I'm combining my professional expertise with my passion for robotics and DIY electronics.\n\n### Stay Connected\n\nI'll be posting regularly about new projects, technical challenges, and solutions I discover along the way. Feel free to reach out with questions or suggestions for future topics!\n\nThank you for reading, and welcome to the journey!"
+  }
+]

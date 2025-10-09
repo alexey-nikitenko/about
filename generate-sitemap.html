@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generate Sitemap - AspeedSoftware</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm p-8 mb-8">
+            <h1 class="text-3xl font-bold text-white mb-4">Sitemap Generator</h1>
+            <p class="text-gray-300 mb-6">This page automatically generates your sitemap.xml including all blog posts. Click the button below to generate and download.</p>
+            
+            <button onclick="generateSitemap()" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-white hover:bg-blue-700 transition-colors font-semibold">
+                <span>Generate Sitemap</span>
+            </button>
+            
+            <div id="status" class="mt-6 hidden">
+                <div class="rounded-lg border border-green-800 bg-green-900/20 p-4">
+                    <p class="text-green-400 font-semibold mb-2">✓ Sitemap Generated!</p>
+                    <p class="text-gray-300 text-sm mb-4">Copy the content below and save it as <code class="bg-gray-800 px-2 py-1 rounded">sitemap.xml</code> in your website root.</p>
+                    <textarea id="sitemap-output" readonly class="w-full h-96 p-4 rounded-lg bg-gray-800 border border-neutral-700 text-gray-200 font-mono text-sm"></textarea>
+                    <button onclick="copyToClipboard()" class="mt-4 inline-flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-white hover:bg-gray-600 transition-colors text-sm">
+                        <span>Copy to Clipboard</span>
+                    </button>
+                    <button onclick="downloadSitemap()" class="mt-4 ml-2 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm">
+                        <span>Download sitemap.xml</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let sitemapContent = '';
+
+        async function generateSitemap() {
+            try {
+                const response = await fetch('blog-posts.json');
+                const posts = await response.json();
+                
+                const today = new Date().toISOString().split('T')[0];
+                const baseUrl = 'https://aspeedsoftware.com';
+                
+                let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${baseUrl}/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/index.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/roboarm.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/ttml_to_audio.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/blog.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/about.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+`;
+
+                // Add blog posts
+                posts.forEach(post => {
+                    sitemap += `  <url>
+    <loc>${baseUrl}/blog-post.html?id=${post.id}</loc>
+    <lastmod>${post.date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+`;
+                });
+
+                sitemap += `</urlset>`;
+
+                sitemapContent = sitemap;
+                document.getElementById('sitemap-output').value = sitemap;
+                document.getElementById('status').classList.remove('hidden');
+                
+            } catch (error) {
+                alert('Error generating sitemap: ' + error.message);
+            }
+        }
+
+        function copyToClipboard() {
+            const textarea = document.getElementById('sitemap-output');
+            textarea.select();
+            document.execCommand('copy');
+            alert('Sitemap copied to clipboard!');
+        }
+
+        function downloadSitemap() {
+            const blob = new Blob([sitemapContent], { type: 'application/xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'sitemap.xml';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
