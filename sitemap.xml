@@ -2,36 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aspeedsoftware.com/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aspeedsoftware.com/index.html</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aspeedsoftware.com/roboarm.html</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aspeedsoftware.com/ttml_to_audio.html</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aspeedsoftware.com/blog.html</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aspeedsoftware.com/about.html</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aspeedsoftware.com/blog-post.html?id=subtitle-to-audio-windows</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aspeedsoftware.com/blog-post.html?id=subtitle-to-audio-macos</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aspeedsoftware.com/blog-post.html?id=subtitle-to-audio-ubuntu</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aspeedsoftware.com/blog-post.html?id=subtitle-to-audio-cross-platform</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aspeedsoftware.com/blog-post.html?id=subtitle-to-audio-free-polish</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aspeedsoftware.com/blog-post.html?id=mastering-subtitle-to-audio-conversion</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aspeedsoftware.com/blog-post.html?id=welcome-to-my-blog</loc>
     <lastmod>2025-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
