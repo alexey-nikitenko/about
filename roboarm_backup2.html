@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VSS258BP6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6VSS258BP6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <meta name="theme-color" content="#1f2937">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo1.png">
+    <link rel="apple-touch-icon" href="images/logo1.png">
+    <link rel="shortcut icon" href="images/logo1.png">
+    
+    <title>RoboArm - Under Construction | AspeedSoftware</title>
+    <meta name="description" content="The RoboArm page is currently under construction. Please check back later for updates.">
+    <meta name="keywords" content="robotic arm, DIY robotics, Arduino, 3D printing, Python, MG90S servo, keyboard control, robotics kit, under construction">
+    <meta name="author" content="Aleksey Nikitenko">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aspeedsoftware.com/roboarm.html">
+    <meta property="og:title" content="RoboArm - Under Construction">
+    <meta property="og:description" content="The RoboArm page is currently under construction. Please check back later for updates.">
+    <meta property="og:image" content="https://aspeedsoftware.com/images/youtube_s1_s6.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aspeedsoftware.com/roboarm.html">
+    <meta property="twitter:title" content="RoboArm - Under Construction">
+    <meta property="twitter:description" content="The RoboArm page is currently under construction. Please check back later for updates.">
+    <meta property="twitter:image" content="https://aspeedsoftware.com/images/youtube_s1_s6.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes slide-in {
+        from { transform: translateY(18px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+        a, button {
+          min-height: 44px;
+        }
+        
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        
+        html {
+          -webkit-text-size-adjust: 100%;
+        }
+        
+        * {
+          -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+        }
+      }
+    </style>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
+    <header class="bg-gray-800 text-gray-100 p-4 sticky top-0 z-50 shadow-lg">
+        <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <img src="images/logo1.png" alt="AspeedSoftware Logo" class="h-[1em] w-auto" style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));">
+            <h1 class="text-base sm:text-lg md:text-xl font-bold" style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);"><span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span></h1>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+            <ul class="flex space-x-4 text-base">
+                <li><a href="index.html" class="hover:text-white px-3 py-2">Home</a></li>
+                <li><a href="roboarm.html" class="hover:text-white px-3 py-2">RoboArm</a></li>
+                <li><a href="ttml_to_audio.html" class="hover:text-white px-3 py-2">TTML to Audio</a></li>
+                <li><a href="blog.html" class="hover:text-white px-3 py-2">Blog</a></li>
+                <li><a href="about.html" class="hover:text-white px-3 py-2">About</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors" aria-label="Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="index.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Home</a></li>
+                <li><a href="roboarm.html" class="block bg-gray-700 px-4 py-3 rounded-lg">RoboArm</a></li>
+                <li><a href="ttml_to_audio.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">TTML to Audio</a></li>
+                <li><a href="blog.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Blog</a></li>
+                <li><a href="about.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="w-full max-w-6xl mx-auto px-4 py-8 flex flex-col items-center justify-center min-h-[calc(100vh-150px)] text-center">
+        <h2 class="text-4xl font-bold text-white mb-6">RoboArm Page Under Construction</h2>
+        <img src="images/youtube_s1_s6.jpg" alt="Under Construction" class="max-w-full h-auto rounded-lg shadow-lg mb-6">
+        <p class="text-lg text-gray-300">We're working hard to bring you exciting new content for the RoboArm. Please check back soon for updates!</p>
+    </main>
+
+    <footer class="bg-gray-900 border-t border-neutral-800 mt-8">
+        <div class="w-full max-w-6xl mx-auto px-4 flex items-center justify-between pt-6 pb-8">
+        <p class="text-gray-400 text-sm">© <span id="currentYear"></span> <span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span>. All rights reserved.</p>
+        <div class="flex items-center gap-3">
+            <a href="about.html" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                <span>About</span>
+            </a>
+            <a href="#top" class="inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm min-w-[44px]" aria-label="Back to top">
+                <i data-lucide="arrow-up" class="w-5 h-5"></i>
+                <span class="hidden sm:inline">Top</span>
+            </a>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        if (window.lucide) {
+            lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+        }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
