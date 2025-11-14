@@ -27,9 +27,6 @@ RoboArm/
 │       ├── conf/
 │       └── graph/
 └── 3dToPrint/                         ← 3D printable parts
-    ├── left_arm_base.stl
-    ├── left_arm_segment1.stl
-    ├── right_arm_base.stl
     └── ... (more STL files)
 ```
 
