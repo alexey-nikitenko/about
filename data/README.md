@@ -16,14 +16,12 @@ To build the full hardware setup, you will need:
 - 2x Rotary Encoders with push-buttons
 - 4x 4x13x5 mm (695z)mm bearing
 - Wires 
-- A 5V power supply for the servos
+- A 5V 1A/2A power supply for the servos
 - 3D printed parts for the robotic arms
 
 ## Setup Instructions
 
-The setup is a two-part process:
 1.  **Flashing the firmware** onto your Raspberry Pi Pico.
-2.  **Setting up the Python environment** on your host computer (Windows, macOS, or Linux) to run the control GUI.
 
 ---
 
@@ -49,3 +47,5 @@ The Raspberry Pi Pico runs a MicroPython script to directly control the servos a
 
 4.  **Reboot the Pico:** Once both files are saved on the Pico, press `Ctrl+D` in the Thonny shell, or unplug and reconnect the Pico (this time without holding `BOOTSEL`). The `main.py` script will run automatically on startup.
 
+### Part: How to assemble 
+https://www.youtube.com/watch?v=qxFJr5wAKV4&t
