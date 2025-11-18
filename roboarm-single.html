@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VSS258BP6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6VSS258BP6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <meta name="theme-color" content="#1f2937">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo1.png">
+    <link rel="apple-touch-icon" href="images/logo1.png">
+    <link rel="shortcut icon" href="images/logo1.png">
+    
+    <title>Single-Hand RoboArm - Open Source 3D Printed Robotic Arm | AspeedSoftware</title>
+    <meta name="description" content="Open source single-hand robotic arm project. Free 3D printable STL files, Arduino Nano firmware, and Windows application. Build your own DIY robotic arm.">
+    <meta name="keywords" content="robotic arm, open source, DIY robotics, Arduino Nano, 3D printing, Windows app, single hand robot, robotics kit, free STL files">
+    <meta name="author" content="Aleksey Nikitenko">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aspeedsoftware.com/roboarm-single.html">
+    <meta property="og:title" content="Single-Hand RoboArm - Open Source Project">
+    <meta property="og:description" content="Free and open source single-hand robotic arm. Download 3D files, firmware, and Windows application.">
+    <meta property="og:image" content="https://aspeedsoftware.com/images/roboarm_single_assembled.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aspeedsoftware.com/roboarm-single.html">
+    <meta property="twitter:title" content="Single-Hand RoboArm - Open Source Project">
+    <meta property="twitter:description" content="Free and open source single-hand robotic arm. Download 3D files, firmware, and Windows application.">
+    <meta property="twitter:image" content="https://aspeedsoftware.com/images/roboarm_single_assembled.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes slide-in {
+        from { transform: translateY(18px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+        a, button {
+          min-height: 44px;
+        }
+        
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        
+        html {
+          -webkit-text-size-adjust: 100%;
+        }
+        
+        * {
+          -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+        }
+      }
+    </style>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
+    <header class="bg-gray-800 text-gray-100 p-4 sticky top-0 z-50 shadow-lg">
+        <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <img src="images/logo1.png" alt="AspeedSoftware Logo" class="h-[1em] w-auto" style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));">
+            <h1 class="text-base sm:text-lg md:text-xl font-bold" style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);"><span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span></h1>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+            <ul class="flex space-x-4 text-base">
+                <li><a href="index.html" class="hover:text-white px-3 py-2">Home</a></li>
+                <li><a href="roboarm.html" class="hover:text-white px-3 py-2">RoboArm</a></li>
+                <li><a href="roboarm-single.html" class="hover:text-white px-3 py-2">Single-Hand RoboArm</a></li>
+                <li><a href="ttml_to_audio.html" class="hover:text-white px-3 py-2">TTML to Audio</a></li>
+                <li><a href="blog.html" class="hover:text-white px-3 py-2">Blog</a></li>
+                <li><a href="about.html" class="hover:text-white px-3 py-2">About</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors" aria-label="Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="index.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Home</a></li>
+                <li><a href="roboarm.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">RoboArm</a></li>
+                <li><a href="roboarm-single.html" class="block bg-gray-700 px-4 py-3 rounded-lg">Single-Hand RoboArm</a></li>
+                <li><a href="ttml_to_audio.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">TTML to Audio</a></li>
+                <li><a href="blog.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Blog</a></li>
+                <li><a href="about.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="w-full max-w-6xl mx-auto px-4 py-8" style="animation: slide-in 720ms linear 0s 1 normal both;">
+        
+        <!-- Hero Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm p-8 mb-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <img src="./images/rotary_encoder.gif" alt="Single-Hand RoboArm" class="w-full md:w-1/2 rounded-lg">
+                <div class="flex-1">
+                    <div class="inline-block px-3 py-1 bg-green-600/20 text-green-400 rounded-full text-sm font-semibold mb-4">
+                        Open Source & Free
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4">Single-Hand RoboArm</h2>
+                    <p class="text-gray-300 text-lg mb-6">A cutting-edge computer gadget designed to interact with your keyboard. By automating keystrokes, it offers an alternative way to engage with a computer through scripted interactions and voice-activated commands.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://makerworld.com" target="_blank" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-white hover:bg-blue-700 transition-colors font-semibold">
+                            <i data-lucide="box" class="w-5 h-5"></i>
+                            <span>3D Files on MakerWorld</span>
+                        </a>
+                        <a href="https://github.com/alexey-nikitenko/SingleHandRoboArm" target="_blank" class="inline-flex items-center gap-2 rounded-lg bg-gray-700 px-6 py-3 text-white hover:bg-gray-600 transition-colors font-semibold">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                            <span>GitHub Repository</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- What is the Robo Arm Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-6">What is the Robo Arm?</h2>
+            <p class="text-gray-300 text-lg mb-6">The Robo Arm is a cutting-edge computer gadget designed to interact with your keyboard. By automating keystrokes, it offers an alternative way to engage with a computer.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="code" class="w-8 h-8 text-blue-400"></i>
+                        <h3 class="text-xl font-semibold text-white">Scripted Interactions</h3>
+                    </div>
+                    <p class="text-gray-300 mb-3">Have a set of commands you often repeat? Program the Robo Arm with a predefined script and watch it execute precise keystrokes at specific timings.</p>
+                    <p class="text-gray-400 text-sm">Automate tasks, run sequences, or simply have fun watching it play out your favorite keyboard shortcuts.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="mic" class="w-8 h-8 text-purple-400"></i>
+                        <h3 class="text-xl font-semibold text-white">Voice-Activated Commands</h3>
+                    </div>
+                    <p class="text-gray-300 mb-3">In a rush or just prefer a hands-free approach? Just say the word! With our voice recognition, you can command the Robo Arm to tap specific keys with pinpoint accuracy.</p>
+                    <p class="text-gray-400 text-sm">Whether you're instructing a series of commands or calling for a single keystroke, the Robo Arm listens and acts.</p>
+                </div>
+            </div>
+
+            <div class="rounded-lg border border-blue-600/30 bg-blue-900/10 p-6 mb-6">
+                <div class="flex items-start gap-4">
+                    <i data-lucide="target" class="w-6 h-6 text-blue-400 flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Enhanced Positioning with Rotary Encoder</h3>
+                        <p class="text-gray-300">We've integrated a rotary encoder into the Robo Arm. This ensures precise and high-quality positioning right under each key, giving you a more accurate and reliable interaction every time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="dollar-sign" class="w-6 h-6 text-green-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Affordable by Design</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">Built using cost-effective components like Arduino, servo motors, rotary encoders, and 3D printed parts. Ideal for individuals and educational institutions like schools and lyceums.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="settings" class="w-6 h-6 text-orange-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Customizable to Your Needs</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">We provide 3D models of the Robo Arm components. Customize, modify, or expand the design to better suit your individual requirements for a truly personalized experience.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="heart" class="w-6 h-6 text-red-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Open Source Commitment</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">Everything is open source. Enthusiasts, educators, and innovators worldwide can modify, improve, and share their versions, ensuring it remains affordable and accessible for everyone.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Bigger Picture Section -->
+        <div class="rounded-xl border border-purple-600/30 bg-purple-900/10 p-8 mb-8">
+            <div class="flex items-start gap-4">
+                <i data-lucide="lightbulb" class="w-8 h-8 text-purple-400 flex-shrink-0 mt-1"></i>
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-4">The Bigger Picture</h2>
+                    <p class="text-gray-300 text-lg mb-4">While the Robo Arm was conceived from a personal observation, its potential extends far beyond. Whether you're looking for a different way to interact with your computer or seeking solutions for specific challenges, the Robo Arm is here to assist.</p>
+                    <p class="text-gray-400">By supporting this open source project, you're endorsing a vision of inclusive computing.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Open Source Notice -->
+        <div class="rounded-xl border border-green-600/30 bg-green-900/10 p-6 mb-8">
+            <div class="flex items-start gap-4">
+                <i data-lucide="heart" class="w-6 h-6 text-green-400 flex-shrink-0 mt-1"></i>
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Free & Open Source</h3>
+                    <p class="text-gray-300 mb-3">This project is completely free to use, modify, and share. All files including 3D models, firmware, and software are available under an open source license.</p>
+                    <p class="text-gray-400 text-sm">Download everything you need from MakerWorld (STL files) and GitHub (software & firmware).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- What You Get Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4 px-2">What's Included</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="box" class="w-8 h-8 text-blue-400"></i>
+                        <h3 class="text-lg font-semibold text-white">3D Printable Files</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Complete set of STL files for all mechanical parts. Optimized for FDM 3D printing.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Arm links and joints</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Servo housings</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Electronics platform</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Key press mechanism</span>
+                        </li>
+                    </ul>
+                    <a href="https://makerworld.com" target="_blank" class="mt-4 inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <span>Download on MakerWorld</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="github" class="w-8 h-8 text-gray-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Software & Firmware</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Complete software package including Windows application and Arduino firmware.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Windows control application</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Arduino Nano firmware</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Complete documentation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Assembly instructions</span>
+                        </li>
+                    </ul>
+                    <a href="https://github.com/alexey-nikitenko/SingleHandRoboArm" target="_blank" class="mt-4 inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <span>View on GitHub</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Applications Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4 px-2">Applications of Robo Arm</h2>
+            <p class="text-gray-300 mb-6 px-2">The Robo Arm boasts a wide range of applications due to its versatile features. Here's how you can harness its potential:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="gamepad-2" class="w-6 h-6 text-blue-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Gaming Automation</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Automate repetitive in-game tasks, such as resource farming or grinding.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="accessibility" class="w-6 h-6 text-green-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Accessibility</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Assist individuals with physical disabilities in interacting with their computer using voice commands.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="bug" class="w-6 h-6 text-red-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Automated Testing</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Use the Robo Arm for software and game testing where physical interaction is required.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="graduation-cap" class="w-6 h-6 text-purple-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Educational Demos</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Teach programming or scripting by visually showing the result of code on the physical keyboard.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="palette" class="w-6 h-6 text-pink-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Artistic Performances</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Integrate the Robo Arm into multimedia art installations.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="shield" class="w-6 h-6 text-yellow-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Security</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Use the Robo Arm to create the illusion of activity on a computer.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="briefcase" class="w-6 h-6 text-orange-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Work Productivity</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Automate repetitive work tasks that require keyboard interaction.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="book-open" class="w-6 h-6 text-cyan-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Learning & Tutorials</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Use the Robo Arm in tutorials to physically show keyboard actions.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="bell" class="w-6 h-6 text-indigo-400"></i>
+                        <h3 class="text-lg font-semibold text-white">Custom Alarms & Notifications</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Create physical movement as a unique alarm or notification.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 px-2">
+                <p class="text-gray-400 text-center italic">The possibilities with the Robo Arm are vast, limited only by the user's imagination!</p>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4 px-2">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <img src="./images/roboarm_single_3dmodel.png" alt="3D Model" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">3D Printable Design</h3>
+                    <p class="text-sm text-gray-400">All parts designed for easy 3D printing with minimal supports. Print at home or use a printing service.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <img src="./images/roboarm_single_wiring.jpg" alt="Arduino Control" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">Arduino Nano Control</h3>
+                    <p class="text-sm text-gray-400">Powered by Arduino Nano for reliable servo control. Easy to program and customize for your needs.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <img src="./images/roboarm_single_action.jpg" alt="Windows App" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">Windows Application</h3>
+                    <p class="text-sm text-gray-400">User-friendly Windows app for controlling the arm, programming movements, and creating automation sequences.</p>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
+                    <img src="./images/voice_control.gif" alt="Voice Control" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">Voice Control Feature</h3>
+                    <p class="text-sm text-gray-400">In a rush or just prefer a hands-free approach? Just say the word! With our voice recognition, you can command the Robo Arm to tap specific keys with pinpoint accuracy, all by just using your voice. Whether you're instructing a series of commands or calling for a single keystroke, the Robo Arm listens and acts.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Components Needed Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-6">Components You'll Need</h2>
+            <p class="text-gray-300 mb-6">You will need to purchase the following items:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-200 mb-3">Electronics:</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• 1x Arduino Nano</li>
+                        <li>• 1x PCA9685 16-channel servo motor board</li>
+                        <li>• 4x SG90 or MG90S servo motors (180°)</li>
+                        <li>• 1x USB 2.0 power adapter 5V 1-2A (to power supply PCA9685 board)</li>
+                        <li>• Necessary wires (check wiring folder in documentation)</li>
+                        <li>• Additional wires for two of the motors</li>
+                        <li>• USB cable to connect Arduino Nano to Windows PC</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-200 mb-3">Mechanical:</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• 1x Bearing 35x47x7mm (d=35mm, D=47mm, B=7mm)</li>
+                        <li>• 3D printed parts (STL files provided in file storage)</li>
+                    </ul>
+                    <div class="mt-4 p-4 rounded-lg border border-blue-600/30 bg-blue-900/10">
+                        <p class="text-sm text-gray-300 mb-2"><span class="font-semibold text-white">Setup Requirements:</span></p>
+                        <p class="text-sm text-gray-400">Connect Arduino Nano to Windows 10 or 11 PC with installed Arduino drivers. Once connected, you should see it in the Device Manager.</p>
+                    </div>
+                    <p class="text-sm text-gray-400 mt-4">
+                        <span class="font-semibold text-gray-300">Estimated cost:</span> $30-50 USD<br>
+                        <span class="text-xs">Components available on Amazon, AliExpress, or local electronics stores</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4">Documentation & Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <a href="data/RoboArm_Single_How_to_start.pdf" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                    <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-200">Getting Started</p>
+                        <p class="text-xs text-gray-400">Complete guide</p>
+                    </div>
+                </a>
+                <a href="data/RoboArm_Single_Setup.pdf" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                    <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-200">Initial Setup</p>
+                        <p class="text-xs text-gray-400">Hardware & software</p>
+                    </div>
+                </a>
+                <a href="data/RoboArm_Single_Arduino_update.pdf" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                    <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-200">Arduino Upload</p>
+                        <p class="text-xs text-gray-400">Firmware guide</p>
+                    </div>
+                </a>
+                <a href="data/RoboArm_Single_Workflow.pdf" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                    <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-200">App Workflow</p>
+                        <p class="text-xs text-gray-400">Usage guide</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Download Links Section -->
+        <div class="rounded-xl border border-blue-600/30 bg-blue-900/10 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-6 text-center">Download Everything You Need</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6 text-center">
+                    <i data-lucide="box" class="w-16 h-16 text-blue-400 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">3D Printable Files</h3>
+                    <p class="text-gray-400 mb-4">Download all STL files and assembly instructions</p>
+                    <a href="https://makerworld.com" target="_blank" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-white hover:bg-blue-700 transition-colors font-semibold">
+                        <span>MakerWorld</span>
+                        <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6 text-center">
+                    <i data-lucide="github" class="w-16 h-16 text-gray-400 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Software & Firmware</h3>
+                    <p class="text-gray-400 mb-4">Windows app, Arduino firmware, and documentation</p>
+                    <a href="https://github.com/alexey-nikitenko/SingleHandRoboArm" target="_blank" class="inline-flex items-center gap-2 rounded-lg bg-gray-700 px-6 py-3 text-white hover:bg-gray-600 transition-colors font-semibold">
+                        <span>GitHub</span>
+                        <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8">
+            <h2 class="text-2xl font-bold text-white mb-4">Join the Community</h2>
+            <p class="text-gray-300 mb-6">This is an open source project. Feel free to contribute, share your builds, suggest improvements, or ask questions.</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://github.com/alexey-nikitenko/SingleHandRoboArm" target="_blank" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-4 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                    <span>Contribute on GitHub</span>
+                </a>
+                <a href="https://makerworld.com" target="_blank" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-4 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                    <span>Share Your Build</span>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 border-t border-neutral-800 mt-8">
+        <div class="w-full max-w-6xl mx-auto px-4 flex items-center justify-between pt-6 pb-8">
+        <p class="text-gray-400 text-sm">© <span id="currentYear"></span> <span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span>. All rights reserved.</p>
+        <div class="flex items-center gap-3">
+            <a href="about.html" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                <span>About</span>
+            </a>
+            <a href="#top" class="inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm min-w-[44px]" aria-label="Back to top">
+                <i data-lucide="arrow-up" class="w-5 h-5"></i>
+                <span class="hidden sm:inline">Top</span>
+            </a>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        if (window.lucide) {
+            lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+        }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
