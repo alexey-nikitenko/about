@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VSS258BP6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6VSS258BP6');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <meta name="theme-color" content="#1f2937">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo1.png">
+    <link rel="apple-touch-icon" href="images/logo1.png">
+    <link rel="shortcut icon" href="images/logo1.png">
+
+    <title>RoboRover - Open Source AI Rover | AspeedSoftware</title>
+    <meta name="description"
+        content="RoboRover: A fully autonomous, AI-powered exploration rover built on ESP32 and Python. Features Lidar scanning, LLM-based decision making, and real-time control.">
+    <meta name="keywords"
+        content="RoboRover, AI Rover, ESP32, Python, Lidar, LLM, Robotics, DIY, Open Source, Autonomous">
+    <meta name="author" content="Aleksey Nikitenko">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aspeedsoftware.com/roborover.html">
+    <meta property="og:title" content="RoboRover - Open Source AI Rover">
+    <meta property="og:description"
+        content="Meet RoboRover. A fully autonomous, AI-powered exploration rover built on the ESP32.">
+    <meta property="og:image" content="images/robodog_hero.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aspeedsoftware.com/roborover.html">
+    <meta property="twitter:title" content="RoboRover - Open Source AI Rover">
+    <meta property="twitter:description"
+        content="Meet RoboRover. A fully autonomous, AI-powered exploration rover built on the ESP32.">
+    <meta property="twitter:image" content="images/robodog_hero.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-in {
+            animation: slide-in 0.8s ease-out forwards;
+        }
+
+        .glass-panel {
+            background: rgba(31, 41, 55, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+
+            nav a,
+            button {
+                min-height: 44px;
+                min-width: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    </style>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body class="min-h-screen bg-gray-950 text-gray-100 antialiased selection:bg-blue-500/30 selection:text-white">
+    <header class="bg-gray-900/90 backdrop-blur-md text-gray-100 p-4 sticky top-0 z-50 border-b border-gray-800">
+        <div class="w-full max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <img src="images/logo1.png" alt="AspeedSoftware Logo" class="h-8 w-auto">
+                <h1 class="text-xl font-bold"><span class="text-white">Aspeed</span><span
+                        class="text-blue-500">Software</span></h1>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-1 text-sm font-medium">
+                    <li><a href="index.html"
+                            class="hover:text-blue-400 hover:bg-gray-800/50 px-3 py-2 rounded-lg transition-colors">Home</a>
+                    </li>
+                    <li><a href="roborover.html"
+                            class="text-blue-400 bg-blue-500/10 px-3 py-2 rounded-lg transition-colors">RoboRover</a>
+                    </li>
+                    <li><a href="roboarm.html"
+                            class="hover:text-blue-400 hover:bg-gray-800/50 px-3 py-2 rounded-lg transition-colors">RoboArm</a>
+                    </li>
+                    <li><a href="roboarm-single.html"
+                            class="hover:text-blue-400 hover:bg-gray-800/50 px-3 py-2 rounded-lg transition-colors">Single-Hand
+                            RoboArm</a></li>
+                    <li><a href="ttml_to_audio.html"
+                            class="hover:text-blue-400 hover:bg-gray-800/50 px-3 py-2 rounded-lg transition-colors">TTML
+                            to Audio</a></li>
+                    <li><a href="blog.html"
+                            class="hover:text-blue-400 hover:bg-gray-800/50 px-3 py-2 rounded-lg transition-colors">Blog</a>
+                    </li>
+                    <li><a href="about.html"
+                            class="hover:text-blue-400 hover:bg-gray-800/50 px-3 py-2 rounded-lg transition-colors">About</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <button id="mobile-menu-btn"
+                class="md:hidden p-2 hover:bg-gray-800 rounded-lg transition-colors text-gray-300" aria-label="Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-2 border-t border-gray-800 pt-4">
+            <ul class="flex flex-col space-y-1">
+                <li><a href="index.html" class="block hover:bg-gray-800 px-4 py-3 rounded-lg transition-colors">Home</a>
+                </li>
+                <li><a href="roborover.html"
+                        class="block bg-blue-500/10 text-blue-400 px-4 py-3 rounded-lg transition-colors">RoboRover</a>
+                </li>
+                <li><a href="roboarm.html"
+                        class="block hover:bg-gray-800 px-4 py-3 rounded-lg transition-colors">RoboArm</a></li>
+                <li><a href="roboarm-single.html"
+                        class="block hover:bg-gray-800 px-4 py-3 rounded-lg transition-colors">Single-Hand RoboArm</a>
+                </li>
+                <li><a href="ttml_to_audio.html"
+                        class="block hover:bg-gray-800 px-4 py-3 rounded-lg transition-colors">TTML to Audio</a></li>
+                <li><a href="blog.html" class="block hover:bg-gray-800 px-4 py-3 rounded-lg transition-colors">Blog</a>
+                </li>
+                <li><a href="about.html"
+                        class="block hover:bg-gray-800 px-4 py-3 rounded-lg transition-colors">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="w-full overflow-hidden">
+
+        <!-- Hero Section -->
+        <section class="relative min-h-[80vh] flex items-center justify-center py-20 px-4">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/robodog_real.jpg" alt="RoboRover Hero" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/80 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-gray-950 via-transparent to-gray-950"></div>
+            </div>
+
+            <div class="relative z-10 max-w-5xl mx-auto text-center animate-slide-in">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    Open Source Project
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+                    Meet <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">RoboRover</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+                    A fully autonomous, AI-powered exploration rover built on the ESP32. It sees with lasers, thinks
+                    with Python, and decides with a Large Language Model.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://github.com/alexey-nikitenko" target="_blank"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-500/25">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        Get the Code
+                    </a>
+                    <a href="#features"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gray-800/50 hover:bg-gray-800 text-white font-semibold border border-gray-700 backdrop-blur-sm transition-all hover:scale-105">
+                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="features" class="py-24 px-4 bg-gray-900/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-800 group">
+                            <div
+                                class="absolute inset-0 bg-blue-500/10 group-hover:bg-transparent transition-colors duration-500">
+                            </div>
+                            <img src="images/robodog_tech_stack.png" alt="RoboRover Tech Stack"
+                                class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Under the Hood</h2>
+                        <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                            The heart is an <strong>ESP32 microcontroller</strong> handling the motors and sensors. It
+                            controls 4 continuous rotation servos and 1 standard servo via the <strong>PCA9685</strong>
+                            driver. But the <strong>brain</strong> lives on your computer. They talk over WiFi using
+                            WebSockets.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+                                <i data-lucide="cpu" class="w-8 h-8 text-blue-400 mb-3"></i>
+                                <h3 class="text-lg font-semibold text-white mb-1">ESP32 Core</h3>
+                                <p class="text-sm text-gray-400">Real-time hardware control</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+                                <i data-lucide="scan-line" class="w-8 h-8 text-cyan-400 mb-3"></i>
+                                <h3 class="text-lg font-semibold text-white mb-1">Lidar Vision</h3>
+                                <p class="text-sm text-gray-400">VL53L0X laser scanning</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+                                <i data-lucide="brain-circuit" class="w-8 h-8 text-purple-400 mb-3"></i>
+                                <h3 class="text-lg font-semibold text-white mb-1">Python Brain</h3>
+                                <p class="text-sm text-gray-400">Local AI processing</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+                                <i data-lucide="wifi" class="w-8 h-8 text-green-400 mb-3"></i>
+                                <h3 class="text-lg font-semibold text-white mb-1">WebSockets</h3>
+                                <p class="text-sm text-gray-400">Low-latency bridge</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Control Modes Section -->
+        <section class="py-24 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Dual Control Modes</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Switch instantly between manual pilot and autonomous AI
+                        exploration.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Manual Mode -->
+                    <div class="glass-panel rounded-2xl p-8 hover:border-blue-500/30 transition-colors">
+                        <div class="mb-6 rounded-xl overflow-hidden border border-gray-700">
+                            <img src="images/robodog_manual_control.png" alt="Manual Control UI"
+                                class="w-full h-64 object-cover">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-3">
+                            <i data-lucide="gamepad-2" class="w-6 h-6 text-blue-400"></i>
+                            Manual Control
+                        </h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            A joy to drive. We built a custom Web UI hosted directly on the ESP32. The joystick control
+                            is <strong>instant—less than 50ms latency</strong>. This mode works instantly because the
+                            ESP32 handles the joystick commands directly, bypassing the Python brain round-trip.
+                        </p>
+                    </div>
+
+                    <!-- AI Mode -->
+                    <div class="glass-panel rounded-2xl p-8 hover:border-purple-500/30 transition-colors">
+                        <div class="mb-6 rounded-xl overflow-hidden border border-gray-700">
+                            <img src="images/robodog_ai_brain.png" alt="AI Brain Visualization"
+                                class="w-full h-64 object-cover">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-3">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-purple-400"></i>
+                            AI Autonomous Mode
+                        </h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Flip the switch... and the AI takes over. It scans the room with Lidar, sends data to
+                            Python, and asks a local LLM (like Llama 3 or <strong>Qwen</strong>) what to do. It analyzes
+                            room geometry and makes logical decisions to explore gaps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Build Guide Section -->
+        <section class="py-24 px-4 bg-gray-900/30 border-y border-gray-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Built to Last</h2>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700">
+                                    <span class="text-xl font-bold text-blue-400">1</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white mb-2">Modular 3D Printed Chassis</h3>
+                                    <p class="text-gray-400">Fully 3D printed with a custom base plate featuring an M3
+                                        screw grid. Super easy to mount the ESP32, battery holder, and future sensors.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700">
+                                    <span class="text-xl font-bold text-blue-400">2</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white mb-2">Stabilized Power Supply</h3>
+                                    <p class="text-gray-400">Servo current spikes can crash the ESP32. We stabilized the
+                                        <strong>PCA9685</strong> by adding <strong>two 470µF/10V capacitors</strong>
+                                        across the power rails to smooth out voltage dips.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700">
+                                    <span class="text-xl font-bold text-blue-400">3</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white mb-2">Plug-and-Play Software</h3>
+                                    <p class="text-gray-400">Just clone the repo, install dependencies, and run <code
+                                            class="bg-gray-800 px-2 py-1 rounded text-blue-300 text-sm">python start_robodog.py</code>.
+                                        It automatically checks your system and connects.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl opacity-20 blur-lg">
+                        </div>
+                        <img src="images/robodog_power_setup.png" alt="Power Setup Detail"
+                            class="relative rounded-2xl shadow-2xl border border-gray-700 w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Section -->
+        <section class="py-24 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Documentation</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="data/RoboRover/QUICKSTART.md"
+                        class="group p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="p-3 rounded-lg bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                                <i data-lucide="rocket" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">Quick Start</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Get up and running in 5 minutes. One-time setup and daily
+                            operation guide.</p>
+                    </a>
+
+                    <a href="data/RoboRover/PRODUCTION_RELEASE.md"
+                        class="group p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-green-500/50 transition-all hover:shadow-lg hover:shadow-green-500/10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="p-3 rounded-lg bg-green-500/10 text-green-400 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                                <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">Production Release</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Complete production guide, system architecture, and
+                            troubleshooting.</p>
+                    </a>
+
+                    <a href="data/RoboRover/SETUP_GUIDE.md"
+                        class="group p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="p-3 rounded-lg bg-purple-500/10 text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                                <i data-lucide="wrench" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">Setup Guide</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Detailed hardware assembly, wiring diagrams, and configuration.
+                        </p>
+                    </a>
+
+                    <a href="data/RoboRover/README.md"
+                        class="group p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-orange-500/50 transition-all hover:shadow-lg hover:shadow-orange-500/10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="p-3 rounded-lg bg-orange-500/10 text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                                <i data-lucide="book-open" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">Full Documentation</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Comprehensive project documentation, API details, and
+                            development guide.</p>
+                    </a>
+
+                    <a href="data/RoboRover/DOCS_INDEX.md"
+                        class="group p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="p-3 rounded-lg bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+                                <i data-lucide="list" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">Docs Index</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Directory of all available documentation and resources.</p>
+                    </a>
+
+                    <a href="data/RoboRover/FINAL_SUMMARY.md"
+                        class="group p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="p-3 rounded-lg bg-pink-500/10 text-pink-400 group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                                <i data-lucide="flag" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">Final Summary</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Summary of the latest session, features implemented, and
+                            status.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-8">Ready to Build Your Own?</h2>
+                <p class="text-xl text-gray-400 mb-10">
+                    The entire project is open source. Wiring guides, 3D print files, and all the code are available for
+                    free.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://github.com/alexey-nikitenko" target="_blank"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-gray-900 hover:bg-gray-100 font-bold transition-all hover:scale-105">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        Star the Repo
+                    </a>
+                    <a href="https://www.youtube.com/@alekseynikitenko8466" target="_blank"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold transition-all hover:scale-105 shadow-lg shadow-red-500/25">
+                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                        Watch the Video
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-950 border-t border-gray-800 py-12">
+        <div class="w-full max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <p class="text-gray-500 text-sm">© <span id="currentYear"></span> <span
+                    class="text-white">Aspeed</span><span class="text-blue-500">Software</span>. All rights
+                reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="text-gray-400 hover:text-white transition-colors text-sm">Home</a>
+                <a href="about.html" class="text-gray-400 hover:text-white transition-colors text-sm">About</a>
+                <a href="#top"
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 hover:text-white hover:border-gray-700 transition-colors"
+                    aria-label="Back to top">
+                    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        if (window.lucide) {
+            lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+        }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

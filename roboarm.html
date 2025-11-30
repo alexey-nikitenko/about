@@ -1,10 +1,11 @@
 <html lang="en">
+
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VSS258BP6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-6VSS258BP6');
     </script>
@@ -15,114 +16,144 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
-    
+
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/logo1.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo1.png">
     <link rel="apple-touch-icon" href="images/logo1.png">
     <link rel="shortcut icon" href="images/logo1.png">
-    
+
     <title>RoboArm - 3D Printed Robotic Arm DIY Kit | AspeedSoftware</title>
-    <meta name="description" content="Build your own 3D printed robotic arm with keyboard control. Complete DIY kit includes Python app, Raspberry Pi Pico firmware, STL files, and documentation. Only 29 EUR.">
-    <meta name="keywords" content="robotic arm, DIY robotics, Raspberry Pi Pico, 3D printing, Python, MG90S servo, keyboard control, robotics kit">
+    <meta name="description"
+        content="Build your own 3D printed robotic arm with keyboard control. Complete DIY kit includes Python app, Raspberry Pi Pico firmware, STL files, and documentation. Only 29 EUR.">
+    <meta name="keywords"
+        content="robotic arm, DIY robotics, Raspberry Pi Pico, 3D printing, Python, MG90S servo, keyboard control, robotics kit">
     <meta name="author" content="Aleksey Nikitenko">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="product">
     <meta property="og:url" content="https://aspeedsoftware.com/roboarm.html">
     <meta property="og:title" content="RoboArm - 3D Printed Robotic Arm DIY Kit">
-    <meta property="og:description" content="Build your own 3D printed robotic arm with keyboard control. Complete DIY kit for only 29 EUR.">
+    <meta property="og:description"
+        content="Build your own 3D printed robotic arm with keyboard control. Complete DIY kit for only 29 EUR.">
     <meta property="og:image" content="https://aspeedsoftware.com/images/youtube_s1_s6.jpg">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://aspeedsoftware.com/roboarm.html">
     <meta property="twitter:title" content="RoboArm - 3D Printed Robotic Arm DIY Kit">
-    <meta property="twitter:description" content="Build your own 3D printed robotic arm with keyboard control. Complete DIY kit for only 29 EUR.">
+    <meta property="twitter:description"
+        content="Build your own 3D printed robotic arm with keyboard control. Complete DIY kit for only 29 EUR.">
     <meta property="twitter:image" content="https://aspeedsoftware.com/images/youtube_s1_s6.jpg">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @keyframes slide-in {
-        from { transform: translateY(18px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-      }
-      
-      /* Mobile optimizations */
-      @media (max-width: 768px) {
-        a, button {
-          min-height: 44px;
+        @keyframes slide-in {
+            from {
+                transform: translateY(18px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        
-        body {
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+
+            a,
+            button {
+                min-height: 44px;
+            }
+
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            html {
+                -webkit-text-size-adjust: 100%;
+            }
+
+            * {
+                -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+            }
         }
-        
-        html {
-          -webkit-text-size-adjust: 100%;
-        }
-        
-        * {
-          -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
-        }
-      }
     </style>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
+
 <body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
     <header class="bg-gray-800 text-gray-100 p-4 sticky top-0 z-50 shadow-lg">
         <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
-        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <img src="images/logo1.png" alt="AspeedSoftware Logo" class="h-[1em] w-auto" style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));">
-            <h1 class="text-base sm:text-lg md:text-xl font-bold" style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);"><span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span></h1>
-        </a>
-        
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:block">
-            <ul class="flex space-x-4 text-base">
-                <li><a href="index.html" class="hover:text-white px-3 py-2">Home</a></li>
-                <li><a href="roboarm.html" class="hover:text-white px-3 py-2">RoboArm</a></li>
-                <li><a href="roboarm-single.html" class="hover:text-white px-3 py-2">Single-Hand RoboArm</a></li>
-                <li><a href="ttml_to_audio.html" class="hover:text-white px-3 py-2">TTML to Audio</a></li>
-                <li><a href="blog.html" class="hover:text-white px-3 py-2">Blog</a></li>
-                <li><a href="about.html" class="hover:text-white px-3 py-2">About</a></li>
-            </ul>
-        </nav>
-        
-        <!-- Mobile Navigation -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors" aria-label="Menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <img src="images/logo1.png" alt="AspeedSoftware Logo" class="h-[1em] w-auto"
+                    style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));">
+                <h1 class="text-base sm:text-lg md:text-xl font-bold"
+                    style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);"><span style="color: white;">Aspeed</span><span
+                        style="color: #2563EB;">Software</span></h1>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-4 text-base">
+                    <li><a href="index.html" class="hover:text-white px-3 py-2">Home</a></li>
+                    <li><a href="roborover.html" class="hover:text-white px-3 py-2">RoboRover</a></li>
+                    <li><a href="roboarm.html" class="hover:text-white px-3 py-2">RoboArm</a></li>
+                    <li><a href="roboarm-single.html" class="hover:text-white px-3 py-2">Single-Hand RoboArm</a></li>
+                    <li><a href="ttml_to_audio.html" class="hover:text-white px-3 py-2">TTML to Audio</a></li>
+                    <li><a href="blog.html" class="hover:text-white px-3 py-2">Blog</a></li>
+                    <li><a href="about.html" class="hover:text-white px-3 py-2">About</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors"
+                aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
         </div>
-        
+
         <!-- Mobile Menu Dropdown -->
         <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
             <ul class="flex flex-col space-y-2">
-                <li><a href="index.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Home</a></li>
+                <li><a href="index.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Home</a>
+                </li>
+                <li><a href="roborover.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">RoboRover</a></li>
                 <li><a href="roboarm.html" class="block bg-gray-700 px-4 py-3 rounded-lg">RoboArm</a></li>
-                <li><a href="roboarm-single.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Single-Hand RoboArm</a></li>
-                <li><a href="ttml_to_audio.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">TTML to Audio</a></li>
-                <li><a href="blog.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Blog</a></li>
-                <li><a href="about.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">About</a></li>
+                <li><a href="roboarm-single.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Single-Hand RoboArm</a>
+                </li>
+                <li><a href="ttml_to_audio.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">TTML to Audio</a></li>
+                <li><a href="blog.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Blog</a>
+                </li>
+                <li><a href="about.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">About</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="w-full max-w-6xl mx-auto px-4 py-8" style="animation: slide-in 720ms linear 0s 1 normal both;">
-        
+
         <!-- Hero Section -->
         <div class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm p-8 mb-6">
             <div class="flex flex-col md:flex-row gap-8 items-center">
                 <img src="./images/youtube_s1_s6.jpg" alt="RoboArm Kit" class="w-full md:w-1/2 rounded-lg">
                 <div class="flex-1">
                     <h2 class="text-3xl font-bold text-white mb-4">RoboArm - Remote Control for Keyboard</h2>
-                    <p class="text-gray-300 text-lg mb-6">A 3D printed robotic arm controlled via keyboard. Build your own DIY robotics project with our comprehensive kit.</p>
+                    <p class="text-gray-300 text-lg mb-6">A 3D printed robotic arm controlled via keyboard. Build your
+                        own DIY robotics project with our comprehensive kit.</p>
                 </div>
             </div>
         </div>
@@ -131,13 +162,15 @@
         <div class="mb-8">
             <h2 class="text-2xl font-bold text-white mb-4 px-2">Get Your RoboArm Digital Kit</h2>
             <div class="max-w-2xl mx-auto">
-                <div class="rounded-xl border border-blue-600 bg-gray-900 shadow-lg hover:border-blue-500 transition-colors p-8">
+                <div
+                    class="rounded-xl border border-blue-600 bg-gray-900 shadow-lg hover:border-blue-500 transition-colors p-8">
                     <div class="flex flex-col md:flex-row gap-6">
                         <div class="flex-1">
                             <h3 class="text-2xl font-semibold text-white mb-2">Digital Kit</h3>
                             <p class="text-4xl font-bold text-blue-400 mb-4">29 EUR</p>
-                            <p class="text-gray-300 mb-6">Perfect for makers with 3D printers and Raspberry Pi Pico experience. Build your own robotic arm from scratch!</p>
-                            
+                            <p class="text-gray-300 mb-6">Perfect for makers with 3D printers and Raspberry Pi Pico
+                                experience. Build your own robotic arm from scratch!</p>
+
                             <div class="mb-6">
                                 <p class="text-base font-semibold text-gray-200 mb-3">What's Included:</p>
                                 <ul class="text-sm text-gray-400 space-y-2">
@@ -163,7 +196,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            
+
                             <div class="mb-6">
                                 <p class="text-base font-semibold text-gray-200 mb-3">You Will Need:</p>
                                 <ul class="text-sm text-gray-400 space-y-1">
@@ -176,13 +209,15 @@
                                     <li>• 2x Rotary Encoder</li>
                                 </ul>
                             </div>
-                            
-                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BZJ8LC25YQ7AS" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-4 text-white hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg">
+
+                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BZJ8LC25YQ7AS"
+                                class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-4 text-white hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg">
                                 <span>Buy with PayPal</span>
                                 <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             </a>
                             <div class="my-4 text-center text-gray-400">or</div>
-                            <a href="https://donaspeed.gumroad.com/l/roboarm-we" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-pink-600 px-6 py-4 text-white hover:bg-pink-700 transition-colors font-semibold text-lg shadow-lg">
+                            <a href="https://donaspeed.gumroad.com/l/roboarm-we"
+                                class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-pink-600 px-6 py-4 text-white hover:bg-pink-700 transition-colors font-semibold text-lg shadow-lg">
                                 <span>Buy on Gumroad</span>
                                 <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             </a>
@@ -210,13 +245,15 @@
                 <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
                     <video src="videos/dual_arms.mp4" autoplay loop muted class="w-full rounded-lg mb-4"></video>
                     <h3 class="text-lg font-semibold text-white mb-2">Voice Control</h3>
-                    <p class="text-sm text-gray-400">Control your RoboArm using voice commands for hands-free operation.</p>
+                    <p class="text-sm text-gray-400">Control your RoboArm using voice commands for hands-free operation.
+                    </p>
                 </div>
 
                 <div class="rounded-xl border border-neutral-800 bg-gray-900 p-6">
                     <img src="./images/3d_models.gif" alt="3D Models" class="w-full rounded-lg mb-4">
                     <h3 class="text-lg font-semibold text-white mb-2">3D Printable Design</h3>
-                    <p class="text-sm text-gray-400">Complete STL files optimized for FDM 3D printing with minimal supports.</p>
+                    <p class="text-sm text-gray-400">Complete STL files optimized for FDM 3D printing with minimal
+                        supports.</p>
                 </div>
             </div>
         </div>
@@ -226,8 +263,11 @@
             <h2 class="text-2xl font-bold text-white mb-4">Why Choose the Digital Kit?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <p class="text-gray-300 mb-4">The idea is to create RoboArm as affordably as possible. By sourcing components yourself from AliExpress, Amazon, or local markets, you can significantly reduce costs and speed up the build process.</p>
-                    <p class="text-gray-300">The Digital Kit gives you everything you need to build and customize your RoboArm at your own pace.</p>
+                    <p class="text-gray-300 mb-4">The idea is to create RoboArm as affordably as possible. By sourcing
+                        components yourself from AliExpress, Amazon, or local markets, you can significantly reduce
+                        costs and speed up the build process.</p>
+                    <p class="text-gray-300">The Digital Kit gives you everything you need to build and customize your
+                        RoboArm at your own pace.</p>
                 </div>
                 <div>
                     <p class="text-sm font-semibold text-gray-200 mb-2">What you get:</p>
@@ -254,7 +294,8 @@
                     <p class="text-xs text-gray-400">Print from STL files</p>
                 </div>
                 <div class="text-center">
-                    <img src="./images/raspberrypipico_boards.jpg" alt="Raspberry Pi Pico and board" class="w-full rounded-lg mb-3">
+                    <img src="./images/raspberrypipico_boards.jpg" alt="Raspberry Pi Pico and board"
+                        class="w-full rounded-lg mb-3">
                     <p class="text-sm font-semibold text-gray-200">Raspberry Pi Pico & Board</p>
                     <p class="text-xs text-gray-400">Pi Pico + PCA9685</p>
                 </div>
@@ -280,28 +321,32 @@
         <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8">
             <h2 class="text-2xl font-bold text-white mb-4">Documentation</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <a href="data/README.md" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                <a href="data/README.md"
+                    class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
                     <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
                     <div>
                         <p class="text-sm font-semibold text-gray-200">Getting Started</p>
                         <p class="text-xs text-gray-400">What you need</p>
                     </div>
                 </a>
-                <a href="data/README.md" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                <a href="data/README.md"
+                    class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
                     <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
                     <div>
                         <p class="text-sm font-semibold text-gray-200">Raspberry Pi Pico Setup</p>
                         <p class="text-xs text-gray-400">Upload guide</p>
                     </div>
                 </a>
-                <a href="https://www.youtube.com/watch?v=qxFJr5wAKV4" target="_blank" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                <a href="https://www.youtube.com/watch?v=qxFJr5wAKV4" target="_blank"
+                    class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
                     <i data-lucide="youtube" class="w-5 h-5 text-red-500"></i>
                     <div>
                         <p class="text-sm font-semibold text-gray-200">Assembly Guide</p>
                         <p class="text-xs text-gray-400">Watch on YouTube</p>
                     </div>
                 </a>
-                <a href="data/HARDWARE_EXPLANATION.md" class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
+                <a href="data/HARDWARE_EXPLANATION.md"
+                    class="flex items-center gap-3 p-4 rounded-lg border border-neutral-800 bg-gray-800/30 hover:border-neutral-700 transition-colors">
                     <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
                     <div>
                         <p class="text-sm font-semibold text-gray-200">HARDWARE EXPLANATION</p>
@@ -315,16 +360,21 @@
 
     <footer class="bg-gray-900 border-t border-neutral-800 mt-8">
         <div class="w-full max-w-6xl mx-auto px-4 flex items-center justify-between pt-6 pb-8">
-        <p class="text-gray-400 text-sm">© <span id="currentYear"></span> <span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span>. All rights reserved.</p>
-        <div class="flex items-center gap-3">
-            <a href="about.html" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
-                <span>About</span>
-            </a>
-            <a href="#top" class="inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm min-w-[44px]" aria-label="Back to top">
-                <i data-lucide="arrow-up" class="w-5 h-5"></i>
-                <span class="hidden sm:inline">Top</span>
-            </a>
-        </div>
+            <p class="text-gray-400 text-sm">© <span id="currentYear"></span> <span
+                    style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span>. All rights
+                reserved.</p>
+            <div class="flex items-center gap-3">
+                <a href="about.html"
+                    class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                    <span>About</span>
+                </a>
+                <a href="#top"
+                    class="inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm min-w-[44px]"
+                    aria-label="Back to top">
+                    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+                    <span class="hidden sm:inline">Top</span>
+                </a>
+            </div>
         </div>
     </footer>
 
@@ -333,16 +383,16 @@
             lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
         }
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
+
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
-            
+
             // Close menu when clicking a link
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
@@ -352,4 +402,5 @@
         }
     </script>
 </body>
+
 </html>
