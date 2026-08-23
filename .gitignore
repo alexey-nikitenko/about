@@ -1,0 +1,8 @@
+# Static site — plain HTML/CSS/JS, no build step.
+# Deploy: GitHub Actions (.github/workflows/deploy.yml) publishes repo root to gh-pages.
+
+node_modules/
+server.log
+sample/
+data_copy/
+.vscode/

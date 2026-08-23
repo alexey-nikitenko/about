@@ -1,0 +1,626 @@
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VSS258BP6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6VSS258BP6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <meta name="theme-color" content="#1f2937">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo1.png">
+    <link rel="apple-touch-icon" href="images/logo1.png">
+    <link rel="shortcut icon" href="images/logo1.png">
+
+    <title>TTML to Audio - Subtitle to Voice Converter | AspeedSoftware</title>
+    <meta name="description"
+        content="Transform subtitle files into natural-sounding audio voiceovers. Stop reading subtitles, start listening. Intelligent timing, pronunciation control, offline TTS.">
+    <meta name="keywords"
+        content="subtitle to audio, TTML converter, text to speech, TTS, voiceover, accessibility, subtitle reader, audio generation">
+    <meta name="author" content="Aleksey Nikitenko">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://aspeedsoftware.top/ttml_to_audio.html">
+    <meta property="og:title" content="TTML to Audio - Subtitle to Voice Converter">
+    <meta property="og:description"
+        content="Transform subtitle files into natural-sounding audio voiceovers. Stop reading subtitles, start listening.">
+    <meta property="og:image" content="https://aspeedsoftware.top/images/sub_to_audio.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aspeedsoftware.top/ttml_to_audio.html">
+    <meta property="twitter:title" content="TTML to Audio - Subtitle to Voice Converter">
+    <meta property="twitter:description"
+        content="Transform subtitle files into natural-sounding audio voiceovers. Stop reading subtitles, start listening.">
+    <meta property="twitter:image" content="https://aspeedsoftware.top/images/sub_to_audio.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slide-in {
+            from {
+                transform: translateY(18px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+
+            a,
+            button {
+                min-height: 44px;
+            }
+
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            html {
+                -webkit-text-size-adjust: 100%;
+            }
+
+            * {
+                -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+            }
+        }
+    </style>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
+    <header class="bg-gray-800 text-gray-100 p-4 sticky top-0 z-50 shadow-lg">
+        <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <img src="images/logo1.png" alt="AspeedSoftware Logo" class="h-[1em] w-auto"
+                    style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));">
+                <h1 class="text-base sm:text-lg md:text-xl font-bold"
+                    style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);"><span style="color: white;">Aspeed</span><span
+                        style="color: #2563EB;">Software</span></h1>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-4 text-base">
+                    <li><a href="index.html" class="hover:text-white px-3 py-2">Home</a></li>
+                    <li><a href="roborover.html" class="hover:text-white px-3 py-2">RoboRover</a></li>
+                    <li><a href="roboarm.html" class="hover:text-white px-3 py-2">RoboArm</a></li>
+                    <li><a href="roboarm-single.html" class="hover:text-white px-3 py-2">Single-Hand RoboArm</a></li>
+                    <li><a href="ttml_to_audio.html" class="hover:text-white px-3 py-2">TTML to Audio</a></li>
+                    <li><a href="blog.html" class="hover:text-white px-3 py-2">Blog</a></li>
+                    <li><a href="about.html" class="hover:text-white px-3 py-2">About</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors"
+                aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="index.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Home</a>
+                </li>
+                <li><a href="roborover.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">RoboRover</a></li>
+                <li><a href="roboarm.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">RoboArm</a></li>
+                <li><a href="roboarm-single.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Single-Hand RoboArm</a>
+                </li>
+                <li><a href="ttml_to_audio.html" class="block bg-gray-700 px-4 py-3 rounded-lg">TTML to Audio</a></li>
+                <li><a href="blog.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Blog</a>
+                </li>
+                <li><a href="about.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="w-full max-w-6xl mx-auto px-4 py-8" style="animation: slide-in 720ms linear 0s 1 normal both;">
+
+        <!-- Hero Section -->
+        <div class="rounded-xl border border-neutral-800 shadow-sm overflow-hidden mb-8"
+            style="background-image: url('./images/sub_to_audio.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <div class="bg-gray-900/80 backdrop-blur-sm p-8">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <h2 class="text-4xl font-bold text-white mb-4">Stop Reading. Keep watching. Start Listening.
+                        </h2>
+                        <p class="text-xl text-gray-200 mb-4">Tired of jumping back and forth between video and
+                            subtitles?
+                            Transform your subtitle files into natural voiceovers and enjoy your content hands-free.</p>
+                        <p class="text-gray-300 mb-6">Complete desktop application with intelligent timing,
+                            pronunciation
+                            control, and offline capabilities.</p>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <a href="https://donaspeed.gumroad.com/l/subtitle-to-audio?wanted=true"
+                                class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-white hover:bg-blue-700 transition-colors font-semibold shadow-lg">
+                                <span>Purchase on Gumroad</span>
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://tts.aspeedsoftware.top" target="_blank"
+                                class="inline-flex items-center gap-2 rounded-lg bg-gray-600 px-6 py-3 text-white hover:bg-gray-700 transition-colors font-semibold shadow-lg">
+                                <span>Try Online Version</span>
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                            <span class="text-sm text-gray-300">7-day money back guarantee</span>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <div class="rounded-xl border border-neutral-700 bg-gray-800/50 p-6 backdrop-blur-sm">
+                            <img src="./images/tts_audio_logo.png" alt="TTML to Audio" class="w-48 h-48 object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Online Tool Section -->
+        <div
+            class="rounded-xl border border-blue-600 bg-gray-900 shadow-lg hover:border-blue-500 transition-colors p-8 mb-8">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex-1">
+                    <h2 class="text-3xl font-bold text-white mb-4">Try Our New Online Tool!</h2>
+                    <p class="text-gray-300 text-lg mb-6">For a quick and easy way to convert your subtitle files, try
+                        our new web-based tool. No installation required!</p>
+                    <a href="https://tts.aspeedsoftware.top" target="_blank"
+                        class="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-4 text-white hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg">
+                        <span>Launch Online Tool</span>
+                        <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="./images/tts_audio_logo_600.png" alt="Online TTS Tool" class="w-48 h-48 rounded-lg">
+                </div>
+            </div>
+        </div>
+
+        <!-- The Problem Section -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4">The Problem with Subtitles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="rounded-lg bg-red-600/20 p-2">
+                            <i data-lucide="eye-off" class="w-5 h-5 text-red-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Constant Eye Movement</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Your eyes constantly jump between the video and subtitle text,
+                        making it hard to focus on the actual content.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="rounded-lg bg-red-600/20 p-2">
+                            <i data-lucide="pause" class="w-5 h-5 text-red-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Missed Moments</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">While reading subtitles, you miss important visual details, facial
+                        expressions, and action sequences.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="rounded-lg bg-red-600/20 p-2">
+                            <i data-lucide="zap-off" class="w-5 h-5 text-red-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Mental Fatigue</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Reading subtitles requires constant attention and can be
+                        exhausting, especially for long videos or movies.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Solution Section -->
+        <div class="rounded-xl border border-blue-600 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4">The Solution: Listen Instead of Read</h2>
+            <p class="text-gray-300 mb-6">Our application converts your subtitle files into natural-sounding voiceovers,
+                so you can watch videos the way they were meant to be experienced - with your eyes on the screen, not on
+                the text.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="rounded-lg bg-green-600/20 p-2">
+                            <i data-lucide="headphones" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Hands-Free Experience</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Listen to the dialogue while fully immersed in the video. No more
+                        reading required.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="rounded-lg bg-green-600/20 p-2">
+                            <i data-lucide="eye" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Full Visual Focus</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Keep your eyes on the action, cinematography, and visual
+                        storytelling without distraction.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="rounded-lg bg-green-600/20 p-2">
+                            <i data-lucide="smile" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Relaxed Viewing</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Enjoy a more natural, comfortable viewing experience without the
+                        mental strain of reading.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works: Intelligent Audio Scheduling -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4">How It Works: Intelligent Audio Scheduling</h2>
+            <p class="text-gray-300 mb-4">The challenge: subtitle timing rarely matches natural speech speed. A short
+                phrase might stay on screen for seconds, while a long sentence appears briefly.</p>
+            <p class="text-gray-300 mb-6">Our solution uses intelligent audio scheduling to create natural-sounding
+                voiceovers that sync perfectly with your video:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="rounded-lg bg-blue-600/20 p-2">
+                            <i data-lucide="layers" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Groups Dialogue</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Identifies related subtitles that appear close together, separated
+                        by longer silences.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="rounded-lg bg-blue-600/20 p-2">
+                            <i data-lucide="clock" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Borrows Time</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Shifts audio slightly by borrowing time from silent gaps,
+                        maintaining natural speech speed.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="rounded-lg bg-blue-600/20 p-2">
+                            <i data-lucide="gauge" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Smart Speed</h3>
+                    </div>
+                    <p class="text-sm text-gray-400">Only speeds up audio when necessary, ensuring consistent pacing
+                        within conversations.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-6">How It Works: Four Simple Phases</h2>
+
+            <div class="space-y-4">
+                <div class="flex gap-4">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
+                        1</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-white mb-2">Parsing & Audio Generation</h3>
+                        <p class="text-gray-400">Reads your .srt or .ttml file, extracts text and timings, then
+                            generates audio at natural speed to measure duration.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
+                        2</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-white mb-2">Timing Calculation & Rescheduling</h3>
+                        <p class="text-gray-400">Groups subtitles and calculates whether to borrow time from silent gaps
+                            or slightly speed up audio for perfect fit.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
+                        3</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-white mb-2">Rendering Final Audio</h3>
+                        <p class="text-gray-400">Creates a silent track matching your video's duration, then places
+                            rescheduled audio segments precisely.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
+                        4</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-white mb-2">Exporting</h3>
+                        <p class="text-gray-400">Encodes the final audio track into high-quality MP3, ready for
+                            immediate use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-6">Who Benefits from Audio Voiceovers?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="rounded-lg bg-blue-600/20 p-3">
+                            <i data-lucide="film" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Movie & TV Enthusiasts</h3>
+                        <p class="text-sm text-gray-400">Watch foreign films and shows without missing visual details.
+                            Focus on cinematography, not text.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="rounded-lg bg-blue-600/20 p-3">
+                            <i data-lucide="book-open" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Language Learners</h3>
+                        <p class="text-sm text-gray-400">Listen to natural pronunciation while watching. Train your ear
+                            without the distraction of reading subtitles.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="rounded-lg bg-blue-600/20 p-3">
+                            <i data-lucide="accessibility" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Accessibility Needs</h3>
+                        <p class="text-sm text-gray-400">Perfect for visually impaired viewers or anyone who finds
+                            reading subtitles difficult or tiring.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="rounded-lg bg-blue-600/20 p-3">
+                            <i data-lucide="video" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Content Creators</h3>
+                        <p class="text-sm text-gray-400">Generate professional voiceovers for videos, tutorials, and
+                            documentaries from subtitle scripts.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="rounded-lg bg-blue-600/20 p-3">
+                            <i data-lucide="headphones" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Multitaskers</h3>
+                        <p class="text-sm text-gray-400">Listen to video content while doing other tasks - cooking,
+                            exercising, or working.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="rounded-lg bg-blue-600/20 p-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Subtitle Editors</h3>
+                        <p class="text-sm text-gray-400">Proofread subtitles by listening. Catch timing issues and
+                            awkward phrasing more easily than reading.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Configuration -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4">Advanced Configuration</h2>
+            <p class="text-gray-300 mb-6">Fine-tune the audio generation with powerful timing controls:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-5 flex gap-4">
+                    <div class="flex-1">
+                        <h3 class="text-base font-semibold text-white mb-2">Max Speed</h3>
+                        <p class="text-sm text-gray-400">Control the maximum speed-up factor. Lower for more natural
+                            pace,
+                            increase to fit long text into short times.</p>
+                    </div>
+                    <div class="w-[20%] flex-shrink-0">
+                        <img src="./images/max_speed.png" alt="Max Speed" class="w-full h-auto rounded-lg object-cover">
+                    </div>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-5 flex gap-4">
+                    <div class="flex-1">
+                        <h3 class="text-base font-semibold text-white mb-2">Min Duration</h3>
+                        <p class="text-sm text-gray-400">Set minimum subtitle duration to be spoken. Perfect for
+                            automatically ignoring short, non-dialogue subtitles.</p>
+                    </div>
+                    <div class="w-[20%] flex-shrink-0">
+                        <img src="./images/min_duration.png" alt="Min Duration"
+                            class="w-full h-auto rounded-lg object-cover">
+                    </div>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-5 flex gap-4">
+                    <div class="flex-1">
+                        <h3 class="text-base font-semibold text-white mb-2">Gap Threshold</h3>
+                        <p class="text-sm text-gray-400">Define minimum silence between subtitles to separate
+                            conversations.
+                            Adjust for proper dialogue grouping.</p>
+                    </div>
+                    <div class="w-[20%] flex-shrink-0">
+                        <img src="./images/gap_threshold.png" alt="Gap Threshold"
+                            class="w-full h-auto rounded-lg object-cover">
+                    </div>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-5 flex gap-4">
+                    <div class="flex-1">
+                        <h3 class="text-base font-semibold text-white mb-2">Borrow Time</h3>
+                        <p class="text-sm text-gray-400">Maximum time to "steal" from silent gaps. More flexibility
+                            avoids
+                            speeding up audio for natural speech.</p>
+                    </div>
+                    <div class="w-[20%] flex-shrink-0">
+                        <img src="./images/borrow_time.png" alt="Borrow Time"
+                            class="w-full h-auto rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pronunciation Feature -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-4">Mastering Pronunciation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-gray-300 mb-4">Fix common text-to-speech mispronunciations with a powerful rule-based
+                        system.</p>
+                    <p class="text-gray-300 mb-4">When a word you've added is found, the application intelligently
+                        modifies it using a "vowel-doubling" trick before sending to the TTS engine.</p>
+                    <p class="text-gray-400 text-sm">Example: If TTS mispronounces "read" (as in "red"), change it to
+                        "reead" to guide the engine to the correct "reed" sound.</p>
+                </div>
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Create Your Dictionary</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Fix names and proper nouns</li>
+                        <li>• Correct technical terms</li>
+                        <li>• Adjust any mispronounced words</li>
+                        <li>• Build a personalized pronunciation library</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="rounded-xl border border-neutral-800 bg-gray-900 p-8">
+            <h2 class="text-2xl font-bold text-white mb-6">Troubleshooting & FAQ</h2>
+
+            <div class="space-y-4">
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-5">
+                    <h3 class="text-base font-semibold text-white mb-2">Q: The application seems frozen or unresponsive.
+                    </h3>
+                    <p class="text-sm text-gray-400"><strong>A:</strong> Audio generation is resource-intensive. The
+                        application is working in the background. The GUI includes a detailed log window so you can
+                        monitor progress in real-time.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-5">
+                    <h3 class="text-base font-semibold text-white mb-2">Q: The generated audio sounds too fast and
+                        robotic.</h3>
+                    <p class="text-sm text-gray-400"><strong>A:</strong> Your subtitles likely have lots of text in
+                        short durations. Adjust the advanced timing settings: increase "Borrow Time" for more
+                        flexibility, or lower "Max Speed" to cap playback rate.</p>
+                </div>
+
+                <div class="rounded-lg border border-neutral-800 bg-gray-800/30 p-5">
+                    <h3 class="text-base font-semibold text-white mb-2">Q: A specific word is always pronounced wrong.
+                    </h3>
+                    <p class="text-sm text-gray-400"><strong>A:</strong> Use the "Mastering Pronunciation" feature. Add
+                        the mispronounced word to the built-in rules list to teach the application the correct
+                        pronunciation.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 border-t border-neutral-800 mt-8">
+        <div class="w-full max-w-6xl mx-auto px-4 flex items-center justify-between pt-6 pb-8">
+            <p class="text-gray-400 text-sm">© <span id="currentYear"></span> <span
+                    style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span>. All rights
+                reserved.</p>
+            <div class="flex items-center gap-3">
+                <a href="about.html"
+                    class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                    <span>About</span>
+                </a>
+                <a href="#top"
+                    class="inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm min-w-[44px]"
+                    aria-label="Back to top">
+                    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+                    <span class="hidden sm:inline">Top</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        if (window.lucide) {
+            lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+        }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

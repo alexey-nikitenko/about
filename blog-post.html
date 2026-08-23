@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VSS258BP6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6VSS258BP6');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <meta name="theme-color" content="#1f2937">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo1.png">
+    <link rel="apple-touch-icon" href="images/logo1.png">
+    <link rel="shortcut icon" href="images/logo1.png">
+    
+    <title id="page-title">Blog Post - AspeedSoftware</title>
+    <meta name="description" id="page-description" content="Read articles about robotics, software development, and DIY projects.">
+    <meta name="keywords" id="page-keywords" content="software development, robotics, DIY">
+    <meta name="author" content="Aleksey Nikitenko">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" id="og-url" content="https://aspeedsoftware.top/blog-post.html">
+    <meta property="og:title" id="og-title" content="Blog Post - AspeedSoftware">
+    <meta property="og:description" id="og-description" content="Read articles about robotics, software development, and DIY projects.">
+    <meta property="og:image" id="og-image" content="https://aspeedsoftware.top/images/face.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" id="twitter-url" content="https://aspeedsoftware.top/blog-post.html">
+    <meta property="twitter:title" id="twitter-title" content="Blog Post - AspeedSoftware">
+    <meta property="twitter:description" id="twitter-description" content="Read articles about robotics, software development, and DIY projects.">
+    <meta property="twitter:image" id="twitter-image" content="https://aspeedsoftware.top/images/face.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slide-in {
+            from { transform: translateY(18px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .blog-content h2 { @apply text-2xl font-bold text-white mt-8 mb-4; }
+        .blog-content h3 { @apply text-xl font-semibold text-white mt-6 mb-3; }
+        .blog-content p { @apply text-gray-300 mb-4 leading-relaxed; }
+        .blog-content ul, .blog-content ol { @apply text-gray-300 mb-4 ml-6; }
+        .blog-content ul { @apply list-disc; }
+        .blog-content ol { @apply list-decimal; }
+        .blog-content li { @apply mb-2; }
+        .blog-content a { @apply text-blue-400 hover:text-blue-300 underline; }
+        .blog-content code { @apply bg-gray-800 px-2 py-1 rounded text-sm text-blue-300; }
+        .blog-content pre { @apply bg-gray-800 p-4 rounded-lg overflow-x-auto mb-4; }
+        .blog-content pre code { @apply bg-transparent p-0; }
+        .blog-content blockquote { @apply border-l-4 border-blue-600 pl-4 italic text-gray-400 my-4; }
+        .blog-content img { @apply rounded-lg my-6; }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            a, button {
+                min-height: 44px;
+            }
+            
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            
+            html {
+                -webkit-text-size-adjust: 100%;
+            }
+            
+            * {
+                -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+            }
+            
+            /* Better mobile typography */
+            .blog-content h2 {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+            
+            .blog-content h3 {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+            }
+            
+            .blog-content p {
+                font-size: 1rem;
+                line-height: 1.75rem;
+            }
+            
+            /* Improve code blocks on mobile */
+            .blog-content pre {
+                font-size: 0.875rem;
+                padding: 0.75rem;
+            }
+            
+            /* Better image handling */
+            .blog-content img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
+    <header class="bg-gray-800 text-gray-100 p-4 sticky top-0 z-50 shadow-lg">
+        <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <img src="images/logo1.png" alt="AspeedSoftware Logo" class="h-[1em] w-auto" style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));">
+                <h1 class="text-base sm:text-lg md:text-xl font-bold" style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);"><span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span></h1>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-4 text-base">
+                    <li><a href="index.html" class="hover:text-white px-3 py-2">Home</a></li>
+                    <li><a href="roboarm.html" class="hover:text-white px-3 py-2">RoboArm</a></li>
+                    <li><a href="roboarm-single.html" class="hover:text-white px-3 py-2">Single-Hand RoboArm</a></li>
+                    <li><a href="ttml_to_audio.html" class="hover:text-white px-3 py-2">TTML to Audio</a></li>
+                    <li><a href="blog.html" class="text-blue-400 hover:text-white px-3 py-2">Blog</a></li>
+                    <li><a href="about.html" class="hover:text-white px-3 py-2">About</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Navigation -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="index.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Home</a></li>
+                <li><a href="roboarm.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">RoboArm</a></li>
+                <li><a href="roboarm-single.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Single-Hand RoboArm</a></li>
+                <li><a href="ttml_to_audio.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">TTML to Audio</a></li>
+                <li><a href="blog.html" class="block bg-gray-700 px-4 py-3 rounded-lg text-blue-400">Blog</a></li>
+                <li><a href="about.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-4 py-8" style="animation: slide-in 720ms linear 0s 1 normal both;">
+        
+        <!-- Back to Blog -->
+        <div class="mb-6">
+            <a href="blog.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Back to Blog</span>
+            </a>
+        </div>
+
+        <!-- Blog Post Container -->
+        <article id="blog-post" class="rounded-xl border border-neutral-800 bg-gray-900 shadow-sm overflow-hidden">
+            <!-- Content will be loaded here by JavaScript -->
+        </article>
+
+        <!-- Post Not Found -->
+        <div id="post-not-found" class="hidden rounded-xl border border-neutral-800 bg-gray-900 p-8 text-center">
+            <i data-lucide="alert-circle" class="w-12 h-12 text-red-400 mx-auto mb-4"></i>
+            <h2 class="text-2xl font-bold text-white mb-2">Post Not Found</h2>
+            <p class="text-gray-400 mb-6">The blog post you're looking for doesn't exist.</p>
+            <a href="blog.html" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Back to Blog</span>
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 border-t border-neutral-800 mt-8">
+        <div class="w-full max-w-6xl mx-auto px-4 flex items-center justify-between pt-6 pb-8">
+            <p class="text-gray-400 text-sm">© <span id="currentYear"></span> <span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span>. All rights reserved.</p>
+            <div class="flex items-center gap-3">
+                <a href="about.html" class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
+                    <span>About</span>
+                </a>
+                <a href="#top" class="inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm min-w-[44px]" aria-label="Back to top">
+                    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+                    <span class="hidden sm:inline">Top</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        if (window.lucide) {
+            lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+        }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Security: Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Get post ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('id');
+
+        async function loadBlogPost() {
+            if (!postId) {
+                showNotFound();
+                return;
+            }
+
+            try {
+                const response = await fetch('blog-posts.json');
+                const posts = await response.json();
+                const post = posts.find(p => p.id === postId);
+                
+                if (!post) {
+                    showNotFound();
+                    return;
+                }
+                
+                displayPost(post);
+                updateMetaTags(post);
+            } catch (error) {
+                console.error('Error loading blog post:', error);
+                showNotFound();
+            }
+        }
+
+        function displayPost(post) {
+            const container = document.getElementById('blog-post');
+            const date = new Date(post.date);
+            const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            // Convert markdown to HTML if content is markdown
+            const contentHtml = post.contentType === 'markdown' ? marked.parse(post.content) : post.content;
+            
+            container.innerHTML = `
+                ${post.image ? `
+                <div class="aspect-video bg-gray-800">
+                    <img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}" class="h-full w-full object-cover">
+                </div>
+                ` : ''}
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-4 text-sm text-gray-400">
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="calendar" class="w-4 h-4"></i>
+                            <span>${escapeHtml(formattedDate)}</span>
+                        </div>
+                        ${post.readTime ? `
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>${escapeHtml(post.readTime.toString())} min read</span>
+                        </div>
+                        ` : ''}
+                    </div>
+                    <h1 class="text-4xl font-bold text-white mb-4">${escapeHtml(post.title)}</h1>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        ${post.tags.map(tag => `
+                            <span class="text-xs px-2 py-1 rounded-md bg-gray-800 text-gray-300 border border-neutral-700">${escapeHtml(tag)}</span>
+                        `).join('')}
+                    </div>
+                    <div class="blog-content">
+                        ${contentHtml}
+                    </div>
+                </div>
+            `;
+            
+            // Reinitialize lucide icons
+            if (window.lucide) {
+                lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+            }
+        }
+
+        function updateMetaTags(post) {
+            // Use textContent for text nodes (auto-escapes)
+            document.getElementById('page-title').textContent = `${post.title} - AspeedSoftware`;
+            
+            // Use setAttribute for attributes (safer than .content)
+            document.getElementById('page-description').setAttribute('content', post.excerpt);
+            document.getElementById('page-keywords').setAttribute('content', post.tags.join(', '));
+            
+            const currentUrl = `https://aspeedsoftware.top/blog-post.html?id=${encodeURIComponent(post.id)}`;
+            const imageUrl = post.image ? `https://aspeedsoftware.top/${encodeURIComponent(post.image)}` : 'https://aspeedsoftware.top/images/face.jpg';
+            
+            document.getElementById('og-url').setAttribute('content', currentUrl);
+            document.getElementById('og-title').setAttribute('content', post.title);
+            document.getElementById('og-description').setAttribute('content', post.excerpt);
+            document.getElementById('og-image').setAttribute('content', imageUrl);
+            
+            document.getElementById('twitter-url').setAttribute('content', currentUrl);
+            document.getElementById('twitter-title').setAttribute('content', post.title);
+            document.getElementById('twitter-description').setAttribute('content', post.excerpt);
+            document.getElementById('twitter-image').setAttribute('content', imageUrl);
+        }
+
+        function showNotFound() {
+            document.getElementById('blog-post').style.display = 'none';
+            document.getElementById('post-not-found').classList.remove('hidden');
+            if (window.lucide) {
+                lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+            }
+        }
+
+        // Load post on page load
+        loadBlogPost();
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
