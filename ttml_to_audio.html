@@ -50,7 +50,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@400;500&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/tailwind.css">
     <style>
         @keyframes slide-in {
             from {
@@ -86,63 +86,13 @@
             }
         }
     </style>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="js/vendor/lucide.min.js"></script>
+    <script src="js/load-components.js" defer></script>
 </head>
 
 <body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
-    <header class="bg-gray-800 text-gray-100 p-4 sticky top-0 z-50 shadow-lg">
-        <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <img src="images/logo1.png" alt="AspeedSoftware Logo" class="h-[1em] w-auto"
-                    style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));">
-                <h1 class="text-base sm:text-lg md:text-xl font-bold"
-                    style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);"><span style="color: white;">Aspeed</span><span
-                        style="color: #2563EB;">Software</span></h1>
-            </a>
-
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:block">
-                <ul class="flex space-x-4 text-base">
-                    <li><a href="index.html" class="hover:text-white px-3 py-2">Home</a></li>
-                    <li><a href="roborover.html" class="hover:text-white px-3 py-2">RoboRover</a></li>
-                    <li><a href="roboarm.html" class="hover:text-white px-3 py-2">RoboArm</a></li>
-                    <li><a href="roboarm-single.html" class="hover:text-white px-3 py-2">Single-Hand RoboArm</a></li>
-                    <li><a href="ttml_to_audio.html" class="hover:text-white px-3 py-2">TTML to Audio</a></li>
-                    <li><a href="blog.html" class="hover:text-white px-3 py-2">Blog</a></li>
-                    <li><a href="about.html" class="hover:text-white px-3 py-2">About</a></li>
-                </ul>
-            </nav>
-
-            <!-- Mobile Navigation -->
-            <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors"
-                aria-label="Menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Menu Dropdown -->
-        <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
-            <ul class="flex flex-col space-y-2">
-                <li><a href="index.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Home</a>
-                </li>
-                <li><a href="roborover.html"
-                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">RoboRover</a></li>
-                <li><a href="roboarm.html"
-                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">RoboArm</a></li>
-                <li><a href="roboarm-single.html"
-                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Single-Hand RoboArm</a>
-                </li>
-                <li><a href="ttml_to_audio.html" class="block bg-gray-700 px-4 py-3 rounded-lg">TTML to Audio</a></li>
-                <li><a href="blog.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Blog</a>
-                </li>
-                <li><a href="about.html"
-                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">About</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
+    
 
     <main class="w-full max-w-6xl mx-auto px-4 py-8" style="animation: slide-in 720ms linear 0s 1 normal both;">
 
@@ -176,7 +126,7 @@
                     </div>
                     <div class="flex-shrink-0">
                         <div class="rounded-xl border border-neutral-700 bg-gray-800/50 p-6 backdrop-blur-sm">
-                            <img src="./images/tts_audio_logo.png" alt="TTML to Audio" class="w-48 h-48 object-contain">
+                            <img src="./images/tts_audio_logo.png" alt="TTML to Audio" class="w-48 h-48 object-contain" loading="lazy" decoding="async" width="200" height="200">
                         </div>
                     </div>
                 </div>
@@ -198,7 +148,7 @@
                     </a>
                 </div>
                 <div class="flex-shrink-0">
-                    <img src="./images/tts_audio_logo_600.png" alt="Online TTS Tool" class="w-48 h-48 rounded-lg">
+                    <img src="./images/tts_audio_logo_600.png" alt="Online TTS Tool" class="w-48 h-48 rounded-lg" loading="lazy" decoding="async" width="600" height="600">
                 </div>
             </div>
         </div>
@@ -477,7 +427,7 @@
                             increase to fit long text into short times.</p>
                     </div>
                     <div class="w-[20%] flex-shrink-0">
-                        <img src="./images/max_speed.png" alt="Max Speed" class="w-full h-auto rounded-lg object-cover">
+                        <img src="./images/max_speed.png" alt="Max Speed" class="w-full h-auto rounded-lg object-cover" loading="lazy" decoding="async" width="116" height="116">
                     </div>
                 </div>
 
@@ -489,7 +439,7 @@
                     </div>
                     <div class="w-[20%] flex-shrink-0">
                         <img src="./images/min_duration.png" alt="Min Duration"
-                            class="w-full h-auto rounded-lg object-cover">
+                            class="w-full h-auto rounded-lg object-cover" loading="lazy" decoding="async" width="116" height="116">
                     </div>
                 </div>
 
@@ -502,7 +452,7 @@
                     </div>
                     <div class="w-[20%] flex-shrink-0">
                         <img src="./images/gap_threshold.png" alt="Gap Threshold"
-                            class="w-full h-auto rounded-lg object-cover">
+                            class="w-full h-auto rounded-lg object-cover" loading="lazy" decoding="async" width="116" height="116">
                     </div>
                 </div>
 
@@ -515,7 +465,7 @@
                     </div>
                     <div class="w-[20%] flex-shrink-0">
                         <img src="./images/borrow_time.png" alt="Borrow Time"
-                            class="w-full h-auto rounded-lg object-cover">
+                            class="w-full h-auto rounded-lg object-cover" loading="lazy" decoding="async" width="116" height="116">
                     </div>
                 </div>
             </div>
@@ -578,48 +528,14 @@
 
     </main>
 
-    <footer class="bg-gray-900 border-t border-neutral-800 mt-8">
-        <div class="w-full max-w-6xl mx-auto px-4 flex items-center justify-between pt-6 pb-8">
-            <p class="text-gray-400 text-sm">© <span id="currentYear"></span> <span
-                    style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span>. All rights
-                reserved.</p>
-            <div class="flex items-center gap-3">
-                <a href="about.html"
-                    class="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm">
-                    <span>About</span>
-                </a>
-                <a href="#top"
-                    class="inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-800 bg-gray-800/40 px-3.5 py-2 text-gray-200 hover:text-white hover:border-neutral-700 transition-colors text-sm min-w-[44px]"
-                    aria-label="Back to top">
-                    <i data-lucide="arrow-up" class="w-5 h-5"></i>
-                    <span class="hidden sm:inline">Top</span>
-                </a>
-            </div>
-        </div>
-    </footer>
+    
+    <div id="footer-placeholder"></div>
 
     <script>
         if (window.lucide) {
             lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
         }
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Close menu when clicking a link
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
-        }
+        
     </script>
 </body>
 

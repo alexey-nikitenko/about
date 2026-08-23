@@ -3,12 +3,13 @@
         <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <img src="images/logo1.png" alt="AspeedSoftware Logo" class="h-[1em] w-auto"
                 style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));">
-            <h1 class="text-base sm:text-lg md:text-xl font-bold" style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);">
-                <span style="color: white;">Aspeed</span><span style="color: #2563EB;">Software</span></h1>
+            <h1 class="text-base sm:text-lg md:text-xl font-bold"
+                style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);"><span style="color: white;">Aspeed</span><span
+                    style="color: #2563EB;">Software</span></h1>
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:block">
+        <nav data-nav="desktop" class="hidden md:block">
             <ul class="flex space-x-4 text-base">
                 <li><a href="index.html" class="hover:text-white px-3 py-2">Home</a></li>
                 <li><a href="roborover.html" class="hover:text-white px-3 py-2">RoboRover</a></li>
@@ -31,7 +32,7 @@
     </div>
 
     <!-- Mobile Menu Dropdown -->
-    <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+    <nav data-nav="mobile" id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
         <ul class="flex flex-col space-y-2">
             <li><a href="index.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Home</a>
             </li>
@@ -40,12 +41,14 @@
             <li><a href="roboarm.html"
                     class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">RoboArm</a></li>
             <li><a href="roboarm-single.html"
-                    class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Single-Hand RoboArm</a></li>
-            <li><a href="ttml_to_audio.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">TTML
-                    to Audio</a></li>
-            <li><a href="blog.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Blog</a></li>
-            <li><a href="about.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">About</a>
+                    class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Single-Hand RoboArm</a>
             </li>
+            <li><a href="ttml_to_audio.html"
+                    class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">TTML to Audio</a></li>
+            <li><a href="blog.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Blog</a>
+            </li>
+            <li><a href="about.html"
+                    class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">About</a></li>
         </ul>
     </nav>
 </header>
