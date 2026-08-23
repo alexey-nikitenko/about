@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aspeedsoftware.com/sitemap.xml
+Sitemap: https://aspeedsoftware.top/sitemap.xml

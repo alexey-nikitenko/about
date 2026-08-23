@@ -32,19 +32,19 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://aspeedsoftware.com/about.html">
+    <meta property="og:url" content="https://aspeedsoftware.top/about.html">
     <meta property="og:title" content="About Aleksey Nikitenko - Software Engineer & Robotics Enthusiast">
     <meta property="og:description"
         content="13 years of experience in software engineering, specializing in .NET technologies and test automation.">
-    <meta property="og:image" content="https://aspeedsoftware.com/images/face.jpg">
+    <meta property="og:image" content="https://aspeedsoftware.top/images/face.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary">
-    <meta property="twitter:url" content="https://aspeedsoftware.com/about.html">
+    <meta property="twitter:url" content="https://aspeedsoftware.top/about.html">
     <meta property="twitter:title" content="About Aleksey Nikitenko">
     <meta property="twitter:description"
         content="13 years of experience in software engineering, specializing in .NET technologies and test automation.">
-    <meta property="twitter:image" content="https://aspeedsoftware.com/images/face.jpg">
+    <meta property="twitter:image" content="https://aspeedsoftware.top/images/face.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -97,22 +97,58 @@
 </head>
 
 <body class="min-h-screen bg-gray-900 text-gray-100 antialiased selection:bg-gray-700/60 selection:text-white">
-    <header class="bg-gray-800 text-gray-100 p-4 sticky top-0 z-50 shadow-lg">
+<header class="bg-gray-800 text-gray-100 p-4 sticky top-0 z-50 shadow-lg">
         <div class="w-full max-w-6xl mx-auto flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <img src="images/logo1.png" alt="AspeedSoftware Logo" class="h-[1em] w-auto"
                     style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));">
                 <h1 class="text-base sm:text-lg md:text-xl font-bold"
                     style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);"><span style="color: white;">Aspeed</span><span
-                        <li><a href="ttml_to_audio.html"
-                            class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">TTML to Audio</a>
-                        </li>
-                        <li><a href="blog.html"
-                                class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Blog</a>
-                        </li>
-                        <li><a href="about.html" class="block bg-gray-700 px-4 py-3 rounded-lg">About</a></li>
-                        </ul>
-                        </nav>
+                        style="color: #2563EB;">Software</span></h1>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-4 text-base">
+                    <li><a href="index.html" class="hover:text-white px-3 py-2">Home</a></li>
+                    <li><a href="roborover.html" class="hover:text-white px-3 py-2">RoboRover</a></li>
+                    <li><a href="roboarm.html" class="hover:text-white px-3 py-2">RoboArm</a></li>
+                    <li><a href="roboarm-single.html" class="hover:text-white px-3 py-2">Single-Hand RoboArm</a></li>
+                    <li><a href="ttml_to_audio.html" class="hover:text-white px-3 py-2">TTML to Audio</a></li>
+                    <li><a href="blog.html" class="hover:text-white px-3 py-2">Blog</a></li>
+                    <li><a href="about.html" class="text-blue-400 hover:text-white px-3 py-2">About</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors"
+                aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="index.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Home</a>
+                </li>
+                <li><a href="roborover.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">RoboRover</a></li>
+                <li><a href="roboarm.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">RoboArm</a></li>
+                <li><a href="roboarm-single.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Single-Hand RoboArm</a>
+                </li>
+                <li><a href="ttml_to_audio.html"
+                        class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">TTML to Audio</a></li>
+                <li><a href="blog.html" class="block hover:bg-gray-700 px-4 py-3 rounded-lg transition-colors">Blog</a>
+                </li>
+                <li><a href="about.html" class="block bg-gray-700 px-4 py-3 rounded-lg">About</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="w-full max-w-6xl mx-auto px-4 py-8" style="animation: slide-in 720ms linear 0s 1 normal both;">
