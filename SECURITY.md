@@ -32,29 +32,19 @@ This blog system is designed with security in mind, using static files and clien
 - ✅ Review repository access regularly
 - ✅ Use SSH keys instead of passwords
 
-### 2. Content Security Policy (Recommended)
+### 2. Content Security Policy
 
-Add a `_headers` file (for Netlify) or `.htaccess` (for Apache) to enable CSP:
+The site is served through **Cloudflare** (fronting GitHub Pages). GitHub Pages
+cannot set custom HTTP response headers, so real headers must be configured in
+the Cloudflare dashboard — see [CLOUDFLARE-HEADERS.md](CLOUDFLARE-HEADERS.md)
+for copy-paste Transform Rules.
 
-**For Netlify (_headers file):**
-```
-/*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
-```
+Current posture that keeps CSP simple:
 
-**For Apache (.htaccess file):**
-```apache
-<IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'"
-    Header set X-Frame-Options "DENY"
-    Header set X-Content-Type-Options "nosniff"
-    Header set Referrer-Policy "strict-origin-when-cross-origin"
-</IfModule>
-```
+- **No third-party JS CDNs anymore**: Tailwind is prebuilt into `css/tailwind.css`,
+  and Lucide (`js/vendor/lucide.min.js`) + marked (`js/vendor/marked.min.js`)
+  are self-hosted at pinned versions.
+- Remaining external origins: Google Fonts (CSS+woff2) and googletagmanager/gtag.
 
 ### 3. Regular Updates
 - Keep CDN dependencies up to date
